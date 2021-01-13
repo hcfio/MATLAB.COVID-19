@@ -32,7 +32,7 @@ OSK=A.data(rowosk,2)/8.81;
 
 % plot
 plot([OKNW,TKY,OSK,HKD,JPN],'LineWidth',2)
-title('COVID-19 in Japan (total cases per 1M)','data souced by NHK')
+title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK')
 xlabel('date')
 ylabel('cases')
 xticks([0 floor(D/3) floor(2*D/3) D])
