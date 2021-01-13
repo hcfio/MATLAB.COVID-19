@@ -56,5 +56,4 @@ plot(t,u(:,2)+u(:,3),t,u(:,2),t,u(:,3),'LineWidth',2);
 title('SIR model for COVID-19 in Japan (126M)');
 xticks([0 2*7 4*7]);
 xticklabels({[l0],[l1],[l2]});
-ylabel('population');
 legend('Total Cases','Active Cases','Discharged','Location','northwest');
