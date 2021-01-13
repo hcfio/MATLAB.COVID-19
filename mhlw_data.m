@@ -42,7 +42,7 @@ l1=datestr(d0+days(floor(N/3)),'yyyy-mm-dd');
 l2=datestr(d0+days(floor(2*N/3)),'yyyy-mm-dd');
 lf=datestr(df,'yyyy-mm-dd');
 plot(n,A,n,C,n,B,'LineWidth',2)
-title('COVID-19 in Japan (126M)')
+title('COVID-19 in Japan (126M)','data sourced by Japanese Ministry of Health')
 xticks([0 floor(N/3) floor(2*N/3) N])
 xticklabels({[l0],[l1],[l2],[lf]})
 legend('Total Cases','Active Cases','Discharged','Location','northwest');
