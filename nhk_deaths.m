@@ -5,7 +5,7 @@ B=str2double(A.textdata(2:l+1,2));
 
 websave('nhk_news_covid19_domestic_daily_data.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_domestic_daily_data.csv');
 JP=importdata('nhk_news_covid19_domestic_daily_data.csv');
-JPN=JP.data(:,1)/126;
+JPN=JP.data(:,4)/126;
 
 dd0=strrep(A.textdata(2,1),'/','-');
 d0=datetime(dd0);
@@ -19,20 +19,20 @@ lf=datestr(d1,'yyyy-mm-dd');
 
 % Okinawa (1.46M): code 47
 rowoknw=find(B(:)==47);
-OKNW=A.data(rowoknw,1)/1.46;
+OKNW=A.data(rowoknw,4)/1.46;
 % Hokkaido (5.27M): code 1, 
 rowhkd=find(B(:)==1);
-HKD=A.data(rowhkd,1)/5.27;
+HKD=A.data(rowhkd,4)/5.27;
 % Tokyo (14M): code 13, 
 rowtky=find(B(:)==13);
-TKY=A.data(rowtky,1)/14;
+TKY=A.data(rowtky,4)/14;
 % Osaka (8.81M): code 27
 rowosk=find(B(:)==27);
-OSK=A.data(rowosk,1)/8.81;
+OSK=A.data(rowosk,4)/8.81;
 
 % plot
-plot([OKNW,TKY,OSK,HKD,JPN],'LineWidth',1)
-title('COVID-19 in Japan (daily new cases per 1M)','data sourced by NHK')
+plot([OKNW,TKY,OSK,HKD,JPN],'LineWidth',2)
+title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
