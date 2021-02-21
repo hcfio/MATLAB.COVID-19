@@ -54,7 +54,7 @@ colororder(newcolors)
 % plot
 subplot(1,3,1)
 plot([JPN1,TKY1,OSK1,HKD1,OKNW1],'LineWidth',2)
-title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK')
+title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
@@ -63,7 +63,7 @@ legend('Japan','Tokyo','Osaka','Hokkaido','Okinawa','Location','northwest');
 % plot
 subplot(1,3,2)
 plot([JPN2,TKY2,OSK2,HKD2,OKNW2],'LineWidth',2)
-title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK')
+title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
@@ -72,7 +72,7 @@ legend('Japan','Tokyo','Osaka','Hokkaido','Okinawa','Location','northwest');
 % plot
 subplot(1,3,3)
 plot([JPN3,TKY3,OSK3,HKD3,OKNW3],'LineWidth',1)
-title('COVID-19 in Japan (daily new cases per 1M)','data sourced by NHK')
+title('COVID-19 in Japan (daily new cases per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
