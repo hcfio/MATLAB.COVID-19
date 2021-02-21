@@ -17,7 +17,7 @@ D=days(d1-d0);
 l0=datestr(d0,'yyyy-mm-dd');
 l1=datestr(d0+days(floor(D/3)),'yyyy-mm-dd');
 l2=datestr(d0+days(floor(2*D/3)),'yyyy-mm-dd');
-lf=datestr(d1,'yyyy-mm-dd');
+l3=datestr(d1,'yyyy-mm-dd');
 
 % Okinawa (1.46M): code 47
 rowoknw=find(B(:)==47);
@@ -54,6 +54,12 @@ rowkng=find(B(:)==14);
 KNG1=A.data(rowkng,2)/9.22;
 KNG2=A.data(rowkng,4)/9.22;
 % KNG3=A.data(rowkng,1)/9.22;
+% Chiba (6.28M): code 12
+rowchb=find(B(:)==12);
+CHB1=A.data(rowchb,2)/6.28;
+CHB2=A.data(rowchb,4)/6.28;
+% CHB3=A.data(rowchb,1)/6.28;
+
 
 newcolors = [0 0 0; 
              0 1 0; 
@@ -68,19 +74,19 @@ newcolors = [0 0 0;
 colororder(newcolors)         
 % plot
 subplot(1,2,1)
-plot([JPN1,TKY1,OSK1,HKD1,OKNW1,KNG1,STM1],'LineWidth',2)
-title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK')
+plot([JPN1,TKY1,OSK1,HKD1,OKNW1,KNG1,STM1,CHB1],'LineWidth',2)
+title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
-xticks([0 floor(D/3) floor(2*D/3) D])
-xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Osaka','Hokkaido','Okinawa','Kanagawa','Saitama','Location','northwest');
+xticks([1 floor(D/3) floor(2*D/3) D]);
+xticklabels({[l0],[l1],[l2],[l3]});
+legend('Japan','Tokyo','Osaka','Hokkaido','Okinawa','Kanagawa','Saitama','Chiba','Location','northwest');
 % plot
 subplot(1,2,2)
-plot([JPN2,TKY2,OSK2,HKD2,OKNW2,KNG2,STM2],'LineWidth',2)
-title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK')
+plot([JPN2,TKY2,OSK2,HKD2,OKNW2,KNG2,STM2,CHB2],'LineWidth',2)
+title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
-xticks([0 floor(D/3) floor(2*D/3) D])
-xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Osaka','Hokkaido','Okinawa','Kanagawa','Saitama','Location','northwest');
+xticks([1 floor(D/3) floor(2*D/3) D])
+xticklabels({[l0],[l1],[l2],[l3]})
+legend('Japan','Tokyo','Osaka','Hokkaido','Okinawa','Kanagawa','Saitama','Chiba','Location','northwest');
