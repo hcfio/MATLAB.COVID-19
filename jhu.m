@@ -46,7 +46,7 @@ PIND=1380;
 AIND=transpose(A.data(147,3:qa))/PIND;
 BIND=transpose(B.data(147,3:qa))/PIND;
 % Nepal
-PNPL=29;
+PNPL=29.5;
 ANPL=transpose(A.data(191,3:qa))/PNPL;
 BNPL=transpose(B.data(191,3:qa))/PNPL;
 % Pakistan
@@ -58,7 +58,7 @@ PBGD=165;
 ABGD=transpose(A.data(21,3:qa))/PBGD;
 BBGD=transpose(B.data(21,3:qa))/PBGD;
 % Sri Lanka
-PLKA=21;
+PLKA=21.5;
 ALKA=transpose(A.data(235,3:qa))/PLKA;
 BLKA=transpose(B.data(235,3:qa))/PLKA;
 
@@ -80,8 +80,8 @@ plot([AJPN,APHI,AMYS,AIDN,AKOR AIND ANPL APAK ABGD ALKA],'LineWidth',2)
 title('COVID-19 in Asia (total cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
-xticks([0 floor(D/3) floor(2*D/3) D])
-xticklabels({[l0],[l1],[l2],[l3]})
+xticks([0 floor(D/3) floor(2*D/3) D]);
+xticklabels({[l0],[l1],[l2],[l3]});
 legend('Japan','Philippines','Malaysia','Indonesia','South Korea','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Location','northwest');
 % plot
 subplot(1,2,2)
