@@ -61,6 +61,42 @@ BBGD=transpose(B.data(21,3:qa))/PBGD;
 PLKA=21.5;
 ALKA=transpose(A.data(235,3:qa))/PLKA;
 BLKA=transpose(B.data(235,3:qa))/PLKA;
+% Argentina 8 8
+PARG=45.2;
+AARG=transpose(A.data(7,3:qa))/PARG;
+BARG=transpose(B.data(7,3:qa))/PARG;
+% Brazil 32 32
+PBRA=213;
+ABRA=transpose(A.data(31,3:qa))/PBRA;
+BBRA=transpose(B.data(31,3:qa))/PBRA;
+% Colombia 93 78
+PCOL=50.9;
+ACOL=transpose(A.data(92,3:qa))/PCOL;
+BCOL=transpose(B.data(92,3:qa))/PCOL;
+% France 131 116
+PFRA=65.3;
+AFRA=transpose(A.data(130,3:qa))/PFRA;
+BFRA=transpose(B.data(130,3:qa))/PFRA;
+% Italia 154 139
+PITA=60.5;
+AITA=transpose(A.data(153,3:qa))/PITA;
+BITA=transpose(B.data(153,3:qa))/PITA;
+% Mexico 183 168
+PMEX=129;
+AMEX=transpose(A.data(182,3:qa))/PMEX;
+BMEX=transpose(B.data(182,3:qa))/PMEX;
+% Spain 235 220
+PESP=46.8;
+AESP=transpose(A.data(234,3:qa))/PESP;
+BESP=transpose(B.data(234,3:qa))/PESP;
+% United Staes 251 236
+PUSA=331;
+AUSA=transpose(A.data(250,3:qa))/PUSA;
+BUSA=transpose(B.data(250,3:qa))/PUSA;
+% United Kingdom 266 251
+PGBR=67.9;
+AGBR=transpose(A.data(265,3:qa))/PGBR;
+BGBR=transpose(B.data(265,3:qa))/PGBR;
 
 newcolors = [0 0 0; 
              0 1 0; 
@@ -75,20 +111,38 @@ newcolors = [0 0 0;
 colororder(newcolors)         
          
 % plot
-subplot(1,2,1)
-plot([AJPN,APHI,AMYS,AIDN,AKOR AIND ANPL APAK ABGD ALKA],'LineWidth',2)
+subplot(2,2,1)
+plot([AJPN,APHI,AMYS,AIDN,AKOR,AIND,ANPL,APAK,ABGD,ALKA],'LineWidth',2)
 title('COVID-19 in Asia (total cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
-xticks([0 floor(D/3) floor(2*D/3) D]);
+xticks([1 floor(D/3) floor(2*D/3) D]);
 xticklabels({[l0],[l1],[l2],[l3]});
 legend('Japan','Philippines','Malaysia','Indonesia','South Korea','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Location','northwest');
 % plot
-subplot(1,2,2)
+subplot(2,2,2)
 plot([BJPN,BPHI,BMYS,BIDN,BKOR BIND BNPL BPAK BBGD BLKA],'LineWidth',2)
 title('COVID-19 in Asia (death toll per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([0 floor(D/3) floor(2*D/3) D])
+xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japan','Philippines','Malaysia','Indonesia','South Korea','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Location','northwest');
+% plot
+subplot(2,2,3)
+plot([AARG,ABRA,ACOL,AFRA,AITA,AMEX,AESP,AUSA,AGBR],'LineWidth',2)
+title('COVID-19 in the World (total cases per 1M)','data sourced by JHU Coronavirus Resource Center')
+xlabel('date');
+ylabel('cases/1M');
+xticks([1 floor(D/3) floor(2*D/3) D]);
+xticklabels({[l0],[l1],[l2],[l3]});
+legend('Argentina','Brazil','Colombia','France','Italy','Mexico','Spain','United States','United Kingdom','Location','northwest');
+% plot
+subplot(2,2,4)
+plot([BARG,BBRA,BCOL,BFRA,BITA,BMEX,BESP,BUSA,BGBR],'LineWidth',2)
+title('COVID-19 in the World (death toll per 1M)','data sourced by JHU Coronavirus Resource Center')
+xlabel('date');
+ylabel('deaths/1M');
+xticks([1 floor(D/3) floor(2*D/3) D])
+xticklabels({[l0],[l1],[l2],[l3]})
+legend('Argentina','Brazil','Colombia','France','Italy','Mexico','Spain','United States','United Kingdom','Location','northwest');
