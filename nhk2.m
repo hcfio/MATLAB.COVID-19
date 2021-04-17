@@ -68,9 +68,9 @@ KYT2=A.data(rowkyt,4)/2.57;
 newcolors = [0 0 0; 
              0 1 0; 
              0 0 1; 
+             1 0 0; 
              0 1 1; 
-             1 0 1; 
-             1 0 0;
+             1 0 1;
              0.85 0.325 0.098; 
              1 0.54 0; 
              0.47 0.25 0.8; 
@@ -78,19 +78,19 @@ newcolors = [0 0 0;
 colororder(newcolors)         
 % plot
 subplot(1,2,1)
-plot([JPN1,TKY1,HKD1,OSK1,HYG1,OKNW1,KNG1,STM1,CHB1,KYT1],'LineWidth',2)
+plot([JPN1,TKY1,OSK1,OKNW1,HYG1,HKD1,KNG1,STM1,CHB1,KYT1],'LineWidth',2)
 title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(D/3) floor(2*D/3) D]);
 xticklabels({[l0],[l1],[l2],[l3]});
-legend('Japan','Tokyo','Hokkaido','Osaka','Hyogo','Okinawa','Kanagawa','Saitama','Chiba','Kyoto','Location','northwest');
+legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Kanagawa','Saitama','Chiba','Kyoto','Location','northwest');
 % plot
 subplot(1,2,2)
-plot([JPN2,TKY2,HKD2,OSK2,HYG2,OKNW2,KNG2,STM2,CHB2,KYT2],'LineWidth',2)
+plot([JPN2,TKY2,OSK2,OKNW2,HYG2,HKD2,KNG2,STM2,CHB2,KYT2],'LineWidth',2)
 title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Tokyo','Hokkaido','Osaka','Hyogo','Okinawa','Kanagawa','Saitama','Chiba','Kyoto','Location','northwest');
+legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Kanagawa','Saitama','Chiba','Kyoto','Location','northwest');
