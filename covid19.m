@@ -94,16 +94,16 @@ AJPN=transpose(A.data(156,3:qa))/PJPN;
 BJPN=transpose(B.data(156,3:qa))/PJPN;
 % South Korea
 PKOR=51.3;
-AKOR=transpose(A.data(160,3:qa))/PKOR;
-BKOR=transpose(B.data(160,3:qa))/PKOR;
+AKOR=transpose(A.data(161,3:qa))/PKOR;
+BKOR=transpose(B.data(161,3:qa))/PKOR;
 % Philippines
 PPHI=108;
-APHI=transpose(A.data(210,3:qa))/PPHI;
-BPHI=transpose(B.data(210,3:qa))/PPHI;
+APHI=transpose(A.data(211,3:qa))/PPHI;
+BPHI=transpose(B.data(211,3:qa))/PPHI;
 % Malaysia
 PMYS=32;
-AMYS=transpose(A.data(176,3:qa))/PMYS;
-BMYS=transpose(B.data(176,3:qa))/PMYS;
+AMYS=transpose(A.data(177,3:qa))/PMYS;
+BMYS=transpose(B.data(177,3:qa))/PMYS;
 % Indonesia
 PIDN=271;
 AIDN=transpose(A.data(149,3:qa))/PIDN;
@@ -114,20 +114,20 @@ AIND=transpose(A.data(148,3:qa))/PIND;
 BIND=transpose(B.data(148,3:qa))/PIND;
 % Nepal
 PNPL=29.5;
-ANPL=transpose(A.data(192,3:qa))/PNPL;
-BNPL=transpose(B.data(192,3:qa))/PNPL;
+ANPL=transpose(A.data(193,3:qa))/PNPL;
+BNPL=transpose(B.data(193,3:qa))/PNPL;
 % Pakistan
 PPAK=221;
-APAK=transpose(A.data(205,3:qa))/PPAK;
-BPAK=transpose(B.data(205,3:qa))/PPAK;
+APAK=transpose(A.data(206,3:qa))/PPAK;
+BPAK=transpose(B.data(206,3:qa))/PPAK;
 % Bangladesh
 PBGD=165;
 ABGD=transpose(A.data(21,3:qa))/PBGD;
 BBGD=transpose(B.data(21,3:qa))/PBGD;
 % Sri Lanka
 PLKA=21.5;
-ALKA=transpose(A.data(236,3:qa))/PLKA;
-BLKA=transpose(B.data(236,3:qa))/PLKA;
+ALKA=transpose(A.data(237,3:qa))/PLKA;
+BLKA=transpose(B.data(237,3:qa))/PLKA;
 % Argentina 8 8
 PARG=45.2;
 AARG=transpose(A.data(7,3:qa))/PARG;
@@ -150,20 +150,20 @@ AITA=transpose(A.data(154,3:qa))/PITA;
 BITA=transpose(B.data(154,3:qa))/PITA;
 % Mexico 183 168
 PMEX=129;
-AMEX=transpose(A.data(183,3:qa))/PMEX;
-BMEX=transpose(B.data(183,3:qa))/PMEX;
+AMEX=transpose(A.data(184,3:qa))/PMEX;
+BMEX=transpose(B.data(184,3:qa))/PMEX;
 % Spain 235 220
 PESP=46.8;
-AESP=transpose(A.data(235,3:qa))/PESP;
-BESP=transpose(B.data(235,3:qa))/PESP;
+AESP=transpose(A.data(236,3:qa))/PESP;
+BESP=transpose(B.data(236,3:qa))/PESP;
 % United Staes 251 236
 PUSA=331;
-AUSA=transpose(A.data(251,3:qa))/PUSA;
-BUSA=transpose(B.data(251,3:qa))/PUSA;
+AUSA=transpose(A.data(252,3:qa))/PUSA;
+BUSA=transpose(B.data(252,3:qa))/PUSA;
 % United Kingdom 266 251
 PGBR=67.9;
-AGBR=transpose(A.data(266,3:qa))/PGBR;
-BGBR=transpose(B.data(266,3:qa))/PGBR;
+AGBR=transpose(A.data(267,3:qa))/PGBR;
+BGBR=transpose(B.data(267,3:qa))/PGBR;
 
 newcolors = [0 0 0; 
              0 1 0; 
