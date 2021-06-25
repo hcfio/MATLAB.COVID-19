@@ -158,12 +158,12 @@ AESP=transpose(A.data(238,3:qa))/PESP;
 BESP=transpose(B.data(238,3:qa))/PESP;
 % United Staes 251 236
 PUSA=331;
-AUSA=transpose(A.data(254,3:qa))/PUSA;
-BUSA=transpose(B.data(254,3:qa))/PUSA;
+AUSA=transpose(A.data(255,3:qa))/PUSA;
+BUSA=transpose(B.data(255,3:qa))/PUSA;
 % United Kingdom 266 251
 PGBR=67.9;
-AGBR=transpose(A.data(269,3:qa))/PGBR;
-BGBR=transpose(B.data(269,3:qa))/PGBR;
+AGBR=transpose(A.data(270,3:qa))/PGBR;
+BGBR=transpose(B.data(270,3:qa))/PGBR;
 
 newcolors = [0 0 0; 
              0 1 0; 
