@@ -20,6 +20,13 @@ l1=datestr(d0+days(floor(D/3)),'yyyy-mm-dd');
 l2=datestr(d0+days(floor(2*D/3)),'yyyy-mm-dd');
 lf=datestr(d1,'yyyy-mm-dd');
 
+% dddd0=strrep(A.textdata(443,1),'/','-');
+% ddd0=datetime(dddd0);
+% DD=days(d1-ddd0);
+% ll0=string(ddd0);
+% ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
+% ll2=datestr(d1,'yyyy-mm-dd');
+
 % Okinawa (1.46M): code 47
 rowoknw=find(B(:)==47);
 OKNW1=A.data(rowoknw,2)/1.46;
