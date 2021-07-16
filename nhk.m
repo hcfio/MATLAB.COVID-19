@@ -8,8 +8,10 @@ JP=importdata('nhk_news_covid19_domestic_daily_data.csv');
 JPN1=JP.data(:,2)/126;
 JPN2=JP.data(:,4)/126;
 JPN3=JP.data(:,1)/126;
-DJPN=JP.data(:,4);
-
+NDJPN=zeros(D-441,1);
+for j=1:D-441
+    NDJPN(j,1)=(JPN2(j+441,1)-JPN2(j+434,1))/7;
+end
 dd0=strrep(A.textdata(2,1),'/','-');
 d0=datetime(dd0);
 dd1=strrep(A.textdata(l+1,1),'/','-');
@@ -20,41 +22,63 @@ l1=datestr(d0+days(floor(D/3)),'yyyy-mm-dd');
 l2=datestr(d0+days(floor(2*D/3)),'yyyy-mm-dd');
 lf=datestr(d1,'yyyy-mm-dd');
 
-% dddd0=strrep(A.textdata(443,1),'/','-');
-% ddd0=datetime(dddd0);
-% DD=days(d1-ddd0);
-% ll0=string(ddd0);
-% ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
-% ll2=datestr(d1,'yyyy-mm-dd');
+ddd0=datetime('2021-04-01');
+DD=days(d1-ddd0);
+ll0=string(ddd0);
+ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
+ll2=datestr(d1,'yyyy-mm-dd');
 
 % Okinawa (1.46M): code 47
 rowoknw=find(B(:)==47);
 OKNW1=A.data(rowoknw,2)/1.46;
 OKNW2=A.data(rowoknw,4)/1.46;
 OKNW3=A.data(rowoknw,1)/1.46;
-% Hokkaido (5.27M): code 1, 
+NDOKNW=zeros(D-441,1);
+for j=1:D-441
+    NDOKNW(j,1)=(OKNW2(j+441,1)-OKNW2(j+434,1))/7;
+end
+
+% Hokkaido (5.27M): code 1,
 rowhkd=find(B(:)==1);
 HKD1=A.data(rowhkd,2)/5.27;
 HKD2=A.data(rowhkd,4)/5.27;
 HKD3=A.data(rowhkd,1)/5.27;
+NDHKD=zeros(D-441,1);
+for j=1:D-441
+    NDHKD(j,1)=(HKD2(j+441,1)-HKD2(j+434,1))/7;
+end
+
 % Tokyo (14M): code 13, 
 rowtky=find(B(:)==13);
 TKY1=A.data(rowtky,2)/14;
 TKY2=A.data(rowtky,4)/14;
 TKY3=A.data(rowtky,1)/14;
-DTKY=A.data(rowtky,4);
+NDTKY=zeros(D-441,1);
+for j=1:D-441
+    NDTKY(j,1)=(TKY2(j+441,1)-TKY2(j+434,1))/7;
+end
+
 % Osaka (8.81M): code 27
 rowosk=find(B(:)==27);
 OSK1=A.data(rowosk,2)/8.81;
 OSK2=A.data(rowosk,4)/8.81;
 OSK3=A.data(rowosk,1)/8.81;
-DOSK=A.data(rowosk,4);
+NDOSK=zeros(D-441,1);
+for j=1:D-441
+    NDOSK(j,1)=(OSK2(j+441,1)-OSK2(j+434,1))/7;
+end
+
 % Hyogo (5.43M): code 28
 rowhyg=find(B(:)==28);
 HYG1=A.data(rowhyg,2)/5.43;
 HYG2=A.data(rowhyg,4)/5.43;
 HYG3=A.data(rowhyg,1)/5.43;
-% Saitama (7.34M): code 11, 
+NDHYG=zeros(D-441,1);
+for j=1:D-441
+    NDHYG(j,1)=(HYG2(j+441,1)-HYG2(j+434,1))/7;
+end
+
+% Saitama (7.34M): code 11,
 rowstm=find(B(:)==11);
 STM1=A.data(rowstm,2)/7.34;
 STM2=A.data(rowstm,4)/7.34;
@@ -117,10 +141,10 @@ xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Location','northwest');
 subplot(2,2,4)
-plot([DJPN,DTKY,DOSK],'LineWidth',2)
-title('COVID-19 in Japan (death toll)','data sourced by NHK (Japan Broadcasting Corporation)')
+plot([NDJPN,NDTKY,NDOSK NDOKNW NDHYG NDHKD],'LineWidth',2)
+title('COVID-19 in Japan (7-day average deaths per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('deaths');
-xticks([0 floor(D/3) floor(2*D/3) D])
-xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Osaka','Location','northwest');
+xticks([0 floor(DD/2) DD])
+xticklabels({[ll0],[ll1],[ll2]})
+legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Location','northwest');
