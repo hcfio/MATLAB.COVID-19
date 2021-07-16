@@ -5,13 +5,7 @@ B=str2double(A.textdata(2:l+1,2));
 
 websave('nhk_news_covid19_domestic_daily_data.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_domestic_daily_data.csv');
 JP=importdata('nhk_news_covid19_domestic_daily_data.csv');
-JPN1=JP.data(:,2)/126;
-JPN2=JP.data(:,4)/126;
-JPN3=JP.data(:,1)/126;
-NDJPN=zeros(D-441,1);
-for j=1:D-441
-    NDJPN(j,1)=(JPN2(j+441,1)-JPN2(j+434,1))/7;
-end
+
 dd0=strrep(A.textdata(2,1),'/','-');
 d0=datetime(dd0);
 dd1=strrep(A.textdata(l+1,1),'/','-');
@@ -27,6 +21,16 @@ DD=days(d1-ddd0);
 ll0=string(ddd0);
 ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
 ll2=datestr(d1,'yyyy-mm-dd');
+
+% Japan (126M)
+JPN1=JP.data(:,2)/126;
+JPN2=JP.data(:,4)/126;
+JPN3=JP.data(:,1)/126;
+NDJPN=zeros(D-441,1);
+for j=1:D-441
+    NDJPN(j,1)=(JPN2(j+441,1)-JPN2(j+434,1))/7;
+end
+
 
 % Okinawa (1.46M): code 47
 rowoknw=find(B(:)==47);
