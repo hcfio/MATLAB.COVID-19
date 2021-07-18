@@ -78,9 +78,9 @@ NJPN(1,1)=AJPN(1,1);
 for j=2:qa-2
     NJPN(j,1)=AJPN(j,1)-AJPN(j-1,1);
 end
-NDIND=zeros(qa-437,1);
+NDJPN=zeros(qa-437,1);
 for j=1:qa-437
-    NDIND(j,1)=(BIND(j+435,1)-BIND(j+428,1))/7;
+    NDJPN(j,1)=(BJPN(j+435,1)-BJPN(j+428,1))/7;
 end
 
 % South Korea
