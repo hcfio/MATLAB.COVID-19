@@ -22,10 +22,9 @@ l2=datestr(d0+days(floor(2*D/3)),'yyyy-mm-dd');
 l3=datestr(d1,'yyyy-mm-dd');
 
 ddd0=datetime('2021-04-01');
-DD=days(qa-438);
-ll0=string(ddd0);
-ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
-ll2=datestr(d1,'yyyy-mm-dd');
+L0=string(ddd0);
+L1=datestr(ddd0+days(floor((D-435)/2)),'yyyy-mm-dd');
+L2=datestr(d1,'yyyy-mm-dd');
 
 % Bangladesh
 PBGD=165;
@@ -34,7 +33,7 @@ BBGD=transpose(B.data(21,3:qa))/PBGD;
 NBGD=zeros(qa-2,1);
 NBGD(1,1)=ABGD(1,1);
 for j=2:qa-2
-    NBGD(j,1)=ABGD(j,1)-ABGD(j-1,1);
+    NBGD(j,1)=max(ABGD(j,1)-ABGD(j-1,1),0);
 end
 NDBGD=zeros(qa-437,1);
 for j=1:qa-437
@@ -48,7 +47,7 @@ BIND=transpose(B.data(148,3:qa))/PIND;
 NIND=zeros(qa-2,1);
 NIND(1,1)=AIND(1,1);
 for j=2:qa-2
-    NIND(j,1)=AIND(j,1)-AIND(j-1,1);
+    NIND(j,1)=max(AIND(j,1)-AIND(j-1,1),0);
 end
 NDIND=zeros(qa-437,1);
 for j=1:qa-437
@@ -62,7 +61,7 @@ BIDN=transpose(B.data(149,3:qa))/PIDN;
 NIDN=zeros(qa-2,1);
 NIDN(1,1)=AIDN(1,1);
 for j=2:qa-2
-    NIDN(j,1)=AIDN(j,1)-AIDN(j-1,1);
+    NIDN(j,1)=max(AIDN(j,1)-AIDN(j-1,1),0);
 end
 NDIDN=zeros(qa-437,1);
 for j=1:qa-437
@@ -76,7 +75,7 @@ BJPN=transpose(B.data(156,3:qa))/PJPN;
 NJPN=zeros(qa-2,1);
 NJPN(1,1)=AJPN(1,1);
 for j=2:qa-2
-    NJPN(j,1)=AJPN(j,1)-AJPN(j-1,1);
+    NJPN(j,1)=max(AJPN(j,1)-AJPN(j-1,1),0);
 end
 NDJPN=zeros(qa-437,1);
 for j=1:qa-437
@@ -90,7 +89,7 @@ BKOR=transpose(B.data(161,3:qa))/PKOR;
 NKOR=zeros(qa-2,1);
 NKOR(1,1)=AKOR(1,1);
 for j=2:qa-2
-    NKOR(j,1)=AKOR(j,1)-AKOR(j-1,1);
+    NKOR(j,1)=max(AKOR(j,1)-AKOR(j-1,1),0);
 end
 NDKOR=zeros(qa-437,1);
 for j=1:qa-437
@@ -104,7 +103,7 @@ BMYS=transpose(B.data(177,3:qa))/PMYS;
 NMYS=zeros(qa-2,1);
 NMYS(1,1)=AMYS(1,1);
 for j=2:qa-2
-    NMYS(j,1)=AMYS(j,1)-AMYS(j-1,1);
+    NMYS(j,1)=max(AMYS(j,1)-AMYS(j-1,1),0);
 end
 NDMYS=zeros(qa-437,1);
 for j=1:qa-437
@@ -118,7 +117,7 @@ BNPL=transpose(B.data(193,3:qa))/PNPL;
 NNPL=zeros(qa-2,1);
 NNPL(1,1)=ANPL(1,1);
 for j=2:qa-2
-    NNPL(j,1)=ANPL(j,1)-ANPL(j-1,1);
+    NNPL(j,1)=max(ANPL(j,1)-ANPL(j-1,1),0);
 end
 NDNPL=zeros(qa-437,1);
 for j=1:qa-437
@@ -132,7 +131,7 @@ BPAK=transpose(B.data(207,3:qa))/PPAK;
 NPAK=zeros(qa-2,1);
 NPAK(1,1)=APAK(1,1);
 for j=2:qa-2
-    NPAK(j,1)=APAK(j,1)-APAK(j-1,1);
+    NPAK(j,1)=max(APAK(j,1)-APAK(j-1,1),0);
 end
 NDPAK=zeros(qa-437,1);
 for j=1:qa-437
@@ -146,7 +145,7 @@ BPHI=transpose(B.data(213,3:qa))/PPHI;
 NPHI=zeros(qa-2,1);
 NPHI(1,1)=APHI(1,1);
 for j=2:qa-2
-    NPHI(j,1)=APHI(j,1)-APHI(j-1,1);
+    NPHI(j,1)=max(APHI(j,1)-APHI(j-1,1),0);
 end
 NDPHI=zeros(qa-437,1);
 for j=1:qa-437
@@ -160,7 +159,7 @@ BLKA=transpose(B.data(239,3:qa))/PLKA;
 NLKA=zeros(qa-2,1);
 NLKA(1,1)=ALKA(1,1);
 for j=2:qa-2
-    NLKA(j,1)=ALKA(j,1)-ALKA(j-1,1);
+    NLKA(j,1)=max(ALKA(j,1)-ALKA(j-1,1),0);
 end
 NDLKA=zeros(qa-437,1);
 for j=1:qa-437
@@ -174,7 +173,7 @@ BTHA=transpose(B.data(249,3:qa))/PTHA;
 NTHA=zeros(qa-2,1);
 NTHA(1,1)=ATHA(1,1);
 for j=2:qa-2
-    NTHA(j,1)=ATHA(j,1)-ATHA(j-1,1);
+    NTHA(j,1)=max(ATHA(j,1)-ATHA(j-1,1),0);
 end
 NDTHA=zeros(qa-437,1);
 for j=1:qa-437
@@ -226,6 +225,6 @@ plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDNPL,NDPAK,NDBGD,NDLKA,NDTHA],'LineWidth',2
 title('COVID-19 in Asia (7-day average deaths per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor(D/3) floor(2*D/3) D])
-xticklabels({[l0],[l1],[l2],[l3]})
+xticks([1 floor((D-435)/2) D-435])
+xticklabels({[L0],[L1],[L2]})
 legend('Japan','Philippines','Malaysia','Indonesia','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
