@@ -212,7 +212,7 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japan','Philippines','Malaysia','Indonesia','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
 % plot
 subplot(2,2,3)
-plot([NJPN,NPHI,NMYS,NIDN,NIND,NNPL,NPAK,NBGD,NLKA,NTHA],'LineWidth',2)
+plot([NJPN,NPHI,NMYS,NIDN,NIND,NNPL,NPAK,NBGD,NLKA,NTHA],'LineWidth',1)
 title('COVID-19 in Asia (daily new cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
