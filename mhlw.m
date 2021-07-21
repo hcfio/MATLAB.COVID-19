@@ -1,8 +1,8 @@
 % data_mhlw.m
 %%%%%%%%%%%%%%%%%%
 % Download data from the MHLW web site.
-%websave('pcr_positive_daily.csv','https://www.mhlw.go.jp/content/pcr_positive_daily.csv');
-%websave('recovery_total.csv','https://www.mhlw.go.jp/content/recovery_total.csv');
+websave('pcr_positive_daily.csv','https://www.mhlw.go.jp/content/pcr_positive_daily.csv');
+websave('recovery_total.csv','https://www.mhlw.go.jp/content/recovery_total.csv');
 Acsv=importdata('pcr_positive_daily.csv');
 Bcsv=importdata('recovery_total.csv');
 
