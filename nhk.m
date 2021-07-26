@@ -18,7 +18,7 @@ lf=datestr(d1,'yyyy-mm-dd');
 
 ddd0=datetime('2021-04-01');
 DD=days(d1-ddd0);
-ll0=string(ddd0);
+ll0=string('2021-04-01');
 ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
 ll2=datestr(d1,'yyyy-mm-dd');
 
@@ -154,7 +154,7 @@ subplot(2,2,4)
 plot([NDJPN,NDTKY,NDOSK NDOKNW NDHYG NDHKD],'LineWidth',2)
 title('COVID-19 in Japan (7-day average deaths per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
-ylabel('deaths');
+ylabel('deaths/1M');
 xticks([0 floor(DD/2) DD])
 xticklabels({[ll0],[ll1],[ll2]})
 legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Location','northwest');

@@ -22,7 +22,7 @@ l2=datestr(d0+days(floor(2*D/3)),'yyyy-mm-dd');
 l3=datestr(d1,'yyyy-mm-dd');
 
 ddd0=datetime('2021-04-01');
-L0=string(ddd0);
+L0=string('2021-04-01');
 L1=datestr(ddd0+days(floor((D-435)/2)),'yyyy-mm-dd');
 L2=datestr(d1,'yyyy-mm-dd');
 
