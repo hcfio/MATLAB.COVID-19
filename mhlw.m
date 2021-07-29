@@ -71,7 +71,7 @@ l2=datestr(d0+days(floor(2*N/3)),'dd-mmm-yyyy');
 lf=datestr(df,'dd-mmm-yyyy');
 subplot(1,2,1)
 plot(n,A,n,C,n,B,'LineWidth',2)
-title('COVID-19 in Japan (126M)','data sourced by Japanese Ministry of Health')
+title('COVID-19 in Japan (125M)','data sourced by Japanese Ministry of Health')
 xlabel('date');
 ylabel('cases');
 xticks([0 floor(N/3) floor(2*N/3) N])
@@ -84,7 +84,7 @@ L1=datestr(df+days(2*7),'dd mmm yyyy');
 L2=datestr(df+days(4*7),'dd mmm yyyy');
 subplot(1,2,2);
 plot(t,u(:,2)+u(:,3),t,u(:,2),t,u(:,3),'LineWidth',2); 
-title('SIR model for COVID-19 in Japan (126M)','data sourced by Japanese Ministry of Health');
+title('SIR model for COVID-19 in Japan (125M)','data sourced by Japanese Ministry of Health');
 xticks([0 2*7 4*7]);
 xticklabels({[L0],[L1],[L2]});
 xlabel('date');

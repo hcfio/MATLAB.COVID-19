@@ -22,7 +22,7 @@ ll0=string('2021-04-01');
 ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
 ll2=datestr(d1,'yyyy-mm-dd');
 
-% Japan (126M)
+% Japan (125M)
 JPN1=JP.data(:,2)/125.36;
 JPN2=JP.data(:,4)/125.36;
 JPN3=JP.data(:,1)/125.36;

@@ -72,7 +72,7 @@ l2=datestr(d0+days(floor(2*N/3)),'dd-mmm-yyyy');
 lf=datestr(df,'dd-mmm-yyyy');
 subplot(2,2,1)
 plot(n,A,n,C,n,B,'LineWidth',2)
-title('COVID-19 in Japan (126M)','data sourced by Japanese Ministry of Health')
+title('COVID-19 in Japan (125M)','data sourced by Japanese Ministry of Health')
 xlabel('date');
 ylabel('cases');
 xticks([0 floor(N/3) floor(2*N/3) N])
@@ -85,7 +85,7 @@ L1=datestr(df+days(2*7),'dd mmm yyyy');
 L2=datestr(df+days(4*7),'dd mmm yyyy');
 subplot(2,2,2);
 plot(t,u(:,2)+u(:,3),t,u(:,2),t,u(:,3),'LineWidth',2); 
-title('SIR model for COVID-19 in Japan (126M)','data sourced by Japanese Ministry of Health');
+title('SIR model for COVID-19 in Japan (125M)','data sourced by Japanese Ministry of Health');
 xticks([0 2*7 4*7]);
 xticklabels({[L0],[L1],[L2]});
 xlabel('date');
@@ -103,7 +103,7 @@ E0=0.1;
 % Plot the results. 
 subplot(2,2,3);
 plot(t,U(:,2)+U(:,3),t,U(:,2),t,U(:,3),t,U(:,1).*U(:,4)/10,'LineWidth',2); 
-title('SIR-SD model for COVID-19 in Japan (126M)');
+title('SIR-SD model for COVID-19 in Japan (125M)');
 subtitle('data sourced by Japanese Ministry of Health');
 xticks([0 2*7 4*7]);
 xticklabels({[L0],[L1],[L2]});
@@ -122,7 +122,7 @@ E0=0.1;
 % Plot the results. 
 subplot(2,2,4);
 plot(t,U(:,2)+U(:,3),t,U(:,2),t,U(:,3),t,U(:,1).*U(:,4)/10,'LineWidth',2); 
-title('SIR-SD model for COVID-19 in Japan (126M)');
+title('SIR-SD model for COVID-19 in Japan (125M)');
 subtitle('data sourced by Japanese Ministry of Health');
 xticks([0 2*7 4*7]);
 xticklabels({[L0],[L1],[L2]});
