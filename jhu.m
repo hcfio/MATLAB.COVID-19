@@ -54,7 +54,7 @@ PITA=60.5;
 AITA=transpose(A.data(154,3:qa))/PITA;
 BITA=transpose(B.data(154,3:qa))/PITA;
 % Japan
-PJPN=126;
+PJPN=125.36;
 AJPN=transpose(A.data(156,3:qa))/PJPN;
 BJPN=transpose(B.data(156,3:qa))/PJPN;
 % South Korea

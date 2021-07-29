@@ -61,6 +61,7 @@ T1=(T0-T2)/days(df-D2);
 R1=(R0-R2)/days(df-D2);
 beta=T1/(T0-R0)/(POP-T0);
 gamma=R1/(T0-R0);
+
 % Solve the initial value ptoblem.
 [t,u]=ode45(@(t,u) [-beta*u(1)*u(2); beta*u(1)*u(2)-gamma*u(2); gamma*u(2)], [0,D], [POP-T0;T0-R0;R0]);
 
@@ -69,7 +70,7 @@ l0=datestr(d0,'dd-mmm-yyyy');
 l1=datestr(d0+days(floor(N/3)),'dd-mmm-yyyy');
 l2=datestr(d0+days(floor(2*N/3)),'dd-mmm-yyyy');
 lf=datestr(df,'dd-mmm-yyyy');
-subplot(1,2,1)
+subplot(2,2,1)
 plot(n,A,n,C,n,B,'LineWidth',2)
 title('COVID-19 in Japan (126M)','data sourced by Japanese Ministry of Health')
 xlabel('date');
@@ -82,11 +83,49 @@ legend('Total Cases','Active Cases','Discharged','Location','northwest');
 L0=datestr(df,'dd mmm yyyy');
 L1=datestr(df+days(2*7),'dd mmm yyyy');
 L2=datestr(df+days(4*7),'dd mmm yyyy');
-subplot(1,2,2);
+subplot(2,2,2);
 plot(t,u(:,2)+u(:,3),t,u(:,2),t,u(:,3),'LineWidth',2); 
 title('SIR model for COVID-19 in Japan (126M)','data sourced by Japanese Ministry of Health');
 xticks([0 2*7 4*7]);
 xticklabels({[L0],[L1],[L2]});
 xlabel('date');
 ylabel('cases');
-legend('Total Cases','Active Cases','Discharged','Location','east');
+legend('Total Cases','Active Cases','Discharged','Location','northwest');
+
+% Solve the initial value ptoblem.
+omega=0.5;
+kappa=1/2;
+Csd=1;
+C1=50;
+E0=0.1;
+[t,U]=ode45(@(t,U) [-beta*(1-U(4))*U(1)*U(2); beta*(1-U(4))*U(1)*U(2)-gamma*U(2); gamma*U(2); omega*U(4)*(1-U(4))*tanh(kappa*(-Csd+C1*(1-exp(-beta*U(2)))))], [0,D], [POP-T0;T0-R0;R0;E0]);
+
+% Plot the results. 
+subplot(2,2,3);
+plot(t,U(:,2)+U(:,3),t,U(:,2),t,U(:,3),t,U(:,1).*U(:,4)/10,'LineWidth',2); 
+title('SIR-SD model for COVID-19 in Japan (126M)');
+subtitle('data sourced by Japanese Ministry of Health');
+xticks([0 2*7 4*7]);
+xticklabels({[L0],[L1],[L2]});
+xlabel('date (omega=0.5, kappa=1, Csd=1, C1=50, E0=0.1)');
+ylabel('cases');
+legend('Total Cases','Active Cases','Discharged','SD/10','Location','east');
+
+% Solve the initial value ptoblem.
+omega=1;
+kappa=1/2;
+Csd=1;
+C1=500;
+E0=0.1;
+[t,U]=ode45(@(t,U) [-beta*(1-U(4))*U(1)*U(2); beta*(1-U(4))*U(1)*U(2)-gamma*U(2); gamma*U(2); omega*U(4)*(1-U(4))*tanh(kappa*(-Csd+C1*(1-exp(-beta*U(2)))))], [0,D], [POP-T0;T0-R0;R0;E0]);
+
+% Plot the results. 
+subplot(2,2,4);
+plot(t,U(:,2)+U(:,3),t,U(:,2),t,U(:,3),t,U(:,1).*U(:,4)/10,'LineWidth',2); 
+title('SIR-SD model for COVID-19 in Japan (126M)');
+subtitle('data sourced by Japanese Ministry of Health');
+xticks([0 2*7 4*7]);
+xticklabels({[L0],[L1],[L2]});
+xlabel('date (omega=1, kappa=1, Csd=1, C1=500, E0=0.1)');
+ylabel('cases');
+legend('Total Cases','Active Cases','Discharged','SD/10','Location','east');

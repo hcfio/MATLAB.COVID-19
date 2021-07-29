@@ -21,29 +21,29 @@ lf=datestr(d1,'yyyy-mm-dd');
 
 % Okinawa (1.46M): code 47
 rowoknw=find(B(:)==47);
-OKNW1=A.data(rowoknw,2)/1.46;
-OKNW2=A.data(rowoknw,4)/1.46;
-OKNW3=A.data(rowoknw,1)/1.46;
+OKNW1=A.data(rowoknw,2)/1.458870;
+OKNW2=A.data(rowoknw,4)/1.458870;
+OKNW3=A.data(rowoknw,1)/1.458870;
 % Hokkaido (5.27M): code 1, 
 rowhkd=find(B(:)==1);
-HKD1=A.data(rowhkd,2)/5.27;
-HKD2=A.data(rowhkd,4)/5.27;
-HKD3=A.data(rowhkd,1)/5.27;
+HKD1=A.data(rowhkd,2)/5.207185;
+HKD2=A.data(rowhkd,4)/5.207185;
+HKD3=A.data(rowhkd,1)/5.207185;
 % Tokyo (14M): code 13, 
 rowtky=find(B(:)==13);
-TKY1=A.data(rowtky,2)/14;
-TKY2=A.data(rowtky,4)/14;
-TKY3=A.data(rowtky,1)/14;
+TKY1=A.data(rowtky,2)/14.049146;
+TKY2=A.data(rowtky,4)/14.049146;
+TKY3=A.data(rowtky,1)/14.049146;
 % Osaka (8.81M): code 27
 rowosk=find(B(:)==27);
-OSK1=A.data(rowosk,2)/8.81;
-OSK2=A.data(rowosk,4)/8.81;
-OSK3=A.data(rowosk,1)/8.81;
+OSK1=A.data(rowosk,2)/8.798545;
+OSK2=A.data(rowosk,4)/8.798545;
+OSK3=A.data(rowosk,1)/8.798545;
 % Hyogo (5.43M): code 28
 rowhyg=find(B(:)==28);
-HYG1=A.data(rowhyg,2)/5.43;
-HYG2=A.data(rowhyg,4)/5.43;
-HYG3=A.data(rowhyg,1)/5.43;
+HYG1=A.data(rowhyg,2)/5.446455;
+HYG2=A.data(rowhyg,4)/5.446455;
+HYG3=A.data(rowhyg,1)/5.446455;
 % Saitama (7.34M): code 11, 
 rowstm=find(B(:)==11);
 STM1=A.data(rowstm,2)/7.34;
@@ -121,7 +121,7 @@ PITA=60.5;
 AITA=transpose(A.data(154,3:qa))/PITA;
 BITA=transpose(B.data(154,3:qa))/PITA;
 % Japan
-PJPN=126;
+PJPN=125.36;
 AJPN=transpose(A.data(156,3:qa))/PJPN;
 BJPN=transpose(B.data(156,3:qa))/PJPN;
 % South Korea
@@ -182,22 +182,22 @@ newcolors = [0 0 1;
 colororder(newcolors)         
 % plot
 subplot(2,3,1)
-plot([JPN1,TKY1,OSK1,OKNW1,HYG1,HKD1,KNG1,STM1,CHB1,KYT1],'LineWidth',2)
+plot([JPN1,TKY1,OSK1,OKNW1,HYG1,HKD1],'LineWidth',2)
 title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Kanagawa','Saitama','Chiba','Kyoto','Location','northwest');
+legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Location','northwest');
 % plot
 subplot(2,3,4)
-plot([JPN2,TKY2,OSK2,OKNW2,HYG2,HKD2,KNG2,STM2,CHB2,KYT2],'LineWidth',2)
+plot([JPN2,TKY2,OSK2,OKNW2,HYG2,HKD2],'LineWidth',2)
 title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Kanagawa','Saitama','Chiba','Kyoto','Location','northwest');
+legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Location','northwest');
 subplot(2,3,2)
 plot([AJPN,APHI,AMYS,AIDN,AIND,ANPL,APAK,ABGD,ALKA,ATHA],'LineWidth',2)
 title('COVID-19 in Asia (total cases per 1M)','data sourced by JHU Coronavirus Resource Center')

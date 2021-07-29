@@ -69,7 +69,7 @@ for j=1:qa-437
 end
 
 % Japan
-PJPN=126;
+PJPN=125.36;
 AJPN=transpose(A.data(156,3:qa))/PJPN;
 BJPN=transpose(B.data(156,3:qa))/PJPN;
 NJPN=zeros(qa-2,1);

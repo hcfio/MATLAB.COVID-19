@@ -23,9 +23,9 @@ ll1=datestr(ddd0+days(floor(DD/2)),'yyyy-mm-dd');
 ll2=datestr(d1,'yyyy-mm-dd');
 
 % Japan (126M)
-JPN1=JP.data(:,2)/126;
-JPN2=JP.data(:,4)/126;
-JPN3=JP.data(:,1)/126;
+JPN1=JP.data(:,2)/125.36;
+JPN2=JP.data(:,4)/125.36;
+JPN3=JP.data(:,1)/125.36;
 NDJPN=zeros(D-441,1);
 for j=1:D-441
     NDJPN(j,1)=(JPN2(j+441,1)-JPN2(j+434,1))/7;
@@ -34,9 +34,9 @@ end
 
 % Okinawa (1.46M): code 47
 rowoknw=find(B(:)==47);
-OKNW1=A.data(rowoknw,2)/1.46;
-OKNW2=A.data(rowoknw,4)/1.46;
-OKNW3=A.data(rowoknw,1)/1.46;
+OKNW1=A.data(rowoknw,2)/1.458870;
+OKNW2=A.data(rowoknw,4)/1.458870;
+OKNW3=A.data(rowoknw,1)/1.458870;
 NDOKNW=zeros(D-441,1);
 for j=1:D-441
     NDOKNW(j,1)=(OKNW2(j+441,1)-OKNW2(j+434,1))/7;
@@ -44,9 +44,9 @@ end
 
 % Hokkaido (5.27M): code 1,
 rowhkd=find(B(:)==1);
-HKD1=A.data(rowhkd,2)/5.27;
-HKD2=A.data(rowhkd,4)/5.27;
-HKD3=A.data(rowhkd,1)/5.27;
+HKD1=A.data(rowhkd,2)/5.207185;
+HKD2=A.data(rowhkd,4)/5.207185;
+HKD3=A.data(rowhkd,1)/5.207185;
 NDHKD=zeros(D-441,1);
 for j=1:D-441
     NDHKD(j,1)=(HKD2(j+441,1)-HKD2(j+434,1))/7;
@@ -54,9 +54,9 @@ end
 
 % Tokyo (14M): code 13, 
 rowtky=find(B(:)==13);
-TKY1=A.data(rowtky,2)/14;
-TKY2=A.data(rowtky,4)/14;
-TKY3=A.data(rowtky,1)/14;
+TKY1=A.data(rowtky,2)/14.049146;
+TKY2=A.data(rowtky,4)/14.049146;
+TKY3=A.data(rowtky,1)/14.049146;
 NDTKY=zeros(D-441,1);
 for j=1:D-441
     NDTKY(j,1)=(TKY2(j+441,1)-TKY2(j+434,1))/7;
@@ -64,9 +64,9 @@ end
 
 % Osaka (8.81M): code 27
 rowosk=find(B(:)==27);
-OSK1=A.data(rowosk,2)/8.81;
-OSK2=A.data(rowosk,4)/8.81;
-OSK3=A.data(rowosk,1)/8.81;
+OSK1=A.data(rowosk,2)/8.798545;
+OSK2=A.data(rowosk,4)/8.798545;
+OSK3=A.data(rowosk,1)/8.798545;
 NDOSK=zeros(D-441,1);
 for j=1:D-441
     NDOSK(j,1)=(OSK2(j+441,1)-OSK2(j+434,1))/7;
@@ -74,9 +74,9 @@ end
 
 % Hyogo (5.43M): code 28
 rowhyg=find(B(:)==28);
-HYG1=A.data(rowhyg,2)/5.43;
-HYG2=A.data(rowhyg,4)/5.43;
-HYG3=A.data(rowhyg,1)/5.43;
+HYG1=A.data(rowhyg,2)/5.446455;
+HYG2=A.data(rowhyg,4)/5.446455;
+HYG3=A.data(rowhyg,1)/5.446455;
 NDHYG=zeros(D-441,1);
 for j=1:D-441
     NDHYG(j,1)=(HYG2(j+441,1)-HYG2(j+434,1))/7;
@@ -125,22 +125,22 @@ colororder(newcolors)
 
 % plot
 subplot(2,2,1)
-plot([JPN1,TKY1,OSK1,OKNW1,HYG1,HKD1,SCK1],'LineWidth',2)
+plot([JPN1,TKY1,OSK1,OKNW1,HYG1,HKD1],'LineWidth',2)
 title('COVID-19 in Japan (total cases per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Saitama Chiba Kanagawa','Location','northwest');
+legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Location','northwest');
 % plot
 subplot(2,2,2)
-plot([JPN2,TKY2,OSK2,OKNW2,HYG2,HKD2,SCK2],'LineWidth',2)
+plot([JPN2,TKY2,OSK2,OKNW2,HYG2,HKD2],'LineWidth',2)
 title('COVID-19 in Japan (death toll per 1M)','data sourced by NHK (Japan Broadcasting Corporation)')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Saitama Chiba Kanagawa','Location','northwest');
+legend('Japan','Tokyo','Osaka','Okinawa','Hyogo','Hokkaido','Location','northwest');
 % plot
 subplot(2,2,3)
 plot([JPN3,TKY3,OSK3,OKNW3,HYG3,HKD3],'LineWidth',1)
