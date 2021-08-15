@@ -198,7 +198,7 @@ plot([AJPN,APHI,AMYS,AIDN,AIND,ANPL,APAK,ABGD,ALKA,ATHA],'LineWidth',2)
 title('COVID-19 in Asia (total cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 floor(D/3) floor(2*D/3) D]);
+xticks([0 floor(D/3) floor(2*D/3) D]);
 xticklabels({[l0],[l1],[l2],[l3]});
 legend('Japan','Philippines','Malaysia','Indonesia','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
 % plot
@@ -207,7 +207,7 @@ plot([BJPN,BPHI,BMYS,BIDN,BIND,BNPL,BPAK,BBGD,BLKA,BTHA],'LineWidth',2)
 title('COVID-19 in Asia (death toll per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor(D/3) floor(2*D/3) D])
+xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japan','Philippines','Malaysia','Indonesia','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
 % plot
@@ -216,7 +216,7 @@ plot([NJPN,NPHI,NMYS,NIDN,NIND,NNPL,NPAK,NBGD,NLKA,NTHA],'LineWidth',1)
 title('COVID-19 in Asia (daily new cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 floor(D/3) floor(2*D/3) D])
+xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japan','Philippines','Malaysia','Indonesia','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
 % plot
@@ -225,6 +225,6 @@ plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDNPL,NDPAK,NDBGD,NDLKA,NDTHA],'LineWidth',2
 title('COVID-19 in Asia (7-day average deaths per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor((D-435)/2) D-435])
+xticks([0 floor((D-435)/2) D-435])
 xticklabels({[L0],[L1],[L2]})
 legend('Japan','Philippines','Malaysia','Indonesia','India','Nepal','Pakistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');

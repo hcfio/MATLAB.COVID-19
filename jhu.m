@@ -170,7 +170,7 @@ plot([AARG,ABRA,ACOL,AFRA,AITA,AMEX,AESP,AUSA,AGBR],'LineWidth',2)
 title('COVID-19 in the World (total cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 floor(D/3) floor(2*D/3) D]);
+xticks([0 floor(D/3) floor(2*D/3) D]);
 xticklabels({[l0],[l1],[l2],[l3]});
 legend('Argentina','Brazil','Colombia','France','Italy','Mexico','Spain','United States','United Kingdom','Location','northwest');
 % plot
@@ -179,7 +179,7 @@ plot([BARG,BBRA,BCOL,BFRA,BITA,BMEX,BESP,BUSA,BGBR],'LineWidth',2)
 title('COVID-19 in the World (death toll per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor(D/3) floor(2*D/3) D])
+xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
 legend('Argentina','Brazil','Colombia','France','Italy','Mexico','Spain','United States','United Kingdom','Location','northwest');
 % plot
@@ -188,7 +188,7 @@ plot([NARG,NBRA,NCOL,NFRA,NITA,NMEX,NESP,NUSA,NGBR],'LineWidth',1)
 title('COVID-19 in the World (daily new cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 floor(D/3) floor(2*D/3) D])
+xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
 legend('Argentina','Brazil','Colombia','France','Italy','Mexico','Spain','United States','United Kingdom','Location','northwest');
 % plot
@@ -197,6 +197,6 @@ plot([NDARG,NDBRA,NDCOL,NDFRA,NDITA,NDMEX,NDESP,NDUSA,NDGBR],'LineWidth',2)
 title('COVID-19 in the World (7-day average deaths per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor((D-435)/2) D-435])
+xticks([0 floor((D-435)/2) D-435])
 xticklabels({[L0],[L1],[L2]})
 legend('Argentina','Brazil','Colombia','France','Italy','Mexico','Spain','United States','United Kingdom','Location','northwest');
