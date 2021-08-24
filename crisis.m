@@ -10,6 +10,14 @@ L0=string('2021-07-01');
 L1=datestr(ddd0+days(floor((D-526)/2)),'yyyy-mm-dd');
 L2=datestr(d1,'yyyy-mm-dd');
 
+% Brunei Darussalam
+PBWN=0.442205;
+WBWN=transpose(W.data(32,3:qw))/PBWN;
+BWN=zeros(qw-528,1);
+for j=1:qw-528
+    BWN(j,1)=WBWN(j+526,1)-WBWN(j+525,1);
+end
+
 % Indonesia
 PIDN=271;
 WIDN=transpose(W.data(149,3:qw))/PIDN;
@@ -126,20 +134,20 @@ colororder(newcolors)
          
 % plot
 subplot(1,2,1)
-plot([JPN,TKY,OKNW,MYS,THA,USA,GBR],'LineWidth',2)
+plot([JPN,TKY,OKNW,MYS,THA,BWN],'LineWidth',2)
 title('COVID-19 in the World (daily new cases per 1M)','data sourced by JHU and NHK')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor((D-526)/2) D-526])
+xticks([1 floor((qw-528)/2) qw-528])
 xticklabels({[L0],[L1],[L2]})
-legend('Japan','Tokyo','Okinawa','Malaysia','Thailand','United States','United Kingdom','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Malaysia','Thailand','Brunei','Location','northwest');
 %
 subplot(1,2,2)
 plot([JPN,NSW,SIN,KOR,VNM,IDN],'LineWidth',2)
 title('COVID-19 in the World (daily new cases per 1M)','data sourced by JHU')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor((D-526)/2) D-526])
+xticks([1 floor((qw-528)/2) qw-528])
 xticklabels({[L0],[L1],[L2]})
 legend('Japan','New South Wales','Singapore','South Korea','Vietnam','Indonesia','Location','northwest');
 
