@@ -7,7 +7,7 @@ dd0=datetime(2021,7,1);
 dd1=dd0+days(DD-1);
 ll0=datestr(dd0,'yyyy-mm-dd');
 ll1=datestr(dd0+days(floor((DD-1)/2)),'yyyy-mm-dd');
-ll2=datestr(d1,'yyyy-mm-dd');
+ll2=datestr(dd1,'yyyy-mm-dd');
 
 % NSW
 PNSW=8.196;
