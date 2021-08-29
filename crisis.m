@@ -1,5 +1,5 @@
-websave('time_series_covid19_confirmed_global.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
-W=importdata('time_series_covid19_confirmed_global.csv');
+websave('./csv/time_series_covid19_confirmed_global.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
+W=importdata('./csv/time_series_covid19_confirmed_global.csv');
 [pw qw]=size(W.data);
 
 DD=qw-528;
@@ -113,8 +113,8 @@ for j=1:DD
     VNM(j,1)=max(0,WVNM(j+526,1)-WVNM(j+519,1))/7;
 end
     
-websave('nhk_news_covid19_prefectures_daily_data.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_prefectures_daily_data.csv');
-A=importdata('nhk_news_covid19_prefectures_daily_data.csv');
+websave('./csv/nhk_news_covid19_prefectures_daily_data.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_prefectures_daily_data.csv');
+A=importdata('./csv/nhk_news_covid19_prefectures_daily_data.csv');
 l=length(A.data(:,2));
 B=str2double(A.textdata(2:l+1,2));
 
