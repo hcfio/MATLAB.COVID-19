@@ -72,9 +72,12 @@ end
 for j=8:D
     NJPN(1,j)=(CJPN(1,j)-CJPN(1,j-7))/7;
 end
-NDJPN=zeros(1,DD);
-for j=1:DD
-    NDJPN(1,j)=(DJPN(1,j+418)-DJPN(1,j+411))/7;
+NDJPN=zeros(1,D);
+for j=1:7
+    NDJPN(1,j)=(DJPN(1,j)-DJPN(1,1))/j;
+end
+for j=8:D
+    NDJPN(1,j)=(DJPN(1,j)-DJPN(1,j-7))/7;
 end
 
 % Tokyo
@@ -91,9 +94,12 @@ end
 for j=8:D
     NTKY(1,j)=(CTKY(1,j)-CTKY(1,j-7))/7;
 end
-NDTKY=zeros(1,DD);
-for j=1:DD
-    NDTKY(1,j)=(DTKY(1,j+418)-DTKY(1,j+411))/7;
+NDTKY=zeros(1,D);
+for j=1:7
+    NDTKY(1,j)=(DTKY(1,j)-DTKY(1,1))/j;
+end
+for j=8:D
+    NDTKY(1,j)=(DTKY(1,j)-DTKY(1,j-7))/7;
 end
 
 % Okinawa
@@ -110,9 +116,12 @@ end
 for j=8:D
     NOKNW(1,j)=(COKNW(1,j)-COKNW(1,j-7))/7;
 end
-NDOKNW=zeros(1,DD);
-for j=1:DD
-    NDOKNW(1,j)=(DOKNW(1,j+418)-DOKNW(1,j+411))/7;
+NDOKNW=zeros(1,D);
+for j=1:7
+    NDOKNW(1,j)=(DOKNW(1,j)-DOKNW(1,1))/j;
+end
+for j=8:D
+    NDOKNW(1,j)=(DOKNW(1,j)-DOKNW(1,j-7))/7;
 end
 
 % Osaka
@@ -129,9 +138,12 @@ end
 for j=8:D
     NOSK(1,j)=(COSK(1,j)-COSK(1,j-7))/7;
 end
-NDOSK=zeros(1,DD);
-for j=1:DD
-    NDOSK(1,j)=(DOSK(1,j+418)-DOSK(1,j+411))/7;
+NDOSK=zeros(1,D);
+for j=1:7
+    NDOSK(1,j)=(DOSK(1,j)-DOSK(1,1))/j;
+end
+for j=8:D
+    NDOSK(1,j)=(DOSK(1,j)-DOSK(1,j-7))/7;
 end
 
 % Hyogo
@@ -146,11 +158,14 @@ for j=1:7
     NHYG(1,j)=(XHYG(1,j+104)+XHYG(1,j+103)+XHYG(1,j+102)+XHYG(1,j+101)+XHYG(1,j+100)+XHYG(1,j+99)+XHYG(1,j+98))/7;
 end
 for j=8:D
-    NHYG(1,j)=(CHYG(1,j)-CHYG(1,j-7))/7;
+    NDHYG(1,j)=(DHYG(1,j)-DHYG(1,1))/j;
 end
-NDHYG=zeros(1,DD);
-for j=1:DD
-    NDHYG(1,j)=(DHYG(1,j+418)-DHYG(1,j+411))/7;
+NDHYG=zeros(1,D);
+for j=1:7
+    NDHYG(1,j)=DHYG(1,j)/j;
+end
+for j=8:D
+    NDHYG(1,j)=(DHYG(1,j)-DHYG(1,j-7))/7;
 end
 
 % Hokkaido
@@ -167,9 +182,12 @@ end
 for j=8:D
     NHKD(1,j)=(CHKD(1,j)-CHKD(1,j-7))/7;
 end
-NDHKD=zeros(1,DD);
-for j=1:DD
-    NDHKD(1,j)=(DHKD(1,j+418)-DHKD(1,j+411))/7;
+NDHKD=zeros(1,D);
+for j=1:7
+    NDHYG(1,j)=(DHYG(1,j)-DHYG(1,1))/j;
+end
+for j=8:D
+    NDHKD(1,j)=(DHKD(1,j)-DHKD(1,j-7))/7;
 end
 
 newcolors = [0 0 1; 
@@ -218,6 +236,6 @@ plot([NDJPN',NDTKY',NDOKNW',NDOSK',NDHYG',NDHKD'],'LineWidth',2)
 title('COVID-19: 7-day average deaths per 1M','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('deaths/1M')
-xticks([1 floor(DD/2) DD])
-xticklabels({[ll0],[ll1],[ll2]})
+xticks([1 floor(D/3) floor(2*D/3) D])
+xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Hyogo','Hokkaido','Location','northwest');

@@ -23,9 +23,9 @@ ll1=datestr(dd0+days(floor((DD-1)/2)),'yyyy-mm-dd');
 ll2=datestr(dd1,'yyyy-mm-dd');
 
 % Argentina
-pwRG=45.672715;
-AARG=transpose(A.data(7,3:qw))/pwRG;
-BARG=transpose(B.data(7,3:qw))/pwRG;
+PARG=45.672715;
+AARG=transpose(A.data(7,3:qw))/PARG;
+BARG=transpose(B.data(7,3:qw))/PARG;
 NARG=zeros(D,1);
 for j=1:7
     NARG(j,1)=AARG(j,1)/j;
@@ -33,9 +33,12 @@ end
 for j=8:D
     NARG(j,1)=max(0,AARG(j,1)-AARG(j-7,1))/7;
 end
-NDARG=zeros(DD,1);
-for j=1:DD
-    NDARG(j,1)=(BARG(j+526,1)-BARG(j+519,1))/7;
+NDARG=zeros(D,1);
+for j=1:7
+    NDARG(j,1)=BARG(j,1)/7;
+end
+for j=8:D
+    NDARG(j,1)=(BARG(j,1)-BARG(j-7,1))/7;
 end
 
 % Brazil
@@ -49,10 +52,14 @@ end
 for j=8:D
     NBRA(j,1)=max(0,ABRA(j,1)-ABRA(j-7,1))/7;
 end
-NDBRA=zeros(DD,1);
-for j=1:DD
-    NDBRA(j,1)=(BBRA(j+526,1)-BBRA(j+519,1))/7;
+NDBRA=zeros(D,1);
+for j=1:7
+    NDBRA(j,1)=BBRA(j,1)/7;
 end
+for j=8:D
+    NDBRA(j,1)=(BBRA(j,1)-BBRA(j-7,1))/7;
+end
+
 
 % Colombia
 PCOL=51.503463;
@@ -65,9 +72,12 @@ end
 for j=8:D
     NCOL(j,1)=max(0,ACOL(j,1)-ACOL(j-7,1))/7;
 end
-NDCOL=zeros(DD,1);
-for j=1:DD
-    NDCOL(j,1)=(BCOL(j+526,1)-BCOL(j+519,1))/7;
+NDCOL=zeros(D,1);
+for j=1:7
+    NDCOL(j,1)=BCOL(j,1)/7;
+end
+for j=8:D
+    NDCOL(j,1)=(BCOL(j,1)-BCOL(j-7,1))/7;
 end
 
 % France Italy Spwin
@@ -90,9 +100,12 @@ end
 for j=8:D
     NFIE(j,1)=max(0,AFIE(j,1)-AFIE(j-7,1))/7;
 end
-NDFIE=zeros(DD,1);
-for j=1:DD
-    NDFIE(j,1)=(BFIE(j+526,1)-BFIE(j+519,1))/7;
+NDFIE=zeros(D,1);
+for j=1:7
+    NDFIE(j,1)=BFIE(j,1)/7;
+end
+for j=8:D
+    NDFIE(j,1)=(BFIE(j,1)-BFIE(j-7,1))/7;
 end
 
 % Mexico
@@ -106,9 +119,12 @@ end
 for j=8:D
     NMEX(j,1)=max(0,AMEX(j,1)-AMEX(j-7,1))/7;
 end
-NDMEX=zeros(DD,1);
-for j=1:DD
-    NDMEX(j,1)=(BMEX(j+526,1)-BMEX(j+519,1))/7;
+NDMEX=zeros(D,1);
+for j=1:7
+    NDMEX(j,1)=BMEX(j,1)/7;
+end
+for j=8:D
+    NDMEX(j,1)=(BMEX(j,1)-BMEX(j-7,1))/7;
 end
 
 % United Staes
@@ -122,9 +138,12 @@ end
 for j=8:D
     NUSA(j,1)=max(0,AUSA(j,1)-AUSA(j-7,1))/7;
 end
-NDUSA=zeros(DD,1);
-for j=1:DD
-    NDUSA(j,1)=(BUSA(j+526,1)-BUSA(j+519,1))/7;
+NDUSA=zeros(D,1);
+for j=1:7
+    NDUSA(j,1)=BUSA(j,1)/7;
+end
+for j=8:D
+    NDUSA(j,1)=(BUSA(j,1)-BUSA(j-7,1))/7;
 end
 
 % United Kingdom
@@ -138,9 +157,12 @@ end
 for j=8:D
     NGBR(j,1)=max(0,AGBR(j,1)-AGBR(j-7,1))/7;
 end
-NDGBR=zeros(DD,1);
-for j=1:DD
-    NDGBR(j,1)=(BGBR(j+526,1)-BGBR(j+519,1))/7;
+NDGBR=zeros(D,1);
+for j=1:7
+    NDGBR(j,1)=BGBR(j,1)/7;
+end
+for j=8:D
+    NDGBR(j,1)=(BGBR(j,1)-BGBR(j-7,1))/7;
 end
 
 newcolors = [0 0 1; 
@@ -188,6 +210,6 @@ plot([NDUSA,NDGBR,NDARG,NDBRA,NDCOL,NDMEX,NDFIE],'LineWidth',2)
 title('COVID-19: 7-day average deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor(DD/2) DD])
-xticklabels({[ll0],[ll1],[ll2]})
+xticks([1 floor(D/3) floor(2*D/3) D])
+xticklabels({[l0],[l1],[l2],[l3]})
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');

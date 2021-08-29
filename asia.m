@@ -33,9 +33,12 @@ end
 for j=8:D
     NBGD(j,1)=max(0,ABGD(j,1)-ABGD(j-7,1))/7;
 end
-NDBGD=zeros(DD,1);
-for j=1:DD
-    NDBGD(j,1)=(BBGD(j+526,1)-BBGD(j+519,1))/7;
+NDBGD=zeros(D,1);
+for j=1:7
+    NDBGD(j,1)=BBGD(j,1)/7;
+end
+for j=8:D
+    NDBGD(j,1)=(BBGD(j,1)-BBGD(j-7,1))/7;
 end
 
 % India
@@ -49,9 +52,12 @@ end
 for j=8:D
     NIND(j,1)=max(0,AIND(j,1)-AIND(j-7,1))/7;
 end
-NDIND=zeros(DD,1);
-for j=1:DD
-    NDIND(j,1)=(BIND(j+526,1)-BIND(j+519,1))/7;
+NDIND=zeros(D,1);
+for j=1:7
+    NDIND(j,1)=BIND(j,1)/7;
+end
+for j=8:D
+    NDIND(j,1)=(BIND(j,1)-BIND(j-7,1))/7;
 end
 
 % Indonesia
@@ -65,9 +71,12 @@ end
 for j=8:D
     NIDN(j,1)=max(0,AIDN(j,1)-AIDN(j-7,1))/7;
 end
-NDIDN=zeros(DD,1);
-for j=1:DD
-    NDIDN(j,1)=(BIDN(j+526,1)-BIDN(j+519,1))/7;
+NDIDN=zeros(D,1);
+for j=1:7
+    NDIDN(j,1)=BIDN(j,1)/7;
+end
+for j=8:D
+    NDIDN(j,1)=(BIDN(j,1)-BIDN(j-7,1))/7;
 end
 
 % Japwn
@@ -81,9 +90,12 @@ end
 for j=8:D
     NJPN(j,1)=max(0,AJPN(j,1)-AJPN(j-7,1))/7;
 end
-NDJPN=zeros(DD,1);
-for j=1:DD
-    NDJPN(j,1)=(BJPN(j+526,1)-BJPN(j+519,1))/7;
+NDJPN=zeros(D,1);
+for j=1:7
+    NDJPN(j,1)=BJPN(j,1)/7;
+end
+for j=8:D
+    NDJPN(j,1)=(BJPN(j,1)-BJPN(j-7,1))/7;
 end
 
 % South Korea
@@ -97,9 +109,12 @@ end
 for j=8:D
     NKOR(j,1)=max(0,AKOR(j,1)-AKOR(j-7,1))/7;
 end
-NDKOR=zeros(DD,1);
-for j=1:DD
-    NDKOR(j,1)=(BKOR(j+526,1)-BKOR(j+519,1))/7;
+NDKOR=zeros(D,1);
+for j=1:7
+    NDKOR(j,1)=BKOR(j,1)/7;
+end
+for j=8:D
+    NDKOR(j,1)=(BKOR(j,1)-BKOR(j-7,1))/7;
 end
 
 % Malaysia
@@ -113,9 +128,12 @@ end
 for j=8:D
     NMYS(j,1)=max(0,AMYS(j,1)-AMYS(j-7,1))/7;
 end
-NDMYS=zeros(DD,1);
-for j=1:DD
-    NDMYS(j,1)=(BMYS(j+526,1)-BMYS(j+519,1))/7;
+NDMYS=zeros(D,1);
+for j=1:7
+    NDMYS(j,1)=BMYS(j,1)/7;
+end
+for j=8:D
+    NDMYS(j,1)=(BMYS(j,1)-BMYS(j-7,1))/7;
 end
 
 % Nepwl
@@ -129,9 +147,12 @@ end
 for j=8:D
     NNPL(j,1)=max(0,ANPL(j,1)-ANPL(j-7,1))/7;
 end
-NDNPL=zeros(DD,1);
-for j=1:DD
-    NDNPL(j,1)=(BNPL(j+526,1)-BNPL(j+519,1))/7;
+NDNPL=zeros(D,1);
+for j=1:7
+    NDNPL(j,1)=BNPL(j,1)/7;
+end
+for j=8:D
+    NDNPL(j,1)=(BNPL(j,1)-BNPL(j-7,1))/7;
 end
 
 % Pakistan
@@ -145,9 +166,12 @@ end
 for j=8:D
     NPAK(j,1)=max(0,APAK(j,1)-APAK(j-7,1))/7;
 end
-NDPAK=zeros(DD,1);
-for j=1:DD
-    NDPAK(j,1)=(BPAK(j+526,1)-BPAK(j+519,1))/7;
+NDPAK=zeros(D,1);
+for j=1:7
+    NDPAK(j,1)=BPAK(j,1)/7;
+end
+for j=8:D
+    NDPAK(j,1)=(BPAK(j,1)-BPAK(j-7,1))/7;
 end
 
 % Philippines
@@ -161,9 +185,12 @@ end
 for j=8:D
     NPHI(j,1)=max(0,APHI(j,1)-APHI(j-7,1))/7;
 end
-NDPHI=zeros(DD,1);
-for j=1:DD
-    NDPHI(j,1)=(BPHI(j+526,1)-BPHI(j+519,1))/7;
+NDPHI=zeros(D,1);
+for j=1:7
+    NDPHI(j,1)=BPHI(j,1)/7;
+end
+for j=8:D
+    NDPHI(j,1)=(BPHI(j,1)-BPHI(j-7,1))/7;
 end
 
 % Sri Lanka
@@ -177,9 +204,12 @@ end
 for j=8:D
     NLKA(j,1)=max(0,ALKA(j,1)-ALKA(j-7,1))/7;
 end
-NDLKA=zeros(DD,1);
-for j=1:DD
-    NDLKA(j,1)=(BLKA(j+526,1)-BLKA(j+519,1))/7;
+NDLKA=zeros(D,1);
+for j=1:7
+    NDLKA(j,1)=BLKA(j,1)/7;
+end
+for j=8:D
+    NDLKA(j,1)=(BLKA(j,1)-BLKA(j-7,1))/7;
 end
 
 % Thailand
@@ -193,9 +223,12 @@ end
 for j=8:D
     NTHA(j,1)=max(0,ATHA(j,1)-ATHA(j-7,1))/7;
 end
-NDTHA=zeros(DD,1);
-for j=1:DD
-    NDTHA(j,1)=(BTHA(j+526,1)-BTHA(j+519,1))/7;
+NDTHA=zeros(D,1);
+for j=1:7
+    NDTHA(j,1)=BTHA(j,1)/7;
+end
+for j=8:D
+    NDTHA(j,1)=(BTHA(j,1)-BTHA(j-7,1))/7;
 end
 
 newcolors = [0 0 1; 
@@ -243,6 +276,6 @@ plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDNPL,NDPAK,NDBGD,NDLKA,NDTHA],'LineWidth',2
 title('COVID-19: 7-day average deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([0 floor(DD/2) DD])
-xticklabels({[ll0],[ll1],[ll2]})
+xticks([0 floor(D/3) floor(2*D/3) D])
+xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japwn','Philippines','Malaysia','Indonesia','India','Nepwl','PAKistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');

@@ -26,13 +26,19 @@ ll2=datestr(d1,'yyyy-mm-dd');
 PJPN=125.36;
 JPN1=JP.data(:,2)/PJPN;
 JPN2=JP.data(:,4)/PJPN;
-JPN3=zeros(DD,1);
-for j=1:DD
-    JPN3(j,1)=(JPN1(j+532,1)-JPN1(j+525,1))/7;
+JPN3=zeros(D,1);
+for j=1:7
+    JPN3(j,1)=JPN1(j,1)/j;
 end
-JPN4=zeros(DD,1);
-for j=1:DD
-    JPN4(j,1)=(JPN2(j+532,1)-JPN2(j+525,1))/7;
+for j=8:D
+    JPN3(j,1)=(JPN1(j,1)-JPN1(j-7,1))/7;
+end
+JPN4=zeros(D,1);
+for j=1:7
+    JPN4(j,1)=JPN4(j,1)/j;
+end
+for j=8:D
+    JPN4(j,1)=(JPN2(j,1)-JPN2(j-7,1))/7;
 end
 
 % Tokyo: code 13, 
@@ -40,13 +46,19 @@ PTKY=14.049146;
 ROWTKY=find(B(:)==13);
 TKY1=A.data(ROWTKY,2)/PTKY;
 TKY2=A.data(ROWTKY,4)/PTKY;
-TKY3=zeros(DD,1);
-for j=1:DD
-    TKY3(j,1)=(TKY1(j+532,1)-TKY1(j+525,1))/7;
+TKY3=zeros(D,1);
+for j=1:7
+    TKY3(j,1)=TKY1(j,1)/j;
+end
+for j=8:D
+    TKY3(j,1)=(TKY1(j,1)-TKY1(j-7,1))/7;
 end
 TKY4=zeros(DD,1);
-for j=1:DD
-    TKY4(j,1)=(TKY2(j+532,1)-TKY2(j+525,1))/7;
+for j=1:7
+    TKY4(j,1)=TKY2(j,1)/j;
+end
+for j=8:D
+    TKY4(j,1)=(TKY2(j,1)-TKY2(j-7,1))/7;
 end
 
 % Okinawa: code 47
@@ -55,12 +67,18 @@ ROWOKNW=find(B(:)==47);
 OKNW1=A.data(ROWOKNW,2)/POKNW;
 OKNW2=A.data(ROWOKNW,4)/POKNW;
 OKNW3=zeros(DD,1);
-for j=1:DD
-    OKNW3(j,1)=(OKNW1(j+532,1)-OKNW1(j+525,1))/7;
+for j=1:7
+    OKNW3(j,1)=OKNW1(j,1)/j;
+end
+for j=8:D
+    OKNW3(j,1)=(OKNW1(j,1)-OKNW1(j-7,1))/7;
 end
 OKNW4=zeros(DD,1);
-for j=1:DD
-    OKNW4(j,1)=(OKNW2(j+532,1)-OKNW2(j+525,1))/7;
+for j=1:7
+    OKNW4(j,1)=OKNW2(j,1)/j;
+end
+for j=8:D
+    OKNW4(j,1)=(OKNW2(j,1)-OKNW2(j-7,1))/7;
 end
 
 % Osaka: code 27
@@ -68,13 +86,19 @@ POSK=8.798545;
 ROWOSK=find(B(:)==27);
 OSK1=A.data(ROWOSK,2)/POSK;
 OSK2=A.data(ROWOSK,4)/POSK;
-OSK3=zeros(DD,1);
-for j=1:DD
-    OSK3(j,1)=(OSK1(j+532,1)-OSK1(j+525,1))/7;
+OSK3=zeros(D,1);
+for j=1:7
+    OSK3(j,1)=OSK1(j,1)/j;
+end
+for j=8:D
+    OSK3(j,1)=(OSK1(j,1)-OSK1(j-7,1))/7;
 end
 OSK4=zeros(DD,1);
-for j=1:DD
-    OSK4(j,1)=(OSK2(j+532,1)-OSK2(j+525,1))/7;
+for j=1:7
+    OSK4(j,1)=OSK2(j,1)/j;
+end
+for j=8:D
+    OSK4(j,1)=(OSK2(j,1)-OSK2(j-7,1))/7;
 end
 
 % Hyogo: code 28
@@ -82,13 +106,19 @@ PHYG=5.446455;
 rowhyg=find(B(:)==28);
 HYG1=A.data(rowhyg,2)/PHYG;
 HYG2=A.data(rowhyg,4)/PHYG;
-HYG3=zeros(DD,1);
-for j=1:DD
-    HYG3(j,1)=(HYG1(j+532,1)-HYG1(j+525,1))/7;
+HYG3=zeros(D,1);
+for j=1:7
+    HYG3(j,1)=HYG1(j,1)/j;
+end
+for j=8:D
+    HYG3(j,1)=(HYG1(j,1)-HYG1(j-7,1))/7;
 end
 HYG4=zeros(DD,1);
-for j=1:DD
-    HYG4(j,1)=(HYG2(j+532,1)-HYG2(j+525,1))/7;
+for j=1:7
+    HYG4(j,1)=HYG2(j,1)/j;
+end
+for j=8:D
+    HYG4(j,1)=(HYG2(j,1)-HYG2(j-7,1))/7;
 end
 
 % Hokkaido: code 1,
@@ -96,13 +126,20 @@ PHKD=5.207185;
 rowhkd=find(B(:)==1);
 HKD1=A.data(rowhkd,2)/PHKD;
 HKD2=A.data(rowhkd,4)/PHKD;
-HKD3=zeros(DD,1);
-for j=1:DD
-    HKD3(j,1)=(HKD1(j+532,1)-HKD1(j+525,1))/7;
+HKD4=zeros(DD,1);
+HKD3=zeros(D,1);
+for j=1:7
+    HKD3(j,1)=HKD1(j,1)/j;
+end
+for j=8:D
+    HKD3(j,1)=(HKD1(j,1)-HKD1(j-7,1))/7;
 end
 HKD4=zeros(DD,1);
-for j=1:DD
-    HKD4(j,1)=(HKD2(j+532,1)-HKD2(j+525,1))/7;
+for j=1:7
+    HKD4(j,1)=HKD2(j,1)/j;
+end
+for j=8:D
+    HKD4(j,1)=(HKD2(j,1)-HKD2(j-7,1))/7;
 end
 
 newcolors = [0 0 1; 
@@ -143,8 +180,8 @@ plot([JPN3,TKY3,OKNW3],'LineWidth',2)
 title('COVID-19 in Japan (daily new cases per 1M)','data sourced by NHK (Japanese Public TV)')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 floor(DD/2) DD])
-xticklabels({[ll0],[ll1],[ll2]})
+xticks([1 floor(D/3) floor(2*D/3) D])
+xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Location','northwest');
 % plot
 subplot(2,2,4)
@@ -152,6 +189,6 @@ plot([JPN4,TKY4,OKNW4,OSK4,HYG4,HKD4],'LineWidth',2)
 title('COVID-19 in Japan (7-day average deaths per 1M)','data sourced by NHK (Japanese Public TV)')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor(DD/2) DD])
-xticklabels({[ll0],[ll1],[ll2]})
+xticks([1 floor(D/3) floor(2*D/3) D])
+xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Hyogo','Hokkaido','Location','northwest');
