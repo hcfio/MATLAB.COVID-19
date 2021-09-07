@@ -33,6 +33,14 @@ for j=1:DD
     IDN(j,1)=max(0,WIDN(j+526,1)-WIDN(j+519,1))/7;
 end
 
+% Israel
+PISR=8.814662;
+WISR=transpose(W.data(153,3:qw))/PISR;
+ISR=zeros(DD,1);
+for j=1:DD
+    ISR(j,1)=max(0,WISR(j+526,1)-WISR(j+519,1))/7;
+end
+
 % Japan
 PJPN=125.36;
 WJPN=transpose(W.data(156,3:qw))/PJPN;
@@ -151,13 +159,13 @@ colororder(newcolors)
          
 % plot
 subplot(1,2,1)
-plot([JPN,TKY,OKNW,MYS,THA,BWN,LKA,USA,GBR],'LineWidth',2)
+plot([JPN,TKY,OKNW,MYS,THA,BWN,LKA,USA,GBR ISR],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and NHK')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([1 floor(DD/2) DD])
 xticklabels({[ll0],[ll1],[ll2]})
-legend('Japan','Tokyo','Okinawa','Malaysia','Thailand','Brunei','Sri Lanka','United States','United Kingdom','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Malaysia','Thailand','Brunei','Sri Lanka','United States','United Kingdom','Israel','Location','northwest');
 %
 subplot(1,2,2)
 plot([JPN,PHI,SIN,KOR,VNM,IDN,NSW],'LineWidth',2)

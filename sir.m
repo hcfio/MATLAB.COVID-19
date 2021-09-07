@@ -140,7 +140,7 @@ title('SIR model for COVID-19: Japan (125.36M)','data sourced by MOH of Japan')
 xticks([1 15 29]);
 xticklabels({[w0],[w1],[w2]});
 ylabel('cases/1M');
-legend('confirmed','active','recovered','Location','northwest');
+legend('confirmed','active','recovered','Location','east');
 
 % Tokyo
 T0=CTKY(D);
