@@ -213,3 +213,5 @@ ylabel('deaths/1M');
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
+set(gcf,'Position',[600,200,1200,800]);
+saveas(gcf,'jhu.png');

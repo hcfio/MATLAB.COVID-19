@@ -192,3 +192,5 @@ ylabel('deaths/1M');
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Hyogo','Hokkaido','Location','northwest');
+set(gcf,'Position',[600,200,1200,800]);
+saveas(gcf,'nhk.png');

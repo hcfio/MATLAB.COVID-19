@@ -279,3 +279,5 @@ ylabel('deaths/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japwn','Philippines','Malaysia','Indonesia','India','Nepwl','PAKistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
+set(gcf,'Position',[600,200,1200,800]);
+saveas(gcf,'asia.png');

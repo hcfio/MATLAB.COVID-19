@@ -175,4 +175,5 @@ ylabel('deaths/1M');
 xticks([1 floor(DD/2) DD])
 xticklabels({[ll0],[ll1],[ll2]})
 legend('Japan','Philippines','Singapore','South Korea','Vietnam','Indonesia','New South Wales','Location','northwest');
-
+set(gcf,'Position',[600,200,1200,400]);
+saveas(gcf,'crisis.png');

@@ -179,4 +179,5 @@ xticks([1 15 29]);
 xticklabels({[w0],[w1],[w2]});
 ylabel('cases/1M');
 legend('confirmed','active','recovered','Location','east');
-
+set(gcf,'Position',[600,200,1500,800]);
+saveas(gcf,'sir.png');
