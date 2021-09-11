@@ -17,6 +17,14 @@ for j=1:DD
     NSW(j,1)=max(0,WNSW(j+526,1)-WNSW(j+519,1))/7;
 end
 
+% Victoria
+PVIC=6.7;
+WVIC=transpose(W.data(15,3:qw))/PVIC;
+VIC=zeros(DD,1);
+for j=1:DD
+    VIC(j,1)=max(0,WVIC(j+526,1)-WVIC(j+519,1))/7;
+end
+
 % Brunei Darussalam
 PBWN=0.442205;
 WBWN=transpose(W.data(32,3:qw))/PBWN;
@@ -168,12 +176,12 @@ xticklabels({[ll0],[ll1],[ll2]})
 legend('Japan','Tokyo','Okinawa','Malaysia','Thailand','Brunei','Sri Lanka','United States','United Kingdom','Israel','Location','northwest');
 %
 subplot(1,2,2)
-plot([JPN,PHI,SIN,KOR,VNM,IDN,NSW],'LineWidth',2)
+plot([JPN,PHI,SIN,KOR,VNM,IDN,NSW,VIC],'LineWidth',2)
 title('COVID-19 in the World (daily new cases per 1M)','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([1 floor(DD/2) DD])
 xticklabels({[ll0],[ll1],[ll2]})
-legend('Japan','Philippines','Singapore','South Korea','Vietnam','Indonesia','New South Wales','Location','northwest');
+legend('Japan','Philippines','Singapore','South Korea','Vietnam','Indonesia','New South Wales','Victoria','Location','northwest');
 set(gcf,'Position',[600,200,1200,400]);
 saveas(gcf,'crisis.png');
