@@ -1,10 +1,10 @@
-websave('./csv/time_series_covid19_confirmed_global.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
-websave('./csv/time_series_covid19_deaths_global.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv');
-% websave('./csv/time_series_covid19_recovered_global.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv');
+websave('./csv/jhu_cases.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
+websave('./csv/jhu_deaths.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv');
+% websave('./csv/jhu_discharged.csv','https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv');
 
-A=importdata('./csv/time_series_covid19_confirmed_global.csv');
-B=importdata('./csv/time_series_covid19_deaths_global.csv');
-% C=importdata('./csv/time_series_covid19_recovered_global.csv');
+A=importdata('./csv/jhu_cases.csv');
+B=importdata('./csv/jhu_deaths.csv');
+% C=importdata('./csv/jhu_discharged.csv');
 [pw qw]=size(A.data);
 
 D=qw-2;

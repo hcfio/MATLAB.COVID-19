@@ -1,10 +1,10 @@
-websave('./csv/nhk_news_covid19_prefectures_daily_data.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_prefectures_daily_data.csv');
-A=importdata('./csv/nhk_news_covid19_prefectures_daily_data.csv');
+websave('./csv/nhk_prefectures.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_prefectures_daily_data.csv');
+A=importdata('./csv/nhk_prefectures.csv');
 l=length(A.data(:,2));
 B=str2double(A.textdata(2:l+1,2));
 
-websave('./csv/nhk_news_covid19_domestic_daily_data.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_domestic_daily_data.csv');
-JP=importdata('./csv/nhk_news_covid19_domestic_daily_data.csv');
+websave('./csv/nhk_japan.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_domestic_daily_data.csv');
+JP=importdata('./csv/nhk_japan.csv');
 
 dd0=strrep(A.textdata(2,1),'/','-');
 d0=datetime(dd0);
