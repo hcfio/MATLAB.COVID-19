@@ -90,7 +90,7 @@ colororder(newcolors)
 %colororder(c);
 
 subplot(2,3,1)
-plot([CJPN',AJPN',RJPN'],'LineWidth',2)
+plot([CJPN',AJPN',RJPN'],'LineWidth',1)
 title('COVID-19: Japan (125.36M)','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('cases/1M')
@@ -99,7 +99,7 @@ xticklabels({[l0],[l1],[l2],[lf]})
 legend('confirmed','active','recovered','Location','northwest');
 % plot
 subplot(2,3,2)
-plot([CTKY',ATKY',RTKY'],'LineWidth',2)
+plot([CTKY',ATKY',RTKY'],'LineWidth',1)
 title('COVID-19: Tokyo (14.049146M)','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('cases/1M')
@@ -108,7 +108,7 @@ xticklabels({[l0],[l1],[l2],[lf]})
 legend('confirmed','active','recovered','Location','northwest');
 % plot
 subplot(2,3,3)
-plot([COKNW',AOKNW',ROKNW'],'LineWidth',2)
+plot([COKNW',AOKNW',ROKNW'],'LineWidth',1)
 title('COVID-19: Okinawa (1.458870M)','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('cases/1M')
@@ -135,7 +135,7 @@ gamma=R1/(T0-R0);
 [t,u]=ode45(@(t,u) [beta*(POP-u(1))*u(2); beta*(POP-u(1))*u(2)-gamma*u(2)], [0,W], [T0;T0-R0]);
 %
 subplot(2,3,4)
-plot(t,u(:,1),t,u(:,2),t,u(:,1)-u(:,2),'LineWidth',2); 
+plot(t,u(:,1),t,u(:,2),t,u(:,1)-u(:,2),'LineWidth',1); 
 title('SIR model for COVID-19: Japan (125.36M)','data sourced by MOH of Japan')
 xticks([1 15 29]);
 xticklabels({[w0],[w1],[w2]});
@@ -154,7 +154,7 @@ gamma=R1/(T0-R0);
 [t,u]=ode45(@(t,u) [beta*(POP-u(1))*u(2); beta*(POP-u(1))*u(2)-gamma*u(2)], [0,W], [T0;T0-R0]);
 %
 subplot(2,3,5)
-plot(t,u(:,1),t,u(:,2),t,u(:,1)-u(:,2),'LineWidth',2); 
+plot(t,u(:,1),t,u(:,2),t,u(:,1)-u(:,2),'LineWidth',1); 
 title('SIR model for COVID-19: Tokyo (14.049146M)','data sourced by MOH of Japan')
 xticks([1 15 29]);
 xticklabels({[w0],[w1],[w2]});
@@ -173,7 +173,7 @@ gamma=R1/(T0-R0);
 [t,u]=ode45(@(t,u) [beta*(POP-u(1))*u(2); beta*(POP-u(1))*u(2)-gamma*u(2)], [0,W], [T0;T0-R0]);
 %
 subplot(2,3,6)
-plot(t,u(:,1),t,u(:,2),t,u(:,1)-u(:,2),'LineWidth',2); 
+plot(t,u(:,1),t,u(:,2),t,u(:,1)-u(:,2),'LineWidth',1); 
 title('SIR model for COVID-19: Okinawa (1.458870M)','data sourced by MOH of Japan')
 xticks([1 15 29]);
 xticklabels({[w0],[w1],[w2]});

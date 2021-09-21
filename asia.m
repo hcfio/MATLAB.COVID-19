@@ -245,7 +245,7 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([AJPN,APHI,AMYS,AIDN,AIND,ANPL,APAK,ABGD,ALKA,ATHA],'LineWidth',2)
+plot([AJPN,APHI,AMYS,AIDN,AIND,ANPL,APAK,ABGD,ALKA,ATHA],'LineWidth',1)
 title('COVID-19: cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
@@ -254,7 +254,7 @@ xticklabels({[l0],[l1],[l2],[l3]});
 legend('Japwn','Philippines','Malaysia','Indonesia','India','Nepwl','PAKistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
 % plot
 subplot(2,2,2)
-plot([BJPN,BPHI,BMYS,BIDN,BIND,BNPL,BPAK,BBGD,BLKA,BTHA],'LineWidth',2)
+plot([BJPN,BPHI,BMYS,BIDN,BIND,BNPL,BPAK,BBGD,BLKA,BTHA],'LineWidth',1)
 title('COVID-19: deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
@@ -263,7 +263,7 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japwn','Philippines','Malaysia','Indonesia','India','Nepwl','PAKistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
 % plot
 subplot(2,2,3)
-plot([NJPN,NPHI,NMYS,NIDN,NIND,NNPL,NPAK,NBGD,NLKA,NTHA],'LineWidth',2)
+plot([NJPN,NPHI,NMYS,NIDN,NIND,NNPL,NPAK,NBGD,NLKA,NTHA],'LineWidth',1)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
@@ -272,7 +272,7 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japwn','Philippines','Malaysia','Indonesia','India','Nepwl','PAKistan','Bangladesh','Sri Lanka','Thailand','Location','northwest');
 % plot
 subplot(2,2,4)
-plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDNPL,NDPAK,NDBGD,NDLKA,NDTHA],'LineWidth',2)
+plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDNPL,NDPAK,NDBGD,NDLKA,NDTHA],'LineWidth',1)
 title('COVID-19: 7-day average deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');

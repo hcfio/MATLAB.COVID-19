@@ -326,7 +326,7 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([USA,PHI,OKNW,MYS,THA,BWN,NSW,LKA,ISR,GBR],'LineWidth',2)
+plot([USA,PHI,OKNW,MYS,THA,BWN,NSW,LKA,ISR,GBR],'LineWidth',1)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and NHK')
 xlabel('date');
 ylabel('cases/1M');
@@ -335,7 +335,7 @@ xticklabels({[ll0],[ll1],[ll2]})
 legend('United States','Philippines','Okinawa','Malaysia','Thailand','Brunei','New South Wales','Sri Lanka','Israel','United Kingdom','Location','northwest');
 %
 subplot(2,2,2)
-plot([JPN,TKY,SIN,KOR,VNM,VIC,IDN],'LineWidth',2)
+plot([JPN,TKY,SIN,KOR,VNM,VIC,IDN],'LineWidth',1)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
@@ -344,7 +344,7 @@ xticklabels({[ll0],[ll1],[ll2]})
 legend('Japan','Tokyo','Singapore','South Korea','Vietnam','Victoria','Indonesia','Location','northwest');
 %
 subplot(2,2,3)
-plot([VJPN,VPHI,VBWN,VCHN,VIDN,VMYS,VSIN,VTHA,VVNM,VUSA],'LineWidth',2)
+plot([VJPN,VPHI,VBWN,VCHN,VIDN,VMYS,VSIN,VTHA,VVNM,VUSA],'LineWidth',1)
 title('COVID-19: fully vaccinated','data sourced by JHU Centers for CIVIC Impact')
 xlabel('date');
 ylabel('%');
@@ -353,12 +353,13 @@ xticklabels({[l0],[l1],[l2]})
 legend('Japan','Philippines','Brunei','China','Indonesia','Malaysia','Singapore','Thailand','Vietnam','United States','Location','northwest');
 %
 subplot(2,2,4)
-plot([DEARG,DEBRA,DEIDN,DEMYS,DEMEX,DEPER,DELKA,DETHA,DEUSA,DEISR],'LineWidth',2)
+plot([DEARG,DEBRA,DEIDN,DEMYS,DEMEX,DEPER,DELKA,DETHA,DEUSA,DEISR],'LineWidth',1)
 title('COVID-19: 7-day average of deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([1 floor(DD/2) DD])
 xticklabels({[ll0],[ll1],[ll2]})
 legend('Argentina','Brazil','Indonesia','Malaysia','Mexico','Peru','Sri Lanka','Thailand','United States','Israel','Location','northwest');
+%
 set(gcf,'Position',[600,200,1200,800]);
 saveas(gcf,'crisis.png');

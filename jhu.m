@@ -179,7 +179,7 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([AUSA,AGBR,AARG,ABRA,ACOL,AMEX,AFIE],'LineWidth',2)
+plot([AUSA,AGBR,AARG,ABRA,ACOL,AMEX,AFIE],'LineWidth',1)
 title('COVID-19: cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
@@ -188,7 +188,7 @@ xticklabels({[l0],[l1],[l2],[l3]});
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
 % plot
 subplot(2,2,2)
-plot([BUSA,BGBR,BARG,BBRA,BCOL,BMEX,BFIE],'LineWidth',2)
+plot([BUSA,BGBR,BARG,BBRA,BCOL,BMEX,BFIE],'LineWidth',1)
 title('COVID-19: deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
@@ -197,7 +197,7 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
 % plot
 subplot(2,2,3)
-plot([NUSA,NGBR,NARG,NBRA,NCOL,NMEX,NFIE],'LineWidth',2)
+plot([NUSA,NGBR,NARG,NBRA,NCOL,NMEX,NFIE],'LineWidth',1)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
@@ -206,7 +206,7 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
 % plot
 subplot(2,2,4)
-plot([NDUSA,NDGBR,NDARG,NDBRA,NDCOL,NDMEX,NDFIE],'LineWidth',2)
+plot([NDUSA,NDGBR,NDARG,NDBRA,NDCOL,NDMEX,NDFIE],'LineWidth',1)
 title('COVID-19: 7-day average deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
