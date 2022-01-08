@@ -129,8 +129,8 @@ end
 
 % United Staes
 PUSA=333.225477;
-AUSA=transpose(A.data(255,3:qw))/PUSA;
-BUSA=transpose(B.data(255,3:qw))/PUSA;
+AUSA=transpose(A.data(256,3:qw))/PUSA;
+BUSA=transpose(B.data(256,3:qw))/PUSA;
 NUSA=zeros(D,1);
 for j=1:7
     NUSA(j,1)=AUSA(j,1)/j;
@@ -148,8 +148,8 @@ end
 
 % United Kingdom
 PGBR=68.294438;
-AGBR=transpose(A.data(270,3:qw))/PGBR;
-BGBR=transpose(B.data(270,3:qw))/PGBR;
+AGBR=transpose(A.data(271,3:qw))/PGBR;
+BGBR=transpose(B.data(271,3:qw))/PGBR;
 NGBR=zeros(D,1);
 for j=1:7
     NGBR(j,1)=AGBR(j,1)/j;
@@ -179,7 +179,7 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([AUSA,AGBR,AARG,ABRA,ACOL,AMEX,AFIE],'LineWidth',1)
+plot([AUSA,AGBR,AARG,ABRA,ACOL,AMEX,AFIE],'LineWidth',2)
 title('COVID-19: cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
@@ -188,7 +188,7 @@ xticklabels({[l0],[l1],[l2],[l3]});
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
 % plot
 subplot(2,2,2)
-plot([BUSA,BGBR,BARG,BBRA,BCOL,BMEX,BFIE],'LineWidth',1)
+plot([BUSA,BGBR,BARG,BBRA,BCOL,BMEX,BFIE],'LineWidth',2)
 title('COVID-19: deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
@@ -197,7 +197,7 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
 % plot
 subplot(2,2,3)
-plot([NUSA,NGBR,NARG,NBRA,NCOL,NMEX,NFIE],'LineWidth',1)
+plot([NUSA,NGBR,NARG,NBRA,NCOL,NMEX,NFIE],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
@@ -206,7 +206,7 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
 % plot
 subplot(2,2,4)
-plot([NDUSA,NDGBR,NDARG,NDBRA,NDCOL,NDMEX,NDFIE],'LineWidth',1)
+plot([NDUSA,NDGBR,NDARG,NDBRA,NDCOL,NDMEX,NDFIE],'LineWidth',2)
 title('COVID-19: 7-day average deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');

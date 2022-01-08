@@ -7,41 +7,10 @@ XC=importdata("./csv/mhlw_cases.csv");
 XD=importdata("./csv/mhlw_deaths.csv");
 XR=importdata("./csv/mhlw_recovered.csv");
 l=length(XC.data(:,1));
-m=length(XN.data(:,1));
-n=floor(l/48);
-k=floor(m/48);
-VN=XN.data(:,1);
-VC=XC.data(:,1);
-VD=XD.data(:,1);
-VR=XR.data(:,2);
-
-MN=zeros(48,k);
-for j=1:k
-    for i=1:48
-    MN(i,j)=VN(i+48*(j-1));
-    end
-end
-
-MC=zeros(48,n);
-for j=1:n
-    for i=1:48
-    MC(i,j)=VC(i+48*(j-1));
-    end
-end
-
-MD=zeros(48,n);
-for j=1:n
-    for i=1:48
-    MD(i,j)=VD(i+48*(j-1));
-    end
-end
-
-MR=zeros(48,n);
-for j=1:n
-    for i=1:48
-    MR(i,j)=VR(i+48*(j-1));
-    end
-end
+VN=XN.data(:,:);
+VC=XC.data(:,:);
+VD=XD.data(:,:);
+VR=XR.data(:,:);
 
 d0=datetime('2020-05-09');
 xd1=strrep(XC.textdata(l+1,1),'/','-');
@@ -60,26 +29,26 @@ ll2=datestr(d2,'yyyy-mm-dd');
 
 % Japan
 PJPN=125.36;
-XJPN=MN(1,:)/PJPN;
-CJPN=MC(1,:)/PJPN;
-DJPN=MD(1,:)/PJPN;
-RJPN=MR(1,:)/PJPN;
+XJPN=VN(:,1)/PJPN;
+CJPN=VC(:,1)/PJPN;
+DJPN=VD(:,1)/PJPN;
+RJPN=VR(:,2)/PJPN;
 AJPN=CJPN-RJPN-DJPN;
 
 % Tokyo
 PTKY=14.049146;
-XTKY=MN(14,:)/PTKY;
-CTKY=MC(14,:)/PTKY;
-DTKY=MD(14,:)/PTKY;
-RTKY=MR(14,:)/PTKY;
+XTKY=VN(:,14)/PTKY;
+CTKY=VC(:,14)/PTKY;
+DTKY=VD(:,14)/PTKY;
+RTKY=VR(:,41)/PTKY;
 ATKY=CTKY-RTKY-DTKY;
 
 % Okinawa
 POKNW=1.458870;
-XOKNW=MN(48,:)/POKNW;
-COKNW=MC(48,:)/POKNW;
-DOKNW=MD(48,:)/POKNW;
-ROKNW=MR(48,:)/POKNW;
+XOKNW=VN(:,48)/POKNW;
+COKNW=VC(:,48)/POKNW;
+DOKNW=VD(:,48)/POKNW;
+ROKNW=VR(:,143)/POKNW;
 AOKNW=max(0,COKNW-ROKNW-DOKNW);
 
 newcolors = [0 0 1; 
@@ -90,7 +59,7 @@ colororder(newcolors)
 %colororder(c);
 
 subplot(2,3,1)
-plot([CJPN',AJPN',RJPN'],'LineWidth',1)
+plot([CJPN,AJPN,RJPN],'LineWidth',1)
 title('COVID-19: Japan (125.36M)','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('cases/1M')
@@ -99,7 +68,7 @@ xticklabels({[l0],[l1],[l2],[lf]})
 legend('confirmed','active','recovered','Location','northwest');
 % plot
 subplot(2,3,2)
-plot([CTKY',ATKY',RTKY'],'LineWidth',1)
+plot([CTKY,ATKY,RTKY],'LineWidth',1)
 title('COVID-19: Tokyo (14.049146M)','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('cases/1M')
@@ -108,7 +77,7 @@ xticklabels({[l0],[l1],[l2],[lf]})
 legend('confirmed','active','recovered','Location','northwest');
 % plot
 subplot(2,3,3)
-plot([COKNW',AOKNW',ROKNW'],'LineWidth',1)
+plot([COKNW,AOKNW,ROKNW],'LineWidth',1)
 title('COVID-19: Okinawa (1.458870M)','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('cases/1M')
