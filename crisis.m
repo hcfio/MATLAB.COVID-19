@@ -88,6 +88,18 @@ for j=1:DD
     FIE(j,1)=max(0,WFIE(j+679,1)-WFIE(j+672,1))/7;
 end
 
+% India
+PIND=1395.531433;
+WIND=transpose(W.data(148,3:qw))/PIND;
+IND=zeros(DD,1);
+for j=1:DD
+    IND(j,1)=max(0,WIND(j+679,1)-WIND(j+672,1))/7;
+end
+UIND=transpose(U.data(148,3:qu))/PIND;
+DEIND=zeros(DD,1);
+for j=1:DD
+    DEIND(j,1)=max(0,UIND(j+679,1)-UIND(j+672,1))/7;
+end
 
 % Indonesia
 PIDN=276.833206;
@@ -388,22 +400,22 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([AUS,ARG,OKNW,NSW,VIC,FIE,RUS,VNM,GBR,USA],'LineWidth',2)
+plot([AUS,PHI,OKNW,NSW,VIC,FIE,RUS,ARG,GBR,USA],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Australia','Argentina','Okinawa','New South Wales','Victoria','FRA+ITA+ESP','Russia','Vietnam','United Kingdom','United States','Location','northwest');
+legend('Australia','Philippines','Okinawa','New South Wales','Victoria','FRA+ITA+ESP','Russia','Argentina','United Kingdom','United States','Location','northwest');
 %
 subplot(2,2,2)
-plot([JPN,TKY,OKNW,PHI,BWN,THA,MYS,IDN,KOR,SIN],'LineWidth',2)
+plot([JPN,TKY,VNM,PHI,BWN,THA,MYS,IND,KOR,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Japan','Tokyo','Okinawa','Philippines','Brunei Darussalam','Thailand','Malaysia','Indonesia','South Korea','Singapore','Location','northwest');
+legend('Japan','Tokyo','Vietnam','Philippines','Brunei Darussalam','Thailand','Malaysia','India','South Korea','Singapore','Location','northwest');
 %
 subplot(2,2,3)
 plot([VBWN,VMYS,VPHI,VSIN,VTHA,VVNM,VCHN,VIDN,VJPN,VUSA],'LineWidth',2)
