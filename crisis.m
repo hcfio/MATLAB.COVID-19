@@ -53,8 +53,22 @@ WTAS=transpose(W.data(14,3:qw));
 WVIC=transpose(W.data(15,3:qw));
 WWA=transpose(W.data(16,3:qw));
 WAUS=(WACT+WNSW+WNT+WQLD+WSA+WTAS+WVIC+WWA)/PAUS;
+AUS=zeros(DD,1);
 for j=1:DD
     AUS(j,1)=max(0,WAUS(j+679,1)-WAUS(j+672,1))/7;
+end
+UACT=transpose(U.data(9,3:qw));
+UNSW=transpose(U.data(10,3:qw));
+UNT=transpose(U.data(11,3:qw));
+UQLD=transpose(U.data(12,3:qw));
+USA=transpose(U.data(13,3:qw));
+UTAS=transpose(U.data(14,3:qw));
+UVIC=transpose(U.data(15,3:qw));
+UWA=transpose(U.data(16,3:qw));
+UAUS=(UACT+UNSW+UNT+UQLD+USA+UTAS+UVIC+UWA)/PAUS;
+DEAUS=zeros(DD,1);
+for j=1:DD
+    DEAUS(j,1)=max(0,UAUS(j+679,1)-UAUS(j+672,1))/7;
 end
 
 
@@ -86,6 +100,14 @@ WFIE=(WFRA+WITA+WESP)/PFIE;
 FIE=zeros(DD,1);
 for j=1:DD
     FIE(j,1)=max(0,WFIE(j+679,1)-WFIE(j+672,1))/7;
+end
+UFRA=transpose(U.data(131,3:qw));
+UITA=transpose(U.data(154,3:qw));
+UESP=transpose(U.data(238,3:qw));
+UFIE=(UFRA+UITA+UESP)/PFIE;
+DEFIE=zeros(DD,1);
+for j=1:DD
+    DEFIE(j,1)=max(0,UFIE(j+679,1)-UFIE(j+672,1))/7;
 end
 
 % India
@@ -299,6 +321,20 @@ for j=1:DD
     TKY(j,1)=(TKY1(j+571,1)-TKY1(j+564,1))/7;
 end
 
+% Osaka: code 28
+POSK=8.798545;
+OSK1=VC(:,28)/POSK;
+OSK2=VD(:,28)/POSK;
+OSK=zeros(DD,1);
+for j=1:DD
+    OSK(j,1)=(OSK1(j+571,1)-OSK1(j+564,1))/7;
+end
+DEOSK=zeros(DD,1);
+for j=1:DD
+    DEOSK(j,1)=(OSK2(j+571,1)-OSK2(j+564,1))/7;
+end
+
+
 websave('./csv/jhu_vaccinated.csv','https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/global_data/time_series_covid19_vaccine_global.csv');
 V=readmatrix('./csv/jhu_vaccinated.csv');
 [m n]=size(V);
@@ -400,22 +436,22 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([AUS,PHI,OKNW,NSW,VIC,FIE,RUS,ARG,GBR,USA],'LineWidth',2)
-title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
-xlabel('date');
-ylabel('cases/1M');
-xticks([1 floor(DD/3) floor(2*DD/3) DD])
-xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Australia','Philippines','Okinawa','New South Wales','Victoria','FRA+ITA+ESP','Russia','Argentina','United Kingdom','United States','Location','northwest');
-%
-subplot(2,2,2)
-plot([JPN,TKY,VNM,PHI,BWN,THA,MYS,IND,KOR,SIN],'LineWidth',2)
+plot([USA,TKY,OKNW,OSK,AUS,NSW,VIC,FIE,GBR,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Japan','Tokyo','Vietnam','Philippines','Brunei Darussalam','Thailand','Malaysia','India','South Korea','Singapore','Location','northwest');
+legend('United States','Tokyo','Okinawa','Osaka','Australia','New South Wales','Victoria','FRA+ITA+ESP','United Kingdom','Singapore','Location','northwest');
+%
+subplot(2,2,2)
+plot([JPN,TKY,OKNW,OSK,VNM,KOR,MYS,IND,PHI,SIN],'LineWidth',2)
+title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MOH of Japan')
+xlabel('date');
+ylabel('cases/1M');
+xticks([1 floor(DD/3) floor(2*DD/3) DD])
+xticklabels({[ll0],[ll1],[ll2],[ll3]})
+legend('Japan','Tokyo','Okinawa','Osaka','Vietnam','South Korea','Malaysia','India','Philippines','Singapore','Location','northwest');
 %
 subplot(2,2,3)
 plot([VBWN,VMYS,VPHI,VSIN,VTHA,VVNM,VCHN,VIDN,VJPN,VUSA],'LineWidth',2)
@@ -427,13 +463,13 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('Brunei Darussalam','Malaysia','Philippines','Singapore','Thailand','Vietnam','China','Indonesia','Japan','United States','Location','northwest');
 %
 subplot(2,2,4)
-plot([DEMYS,DEBRA,DEOKNW,DESIN,DEMEX,DELKA,DERUS,DETHA,DEGBR,DEUSA],'LineWidth',2)
+plot([DEUSA,DEGBR,DEOKNW,DEOSK,DEAUS,DEMEX,DEFIE,DEMYS,DERUS,DEBRA],'LineWidth',2)
 title('COVID-19: 7-day average of deaths per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Malaysia','Brazil','Okinawa','Singapore','Mexico','Sri Lanka','Russia','Thailand','United Kingdom','United States','Location','northwest');
+legend('United States','United Kingdom','Okinawa','Osaka','Australia','Mexico','FRA+ITA+ESP','Malaysia','Russia','Brazil','Location','northwest');
 %
 set(gcf,'Position',[600,200,1200,800]);
 saveas(gcf,'crisis.png');
