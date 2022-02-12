@@ -15,12 +15,12 @@ ll3=datestr(dd1,'yyyy-mm-dd');
 
 % Argentina
 PARG=45.672715;
-WARG=transpose(W.data(7,3:qw))/PARG;
+WARG=transpose(W.data(8,3:qw))/PARG;
 ARG=zeros(DD,1);
 for j=1:DD
     ARG(j,1)=max(0,WARG(j+679,1)-WARG(j+672,1))/7;
 end
-UARG=transpose(U.data(7,3:qu))/PARG;
+UARG=transpose(U.data(8,3:qu))/PARG;
 DEARG=zeros(DD,1);
 for j=1:DD
     DEARG(j,1)=max(0,UARG(j+679,1)-UARG(j+672,1))/7;
@@ -28,7 +28,7 @@ end
 
 % NSW
 PNSW=8.196;
-WNSW=transpose(W.data(10,3:qw))/PNSW;
+WNSW=transpose(W.data(11,3:qw))/PNSW;
 NSW=zeros(DD,1);
 for j=1:DD
     NSW(j,1)=max(0,WNSW(j+679,1)-WNSW(j+672,1))/7;
@@ -36,7 +36,7 @@ end
 
 % Victoria
 PVIC=6.7;
-WVIC=transpose(W.data(15,3:qw))/PVIC;
+WVIC=transpose(W.data(16,3:qw))/PVIC;
 VIC=zeros(DD,1);
 for j=1:DD
     VIC(j,1)=max(0,WVIC(j+679,1)-WVIC(j+672,1))/7;
@@ -44,27 +44,27 @@ end
 
 % Australia
 PAUS=25.739256;
-WACT=transpose(W.data(9,3:qw));
-WNSW=transpose(W.data(10,3:qw));
-WNT=transpose(W.data(11,3:qw));
-WQLD=transpose(W.data(12,3:qw));
-WSA=transpose(W.data(13,3:qw));
-WTAS=transpose(W.data(14,3:qw));
-WVIC=transpose(W.data(15,3:qw));
-WWA=transpose(W.data(16,3:qw));
+WACT=transpose(W.data(10,3:qw));
+WNSW=transpose(W.data(11,3:qw));
+WNT=transpose(W.data(12,3:qw));
+WQLD=transpose(W.data(13,3:qw));
+WSA=transpose(W.data(14,3:qw));
+WTAS=transpose(W.data(15,3:qw));
+WVIC=transpose(W.data(16,3:qw));
+WWA=transpose(W.data(17,3:qw));
 WAUS=(WACT+WNSW+WNT+WQLD+WSA+WTAS+WVIC+WWA)/PAUS;
 AUS=zeros(DD,1);
 for j=1:DD
     AUS(j,1)=max(0,WAUS(j+679,1)-WAUS(j+672,1))/7;
 end
-UACT=transpose(U.data(9,3:qw));
-UNSW=transpose(U.data(10,3:qw));
-UNT=transpose(U.data(11,3:qw));
-UQLD=transpose(U.data(12,3:qw));
-USA=transpose(U.data(13,3:qw));
-UTAS=transpose(U.data(14,3:qw));
-UVIC=transpose(U.data(15,3:qw));
-UWA=transpose(U.data(16,3:qw));
+UACT=transpose(U.data(10,3:qw));
+UNSW=transpose(U.data(11,3:qw));
+UNT=transpose(U.data(12,3:qw));
+UQLD=transpose(U.data(13,3:qw));
+USA=transpose(U.data(14,3:qw));
+UTAS=transpose(U.data(15,3:qw));
+UVIC=transpose(U.data(16,3:qw));
+UWA=transpose(U.data(17,3:qw));
 UAUS=(UACT+UNSW+UNT+UQLD+USA+UTAS+UVIC+UWA)/PAUS;
 DEAUS=zeros(DD,1);
 for j=1:DD
@@ -74,7 +74,7 @@ end
 
 % Brazil
 PBRA=214.289417;
-UBRA=transpose(U.data(31,3:qu))/PBRA;
+UBRA=transpose(U.data(32,3:qu))/PBRA;
 DEBRA=zeros(DD,1);
 for j=1:DD
     DEBRA(j,1)=max(0,UBRA(j+679,1)-UBRA(j+672,1))/7;
@@ -82,7 +82,7 @@ end
 
 % Brunei Darussalam
 PBWN=0.442205;
-WBWN=transpose(W.data(32,3:qw))/PBWN;
+WBWN=transpose(W.data(33,3:qw))/PBWN;
 BWN=zeros(DD,1);
 for j=1:DD
     BWN(j,1)=max(0,WBWN(j+679,1)-WBWN(j+672,1))/7;
@@ -93,17 +93,17 @@ PFRA=65.439014;
 PITA=60.359899;
 PESP=46.775535;
 PFIE=PFRA+PITA+PESP;
-WFRA=transpose(W.data(131,3:qw));
-WITA=transpose(W.data(154,3:qw));
-WESP=transpose(W.data(238,3:qw));
+WFRA=transpose(W.data(132,3:qw));
+WITA=transpose(W.data(155,3:qw));
+WESP=transpose(W.data(239,3:qw));
 WFIE=(WFRA+WITA+WESP)/PFIE;
 FIE=zeros(DD,1);
 for j=1:DD
     FIE(j,1)=max(0,WFIE(j+679,1)-WFIE(j+672,1))/7;
 end
-UFRA=transpose(U.data(131,3:qw));
-UITA=transpose(U.data(154,3:qw));
-UESP=transpose(U.data(238,3:qw));
+UFRA=transpose(U.data(132,3:qw));
+UITA=transpose(U.data(155,3:qw));
+UESP=transpose(U.data(239,3:qw));
 UFIE=(UFRA+UITA+UESP)/PFIE;
 DEFIE=zeros(DD,1);
 for j=1:DD
@@ -112,12 +112,12 @@ end
 
 % India
 PIND=1395.531433;
-WIND=transpose(W.data(148,3:qw))/PIND;
+WIND=transpose(W.data(149,3:qw))/PIND;
 IND=zeros(DD,1);
 for j=1:DD
     IND(j,1)=max(0,WIND(j+679,1)-WIND(j+672,1))/7;
 end
-UIND=transpose(U.data(148,3:qu))/PIND;
+UIND=transpose(U.data(149,3:qu))/PIND;
 DEIND=zeros(DD,1);
 for j=1:DD
     DEIND(j,1)=max(0,UIND(j+679,1)-UIND(j+672,1))/7;
@@ -125,12 +125,12 @@ end
 
 % Indonesia
 PIDN=276.833206;
-WIDN=transpose(W.data(149,3:qw))/PIDN;
+WIDN=transpose(W.data(150,3:qw))/PIDN;
 IDN=zeros(DD,1);
 for j=1:DD
     IDN(j,1)=max(0,WIDN(j+679,1)-WIDN(j+672,1))/7;
 end
-UIDN=transpose(U.data(149,3:qu))/PIDN;
+UIDN=transpose(U.data(150,3:qu))/PIDN;
 DEIDN=zeros(DD,1);
 for j=1:DD
     DEIDN(j,1)=max(0,UIDN(j+679,1)-UIDN(j+672,1))/7;
@@ -138,12 +138,12 @@ end
 
 % Israel
 PISR=8.814662;
-WISR=transpose(W.data(153,3:qw))/PISR;
+WISR=transpose(W.data(154,3:qw))/PISR;
 ISR=zeros(DD,1);
 for j=1:DD
     ISR(j,1)=max(0,WISR(j+679,1)-WISR(j+672,1))/7;
 end
-UISR=transpose(U.data(153,3:qu))/PISR;
+UISR=transpose(U.data(154,3:qu))/PISR;
 DEISR=zeros(DD,1);
 for j=1:DD
     DEISR(j,1)=max(0,UISR(j+679,1)-UISR(j+672,1))/7;
@@ -151,7 +151,7 @@ end
 
 % Japan
 PJPN=125.36;
-WJPN=transpose(W.data(156,3:qw))/PJPN;
+WJPN=transpose(W.data(157,3:qw))/PJPN;
 JPN=zeros(DD,1);
 for j=1:DD
     JPN(j,1)=max(0,WJPN(j+679,1)-WJPN(j+672,1))/7;
@@ -159,7 +159,7 @@ end
 
 % South Korea
 PKOR=51.318552;
-WKOR=transpose(W.data(161,3:qw))/PKOR;
+WKOR=transpose(W.data(162,3:qw))/PKOR;
 KOR=zeros(DD,1);
 for j=1:DD
     KOR(j,1)=max(0,WKOR(j+679,1)-WKOR(j+672,1))/7;
@@ -167,12 +167,12 @@ end
 
 % Malaysia
 PMYS=32.66;
-WMYS=transpose(W.data(177,3:qw))/PMYS;
+WMYS=transpose(W.data(178,3:qw))/PMYS;
 MYS=zeros(DD,1);
 for j=1:DD
     MYS(j,1)=max(0,WMYS(j+679,1)-WMYS(j+672,1))/7;
 end
-UMYS=transpose(U.data(177,3:qu))/PMYS;
+UMYS=transpose(U.data(178,3:qu))/PMYS;
 DEMYS=zeros(DD,1);
 for j=1:DD
     DEMYS(j,1)=max(0,UMYS(j+679,1)-UMYS(j+672,1))/7;
@@ -180,7 +180,7 @@ end
 
 % Mexico
 PMEX=130.482814;
-UMEX=transpose(U.data(184,3:qu))/PMEX;
+UMEX=transpose(U.data(185,3:qu))/PMEX;
 DEMEX=zeros(DD,1);
 for j=1:DD
     DEMEX(j,1)=max(0,UMEX(j+679,1)-UMEX(j+672,1))/7;
@@ -188,7 +188,7 @@ end
 
 % Peru
 PPER=33.525950;
-UPER=transpose(U.data(212,3:qu))/PPER;
+UPER=transpose(U.data(213,3:qu))/PPER;
 DEPER=zeros(DD,1);
 for j=1:DD
     DEPER(j,1)=max(0,UPER(j+679,1)-UPER(j+672,1))/7;
@@ -196,12 +196,12 @@ end
 
 % Philippines
 PPHI=111.249116;
-WPHI=transpose(W.data(213,3:qw))/PPHI;
+WPHI=transpose(W.data(214,3:qw))/PPHI;
 PHI=zeros(DD,1);
 for j=1:DD
     PHI(j,1)=max(0,WPHI(j+679,1)-WPHI(j+672,1))/7;
 end
-UIDN=transpose(U.data(213,3:qu))/PIDN;
+UIDN=transpose(U.data(214,3:qu))/PIDN;
 DEIDN=zeros(DD,1);
 for j=1:DD
     DEIDN(j,1)=max(0,UIDN(j+679,1)-UIDN(j+672,1))/7;
@@ -209,12 +209,12 @@ end
 
 % Russia
 PRUS=146.013169;
-WRUS=transpose(W.data(218,3:qw))/PRUS;
+WRUS=transpose(W.data(219,3:qw))/PRUS;
 RUS=zeros(DD,1);
 for j=1:DD
     RUS(j,1)=max(0,WRUS(j+679,1)-WRUS(j+672,1))/7;
 end
-URUS=transpose(U.data(218,3:qu))/PRUS;
+URUS=transpose(U.data(219,3:qu))/PRUS;
 DERUS=zeros(DD,1);
 for j=1:DD
     DERUS(j,1)=max(0,URUS(j+679,1)-URUS(j+672,1))/7;
@@ -222,12 +222,12 @@ end
 
 % Singapore
 PSIN=5.902011;
-WSIN=transpose(W.data(231,3:qw))/PSIN;
+WSIN=transpose(W.data(232,3:qw))/PSIN;
 SIN=zeros(DD,1);
 for j=1:DD
     SIN(j,1)=max(0,WSIN(j+679,1)-WSIN(j+672,1))/7;
 end
-USIN=transpose(U.data(231,3:qu))/PSIN;
+USIN=transpose(U.data(232,3:qu))/PSIN;
 DESIN=zeros(DD,1);
 for j=1:DD
     DESIN(j,1)=max(0,USIN(j+679,1)-USIN(j+672,1))/7;
@@ -235,12 +235,12 @@ end
 
 % Sri Lanka
 PLKA=21.516097;
-WLKA=transpose(W.data(239,3:qw))/PLKA;
+WLKA=transpose(W.data(240,3:qw))/PLKA;
 LKA=zeros(DD,1);
 for j=1:DD
     LKA(j,1)=max(0,WLKA(j+679,1)-WLKA(j+672,1))/7;
 end
-ULKA=transpose(U.data(239,3:qu))/PLKA;
+ULKA=transpose(U.data(240,3:qu))/PLKA;
 DELKA=zeros(DD,1);
 for j=1:DD
     DELKA(j,1)=max(0,ULKA(j+679,1)-ULKA(j+672,1))/7;
@@ -248,12 +248,12 @@ end
 
 % Thailand
 PTHA=70.000662;
-WTHA=transpose(W.data(249,3:qw))/PTHA;
+WTHA=transpose(W.data(250,3:qw))/PTHA;
 THA=zeros(DD,1);
 for j=1:DD
     THA(j,1)=max(0,WTHA(j+679,1)-WTHA(j+672,1))/7;
 end
-UTHA=transpose(U.data(249,3:qu))/PTHA;
+UTHA=transpose(U.data(250,3:qu))/PTHA;
 DETHA=zeros(DD,1);
 for j=1:DD
     DETHA(j,1)=max(0,UTHA(j+679,1)-UTHA(j+672,1))/7;
@@ -261,12 +261,12 @@ end
 
 % United Staes
 PUSA=333.225477;
-WUSA=transpose(W.data(256,3:qw))/PUSA;
+WUSA=transpose(W.data(257,3:qw))/PUSA;
 USA=zeros(DD,1);
 for j=1:DD
     USA(j,1)=max(0,WUSA(j+679,1)-WUSA(j+672,1))/7;
 end
-UUSA=transpose(U.data(256,3:qu))/PUSA;
+UUSA=transpose(U.data(257,3:qu))/PUSA;
 DEUSA=zeros(DD,1);
 for j=1:DD
     DEUSA(j,1)=max(0,UUSA(j+679,1)-UUSA(j+672,1))/7;
@@ -274,12 +274,12 @@ end
 
 % United Kingdom
 PGBR=68.294438;
-WGBR=transpose(W.data(271,3:qw))/PGBR;
+WGBR=transpose(W.data(272,3:qw))/PGBR;
 GBR=zeros(DD,1);
 for j=1:DD
     GBR(j,1)=max(0,WGBR(j+679,1)-WGBR(j+672,1))/7;
 end
-UGBR=transpose(U.data(271,3:qu))/PGBR;
+UGBR=transpose(U.data(272,3:qu))/PGBR;
 DEGBR=zeros(DD,1);
 for j=1:DD
     DEGBR(j,1)=max(0,UGBR(j+679,1)-UGBR(j+672,1))/7;
@@ -287,7 +287,7 @@ end
 
 % Vietnam
 PVNM=98.341025;
-WVNM=transpose(W.data(276,3:qw))/PVNM;
+WVNM=transpose(W.data(277,3:qw))/PVNM;
 VNM=zeros(DD,1);
 for j=1:DD
     VNM(j,1)=max(0,WVNM(j+679,1)-WVNM(j+672,1))/7;

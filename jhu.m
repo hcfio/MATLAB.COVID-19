@@ -24,8 +24,8 @@ ll2=datestr(dd1,'yyyy-mm-dd');
 
 % Argentina
 PARG=45.672715;
-AARG=transpose(A.data(7,3:qw))/PARG;
-BARG=transpose(B.data(7,3:qw))/PARG;
+AARG=transpose(A.data(8,3:qw))/PARG;
+BARG=transpose(B.data(8,3:qw))/PARG;
 NARG=zeros(D,1);
 for j=1:7
     NARG(j,1)=AARG(j,1)/j;
@@ -43,8 +43,8 @@ end
 
 % Brazil
 PBRA=214.289417;
-ABRA=transpose(A.data(31,3:qw))/PBRA;
-BBRA=transpose(B.data(31,3:qw))/PBRA;
+ABRA=transpose(A.data(32,3:qw))/PBRA;
+BBRA=transpose(B.data(32,3:qw))/PBRA;
 NBRA=zeros(D,1);
 for j=1:7
     NBRA(j,1)=ABRA(j,1)/j;
@@ -63,8 +63,8 @@ end
 
 % Colombia
 PCOL=51.503463;
-ACOL=transpose(A.data(93,3:qw))/PCOL;
-BCOL=transpose(B.data(93,3:qw))/PCOL;
+ACOL=transpose(A.data(94,3:qw))/PCOL;
+BCOL=transpose(B.data(94,3:qw))/PCOL;
 NCOL=zeros(D,1);
 for j=1:7
     NCOL(j,1)=ACOL(j,1)/j;
@@ -85,13 +85,13 @@ PFRA=65.439014;
 PITA=60.359899;
 PESP=46.775535;
 PFIE=PFRA+PITA+PESP;
-AFRA=transpose(A.data(131,3:qw));
-AITA=transpose(A.data(154,3:qw));
-AESP=transpose(A.data(239,3:qw));
+AFRA=transpose(A.data(132,3:qw));
+AITA=transpose(A.data(155,3:qw));
+AESP=transpose(A.data(240,3:qw));
 AFIE=(AFRA+AITA+AESP)/PFIE;
-BFRA=transpose(B.data(131,3:qw));
-BITA=transpose(B.data(154,3:qw));
-BESP=transpose(B.data(239,3:qw));
+BFRA=transpose(B.data(132,3:qw));
+BITA=transpose(B.data(155,3:qw));
+BESP=transpose(B.data(240,3:qw));
 BFIE=(BFRA+BITA+BESP)/PFIE;
 NFIE=zeros(D,1);
 for j=1:7
@@ -110,8 +110,8 @@ end
 
 % Mexico
 PMEX=130.482814;
-AMEX=transpose(A.data(184,3:qw))/PMEX;
-BMEX=transpose(B.data(184,3:qw))/PMEX;
+AMEX=transpose(A.data(185,3:qw))/PMEX;
+BMEX=transpose(B.data(185,3:qw))/PMEX;
 NMEX=zeros(D,1);
 for j=1:7
     NMEX(j,1)=AMEX(j,1)/j;
@@ -129,8 +129,8 @@ end
 
 % United Staes
 PUSA=333.225477;
-AUSA=transpose(A.data(256,3:qw))/PUSA;
-BUSA=transpose(B.data(256,3:qw))/PUSA;
+AUSA=transpose(A.data(257,3:qw))/PUSA;
+BUSA=transpose(B.data(257,3:qw))/PUSA;
 NUSA=zeros(D,1);
 for j=1:7
     NUSA(j,1)=AUSA(j,1)/j;
@@ -148,8 +148,8 @@ end
 
 % United Kingdom
 PGBR=68.294438;
-AGBR=transpose(A.data(271,3:qw))/PGBR;
-BGBR=transpose(B.data(271,3:qw))/PGBR;
+AGBR=transpose(A.data(272,3:qw))/PGBR;
+BGBR=transpose(B.data(272,3:qw))/PGBR;
 NGBR=zeros(D,1);
 for j=1:7
     NGBR(j,1)=AGBR(j,1)/j;
