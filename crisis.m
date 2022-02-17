@@ -274,12 +274,12 @@ end
 
 % United Kingdom
 PGBR=68.294438;
-WGBR=transpose(W.data(272,3:qw))/PGBR;
+WGBR=transpose(W.data(274,3:qw))/PGBR;
 GBR=zeros(DD,1);
 for j=1:DD
     GBR(j,1)=max(0,WGBR(j+679,1)-WGBR(j+672,1))/7;
 end
-UGBR=transpose(U.data(272,3:qu))/PGBR;
+UGBR=transpose(U.data(274,3:qu))/PGBR;
 DEGBR=zeros(DD,1);
 for j=1:DD
     DEGBR(j,1)=max(0,UGBR(j+679,1)-UGBR(j+672,1))/7;
@@ -287,7 +287,7 @@ end
 
 % Vietnam
 PVNM=98.341025;
-WVNM=transpose(W.data(277,3:qw))/PVNM;
+WVNM=transpose(W.data(279,3:qw))/PVNM;
 VNM=zeros(DD,1);
 for j=1:DD
     VNM(j,1)=max(0,WVNM(j+679,1)-WVNM(j+672,1))/7;

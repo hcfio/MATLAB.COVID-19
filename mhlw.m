@@ -203,7 +203,7 @@ legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
 %
 subplot(2,2,4)
 plot([NDJPN,NDTKY,NDOKNW,NDOSK,NDHYG,NDHKD],'LineWidth',2)
-title('COVID-19: 7-day average of deaths per 1M','data sourced by MOH of Japan')
+title('COVID-19: 7-day average of daily deaths per 1M','data sourced by MOH of Japan')
 xlabel('date')
 ylabel('deaths/1M')
 xticks([1 floor(D/3) floor(2*D/3) D])

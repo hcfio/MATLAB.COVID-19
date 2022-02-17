@@ -148,8 +148,8 @@ end
 
 % United Kingdom
 PGBR=68.294438;
-AGBR=transpose(A.data(272,3:qw))/PGBR;
-BGBR=transpose(B.data(272,3:qw))/PGBR;
+AGBR=transpose(A.data(274,3:qw))/PGBR;
+BGBR=transpose(B.data(274,3:qw))/PGBR;
 NGBR=zeros(D,1);
 for j=1:7
     NGBR(j,1)=AGBR(j,1)/j;
