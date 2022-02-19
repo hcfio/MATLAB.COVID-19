@@ -436,22 +436,22 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([USA,TKY,OKNW,OSK,AUS,NSW,VIC,FIE,GBR,SIN],'LineWidth',2)
+plot([USA,TKY,OKNW,OSK,AUS,KOR,MYS,FIE,GBR,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('United States','Tokyo','Okinawa','Osaka','Australia','New South Wales','Victoria','FRA+ITA+ESP','United Kingdom','Singapore','Location','northwest');
+legend('United States','Tokyo','Okinawa','Osaka','Australia','South Korea','Malaysia','FRA+ITA+ESP','United Kingdom','Singapore','Location','northwest');
 %
 subplot(2,2,2)
-plot([JPN,TKY,OKNW,OSK,VNM,KOR,MYS,IND,PHI,SIN],'LineWidth',2)
+plot([JPN,TKY,OKNW,OSK,VNM,IDN,BWN,IND,PHI,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Japan','Tokyo','Okinawa','Osaka','Vietnam','South Korea','Malaysia','India','Philippines','Singapore','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Osaka','Vietnam','Indonesia','Brunei','India','Philippines','Singapore','Location','northwest');
 %
 subplot(2,2,3)
 plot([VBWN,VMYS,VPHI,VSIN,VTHA,VVNM,VCHN,VIDN,VJPN,VUSA],'LineWidth',2)
