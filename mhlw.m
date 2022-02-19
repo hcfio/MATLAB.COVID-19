@@ -31,7 +31,7 @@ ll1=datestr(dd0+days(floor((DD-1)/2)),'yyyy-mm-dd');
 ll2=datestr(d1,'yyyy-mm-dd');
 
 % Japan
-PJPN=125.36;
+PJPN=125.845010;
 XJPN=VN(:,1)/PJPN;
 CJPN=VC(:,1)/PJPN;
 DJPN=VD(:,1)/PJPN;
@@ -53,7 +53,7 @@ for j=8:D
 end
 
 % Tokyo
-PTKY=14.049146;
+PTKY=13.988129;
 XTKY=VN(:,14)/PTKY;
 CTKY=VC(:,14)/PTKY;
 DTKY=VD(:,14)/PTKY;
@@ -75,7 +75,7 @@ for j=8:D
 end
 
 % Okinawa
-POKNW=1.458870;
+POKNW=1.469335;    
 XOKNW=VN(:,48)/POKNW;
 COKNW=VC(:,48)/POKNW;
 DOKNW=VD(:,48)/POKNW;
@@ -97,7 +97,7 @@ for j=8:D
 end
 
 % Osaka
-POSK=8.798545;
+POSK=8.797153;
 XOSK=VN(:,28)/POSK;
 COSK=VC(:,28)/POSK;
 DOSK=VD(:,28)/POSK;
@@ -119,7 +119,7 @@ for j=8:D
 end
 
 % Hyogo
-PHYG=5.446455;
+PHYG=5.425850;
 XHYG=VN(:,29)/PHYG;
 CHYG=VC(:,29)/PHYG;
 DHYG=VD(:,29)/PHYG;
@@ -141,7 +141,7 @@ for j=8:D
 end
 
 % Hokkaido
-PHKD=5.207185;
+PHKD=5.191355;
 XHKD=VN(:,2)/PHKD;
 CHKD=VC(:,2)/PHKD;
 DHKD=VD(:,2)/PHKD;

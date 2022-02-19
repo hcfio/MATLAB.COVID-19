@@ -23,7 +23,7 @@ ll1=datestr(ddd0+days(floor((DD-1)/2)),'yyyy-mm-dd');
 ll2=datestr(d1,'yyyy-mm-dd');
 
 % Japan (125M)
-PJPN=125.36;
+PJPN=125.845010;
 JPN1=JP.data(:,2)/PJPN;
 JPN2=JP.data(:,4)/PJPN;
 JPN3=zeros(D,1);
@@ -42,7 +42,7 @@ for j=8:D
 end
 
 % Tokyo: code 13, 
-PTKY=14.049146;
+PTKY=13.988129;
 ROWTKY=find(B(:)==13);
 TKY1=A.data(ROWTKY,2)/PTKY;
 TKY2=A.data(ROWTKY,4)/PTKY;
@@ -62,7 +62,7 @@ for j=8:D
 end
 
 % Okinawa: code 47
-POKNW=1.458870;
+POKNW=1.469335;    
 ROWOKNW=find(B(:)==47);
 OKNW1=A.data(ROWOKNW,2)/POKNW;
 OKNW2=A.data(ROWOKNW,4)/POKNW;
@@ -82,7 +82,7 @@ for j=8:D
 end
 
 % Osaka: code 27
-POSK=8.798545;
+POSK=8.797153;
 ROWOSK=find(B(:)==27);
 OSK1=A.data(ROWOSK,2)/POSK;
 OSK2=A.data(ROWOSK,4)/POSK;
@@ -102,7 +102,7 @@ for j=8:D
 end
 
 % Hyogo: code 28
-PHYG=5.446455;
+PHYG=5.425850;
 rowhyg=find(B(:)==28);
 HYG1=A.data(rowhyg,2)/PHYG;
 HYG2=A.data(rowhyg,4)/PHYG;
@@ -122,7 +122,7 @@ for j=8:D
 end
 
 % Hokkaido: code 1,
-PHKD=5.207185;
+PHKD=5.191355;
 rowhkd=find(B(:)==1);
 HKD1=A.data(rowhkd,2)/PHKD;
 HKD2=A.data(rowhkd,4)/PHKD;

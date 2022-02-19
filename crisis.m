@@ -14,7 +14,7 @@ ll2=datestr(dd0+days(floor(2*(DD-1)/3)),'yyyy-mm-dd');
 ll3=datestr(dd1,'yyyy-mm-dd');
 
 % Argentina
-PARG=45.672715;
+PARG=45.870820;
 WARG=transpose(W.data(8,3:qw))/PARG;
 ARG=zeros(DD,1);
 for j=1:DD
@@ -27,7 +27,7 @@ for j=1:DD
 end
 
 % NSW
-PNSW=8.196;
+PNSW=8.21;
 WNSW=transpose(W.data(11,3:qw))/PNSW;
 NSW=zeros(DD,1);
 for j=1:DD
@@ -35,7 +35,7 @@ for j=1:DD
 end
 
 % Victoria
-PVIC=6.7;
+PVIC=6.64;
 WVIC=transpose(W.data(16,3:qw))/PVIC;
 VIC=zeros(DD,1);
 for j=1:DD
@@ -43,7 +43,7 @@ for j=1:DD
 end
 
 % Australia
-PAUS=25.739256;
+PAUS=25.981402;
 WACT=transpose(W.data(10,3:qw));
 WNSW=transpose(W.data(11,3:qw));
 WNT=transpose(W.data(12,3:qw));
@@ -73,7 +73,7 @@ end
 
 
 % Brazil
-PBRA=214.289417;
+PBRA=215.019011;
 UBRA=transpose(U.data(32,3:qu))/PBRA;
 DEBRA=zeros(DD,1);
 for j=1:DD
@@ -81,7 +81,7 @@ for j=1:DD
 end
 
 % Brunei Darussalam
-PBWN=0.442205;
+PBWN=0.4435;
 WBWN=transpose(W.data(33,3:qw))/PBWN;
 BWN=zeros(DD,1);
 for j=1:DD
@@ -89,9 +89,9 @@ for j=1:DD
 end
 
 % France Italy Spain 
-PFRA=65.439014;
-PITA=60.359899;
-PESP=46.775535;
+PFRA=65.508662;
+PITA=60.317073;
+PESP=46.784213;
 PFIE=PFRA+PITA+PESP;
 WFRA=transpose(W.data(132,3:qw));
 WITA=transpose(W.data(155,3:qw));
@@ -111,7 +111,7 @@ for j=1:DD
 end
 
 % India
-PIND=1395.531433;
+PIND=1402.124607;
 WIND=transpose(W.data(149,3:qw))/PIND;
 IND=zeros(DD,1);
 for j=1:DD
@@ -124,7 +124,7 @@ for j=1:DD
 end
 
 % Indonesia
-PIDN=276.833206;
+PIDN=278.239007;
 WIDN=transpose(W.data(150,3:qw))/PIDN;
 IDN=zeros(DD,1);
 for j=1:DD
@@ -136,21 +136,8 @@ for j=1:DD
     DEIDN(j,1)=max(0,UIDN(j+679,1)-UIDN(j+672,1))/7;
 end
 
-% Israel
-PISR=8.814662;
-WISR=transpose(W.data(154,3:qw))/PISR;
-ISR=zeros(DD,1);
-for j=1:DD
-    ISR(j,1)=max(0,WISR(j+679,1)-WISR(j+672,1))/7;
-end
-UISR=transpose(U.data(154,3:qu))/PISR;
-DEISR=zeros(DD,1);
-for j=1:DD
-    DEISR(j,1)=max(0,UISR(j+679,1)-UISR(j+672,1))/7;
-end
-
 % Japan
-PJPN=125.36;
+PJPN=125.845010;
 WJPN=transpose(W.data(157,3:qw))/PJPN;
 JPN=zeros(DD,1);
 for j=1:DD
@@ -158,7 +145,7 @@ for j=1:DD
 end
 
 % South Korea
-PKOR=51.318552;
+PKOR=51.341022;
 WKOR=transpose(W.data(162,3:qw))/PKOR;
 KOR=zeros(DD,1);
 for j=1:DD
@@ -166,7 +153,7 @@ for j=1:DD
 end
 
 % Malaysia
-PMYS=32.66;
+PMYS=33.060794;
 WMYS=transpose(W.data(178,3:qw))/PMYS;
 MYS=zeros(DD,1);
 for j=1:DD
@@ -179,23 +166,15 @@ for j=1:DD
 end
 
 % Mexico
-PMEX=130.482814;
+PMEX=131.137507;
 UMEX=transpose(U.data(185,3:qu))/PMEX;
 DEMEX=zeros(DD,1);
 for j=1:DD
     DEMEX(j,1)=max(0,UMEX(j+679,1)-UMEX(j+672,1))/7;
 end
 
-% Peru
-PPER=33.525950;
-UPER=transpose(U.data(213,3:qu))/PPER;
-DEPER=zeros(DD,1);
-for j=1:DD
-    DEPER(j,1)=max(0,UPER(j+679,1)-UPER(j+672,1))/7;
-end
-
 % Philippines
-PPHI=111.249116;
+PPHI=112.027348;
 WPHI=transpose(W.data(214,3:qw))/PPHI;
 PHI=zeros(DD,1);
 for j=1:DD
@@ -208,7 +187,7 @@ for j=1:DD
 end
 
 % Russia
-PRUS=146.013169;
+PRUS=146.036343;
 WRUS=transpose(W.data(219,3:qw))/PRUS;
 RUS=zeros(DD,1);
 for j=1:DD
@@ -221,7 +200,7 @@ for j=1:DD
 end
 
 % Singapore
-PSIN=5.902011;
+PSIN=5.925237;
 WSIN=transpose(W.data(232,3:qw))/PSIN;
 SIN=zeros(DD,1);
 for j=1:DD
@@ -234,7 +213,7 @@ for j=1:DD
 end
 
 % Sri Lanka
-PLKA=21.516097;
+PLKA=21.559415;
 WLKA=transpose(W.data(240,3:qw))/PLKA;
 LKA=zeros(DD,1);
 for j=1:DD
@@ -247,7 +226,7 @@ for j=1:DD
 end
 
 % Thailand
-PTHA=70.000662;
+PTHA=70.085127;
 WTHA=transpose(W.data(250,3:qw))/PTHA;
 THA=zeros(DD,1);
 for j=1:DD
@@ -260,7 +239,7 @@ for j=1:DD
 end
 
 % United Staes
-PUSA=333.225477;
+PUSA=334.207212;
 WUSA=transpose(W.data(257,3:qw))/PUSA;
 USA=zeros(DD,1);
 for j=1:DD
@@ -273,7 +252,7 @@ for j=1:DD
 end
 
 % United Kingdom
-PGBR=68.294438;
+PGBR=68.466544;
 WGBR=transpose(W.data(274,3:qw))/PGBR;
 GBR=zeros(DD,1);
 for j=1:DD
@@ -286,7 +265,7 @@ for j=1:DD
 end
 
 % Vietnam
-PVNM=98.341025;
+PVNM=98.953541;
 WVNM=transpose(W.data(279,3:qw))/PVNM;
 VNM=zeros(DD,1);
 for j=1:DD
@@ -301,7 +280,7 @@ VC=XC.data(:,:);
 VD=XD.data(:,:);
 
 % Okinawa (1.46M): code 47
-POKNW=1.458870;
+POKNW=1.469335;    
 OKNW1=VC(:,48)/POKNW;
 OKNW2=VD(:,48)/POKNW;
 OKNW=zeros(DD,1);
@@ -314,7 +293,7 @@ for j=1:DD
 end
 
 % Tokyo (14M): code 13, 
-PTKY=14.049146;
+PTKY=13.988129;
 TKY1=VC(:,14)/PTKY;
 TKY=zeros(DD,1);
 for j=1:DD
@@ -322,7 +301,7 @@ for j=1:DD
 end
 
 % Osaka: code 28
-POSK=8.798545;
+POSK=8.797153;
 OSK1=VC(:,28)/POSK;
 OSK2=VD(:,28)/POSK;
 OSK=zeros(DD,1);

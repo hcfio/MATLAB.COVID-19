@@ -23,7 +23,7 @@ ll1=datestr(dd0+days(floor((DD-1)/2)),'yyyy-mm-dd');
 ll2=datestr(dd1,'yyyy-mm-dd');
 
 % Argentina
-PARG=45.672715;
+PARG=45.870820;
 AARG=transpose(A.data(8,3:qw))/PARG;
 BARG=transpose(B.data(8,3:qw))/PARG;
 NARG=zeros(D,1);
@@ -42,7 +42,7 @@ for j=8:D
 end
 
 % Brazil
-PBRA=214.289417;
+PBRA=215.019011;
 ABRA=transpose(A.data(32,3:qw))/PBRA;
 BBRA=transpose(B.data(32,3:qw))/PBRA;
 NBRA=zeros(D,1);
@@ -62,7 +62,7 @@ end
 
 
 % Colombia
-PCOL=51.503463;
+PCOL=51.765589;
 ACOL=transpose(A.data(94,3:qw))/PCOL;
 BCOL=transpose(B.data(94,3:qw))/PCOL;
 NCOL=zeros(D,1);
@@ -81,9 +81,9 @@ for j=8:D
 end
 
 % France Italy Spwin
-PFRA=65.439014;
-PITA=60.359899;
-PESP=46.775535;
+PFRA=65.508662;
+PITA=60.317073;
+PESP=46.784213;
 PFIE=PFRA+PITA+PESP;
 AFRA=transpose(A.data(132,3:qw));
 AITA=transpose(A.data(155,3:qw));
@@ -109,7 +109,7 @@ for j=8:D
 end
 
 % Mexico
-PMEX=130.482814;
+PMEX=131.137507;
 AMEX=transpose(A.data(185,3:qw))/PMEX;
 BMEX=transpose(B.data(185,3:qw))/PMEX;
 NMEX=zeros(D,1);
@@ -128,7 +128,7 @@ for j=8:D
 end
 
 % United Staes
-PUSA=333.225477;
+PUSA=334.207212;
 AUSA=transpose(A.data(257,3:qw))/PUSA;
 BUSA=transpose(B.data(257,3:qw))/PUSA;
 NUSA=zeros(D,1);
@@ -147,7 +147,7 @@ for j=8:D
 end
 
 % United Kingdom
-PGBR=68.294438;
+PGBR=68.466544;
 AGBR=transpose(A.data(274,3:qw))/PGBR;
 BGBR=transpose(B.data(274,3:qw))/PGBR;
 NGBR=zeros(D,1);

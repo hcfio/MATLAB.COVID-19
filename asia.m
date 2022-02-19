@@ -22,25 +22,6 @@ ll0=datestr(dd0,'yyyy-mm-dd');
 ll1=datestr(dd0+days(floor((DD-1)/2)),['yyyy-mm-dd']);
 ll2=datestr(dd1,'yyyy-mm-dd');
 
-% Bangladesh
-PBGD=166.567052;
-ABGD=transpose(A.data(22,3:qw))/PBGD;
-BBGD=transpose(B.data(22,3:qw))/PBGD;
-NBGD=zeros(D,1);
-for j=1:7
-    NBGD(j,1)=ABGD(j,1)/j;
-end
-for j=8:D
-    NBGD(j,1)=max(0,ABGD(j,1)-ABGD(j-7,1))/7;
-end
-NDBGD=zeros(D,1);
-for j=1:7
-    NDBGD(j,1)=BBGD(j,1)/7;
-end
-for j=8:D
-    NDBGD(j,1)=(BBGD(j,1)-BBGD(j-7,1))/7;
-end
-
 % India
 PIND=1395.531433;
 AIND=transpose(A.data(149,3:qw))/PIND;
@@ -61,7 +42,7 @@ for j=8:D
 end
 
 % Indonesia
-PIDN=276.833206;
+PIDN=278.239007;
 AIDN=transpose(A.data(150,3:qw))/PIDN;
 BIDN=transpose(B.data(150,3:qw))/PIDN;
 NIDN=zeros(D,1);
@@ -80,7 +61,7 @@ for j=8:D
 end
 
 % Japwn
-PJPN=126.032481;
+PJPN=125.845010;
 AJPN=transpose(A.data(157,3:qw))/PJPN;
 BJPN=transpose(B.data(157,3:qw))/PJPN;
 NJPN=zeros(D,1);
@@ -99,7 +80,7 @@ for j=8:D
 end
 
 % South Korea
-PKOR=51.319753;
+PKOR=51.341022;
 AKOR=transpose(A.data(162,3:qw))/PKOR;
 BKOR=transpose(B.data(162,3:qw))/PKOR;
 NKOR=zeros(D,1);
@@ -118,7 +99,7 @@ for j=8:D
 end
 
 % Malaysia
-PMYS=32.7;
+PMYS=33.060794;
 AMYS=transpose(A.data(178,3:qw))/PMYS;
 BMYS=transpose(B.data(178,3:qw))/PMYS;
 NMYS=zeros(D,1);
@@ -136,8 +117,8 @@ for j=8:D
     NDMYS(j,1)=(BMYS(j,1)-BMYS(j-7,1))/7;
 end
 
-% Nepwl
-PNPL=29.735589;
+% Nepal
+PNPL=29.989352;
 ANPL=transpose(A.data(194,3:qw))/PNPL;
 BNPL=transpose(B.data(194,3:qw))/PNPL;
 NNPL=zeros(D,1);
@@ -155,27 +136,8 @@ for j=8:D
     NDNPL(j,1)=(BNPL(j,1)-BNPL(j-7,1))/7;
 end
 
-% Pakistan
-PPAK=225.791619;
-APAK=transpose(A.data(208,3:qw))/PPAK;
-BPAK=transpose(B.data(208,3:qw))/PPAK;
-NPAK=zeros(D,1);
-for j=1:7
-    NPAK(j,1)=APAK(j,1)/j;
-end
-for j=8:D
-    NPAK(j,1)=max(0,APAK(j,1)-APAK(j-7,1))/7;
-end
-NDPAK=zeros(D,1);
-for j=1:7
-    NDPAK(j,1)=BPAK(j,1)/7;
-end
-for j=8:D
-    NDPAK(j,1)=(BPAK(j,1)-BPAK(j-7,1))/7;
-end
-
 % Philippines
-PPHI=111.249116;
+PPHI=112.027348;
 APHI=transpose(A.data(214,3:qw))/PPHI;
 BPHI=transpose(B.data(214,3:qw))/PPHI;
 NPHI=zeros(D,1);
@@ -194,7 +156,7 @@ for j=8:D
 end
 
 % Singapore
-PSIN=5.902011;
+PSIN=5.925237;
 ASIN=transpose(A.data(232,3:qw))/PSIN;
 BSIN=transpose(B.data(232,3:qw))/PSIN;
 NSIN=zeros(D,1);
@@ -213,7 +175,7 @@ for j=8:D
 end
 
 % Sri Lanka
-PLKA=21.516097;
+PLKA=21.559415;
 ALKA=transpose(A.data(240,3:qw))/PLKA;
 BLKA=transpose(B.data(240,3:qw))/PLKA;
 NLKA=zeros(D,1);
@@ -232,7 +194,7 @@ for j=8:D
 end
 
 % Thailand
-PTHA=70.000662;
+PTHA=70.085127;
 ATHA=transpose(A.data(250,3:qw))/PTHA;
 BTHA=transpose(B.data(250,3:qw))/PTHA;
 NTHA=zeros(D,1);
@@ -250,6 +212,25 @@ for j=8:D
     NDTHA(j,1)=(BTHA(j,1)-BTHA(j-7,1))/7;
 end
 
+% Vietnam
+PVNM=98.953541;
+AVNM=transpose(A.data(279,3:qw))/PVNM;
+BVNM=transpose(B.data(279,3:qw))/PVNM;
+NVNM=zeros(D,1);
+for j=1:7
+    NVNM(j,1)=AVNM(j,1)/j;
+end
+for j=8:D
+    NVNM(j,1)=max(0,AVNM(j,1)-AVNM(j-7,1))/7;
+end
+NDVNM=zeros(D,1);
+for j=1:7
+    NDVNM(j,1)=BVNM(j,1)/7;
+end
+for j=8:D
+    NDVNM(j,1)=(BVNM(j,1)-BVNM(j-7,1))/7;
+end
+
 newcolors = [0 0 1; 
              1 131/255 0; 
              0 1 0; 
@@ -264,39 +245,39 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([AJPN,APHI,AMYS,AIDN,AIND,ANPL,ABGD,ALKA,ATHA,ASIN],'LineWidth',2)
+plot([AJPN,APHI,AMYS,AIDN,AIND,AVNM,AKOR,ALKA,ATHA,ASIN],'LineWidth',2)
 title('COVID-19: cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D]);
 xticklabels({[l0],[l1],[l2],[l3]});
-legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','Bangladesh','Sri Lanka','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Indonesia','India','Vietnam','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
 % plot
 subplot(2,2,2)
-plot([BJPN,BPHI,BMYS,BIDN,BIND,BNPL,BBGD,BLKA,BTHA,BSIN],'LineWidth',2)
+plot([BJPN,BPHI,BMYS,BIDN,BIND,BVNM,BKOR,BLKA,BTHA,BSIN],'LineWidth',2)
 title('COVID-19: deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','Bangladesh','Sri Lanka','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Indonesia','India','Vietnam','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
 % plot
 subplot(2,2,3)
-plot([NJPN,NPHI,NMYS,NIDN,NIND,NNPL,NBGD,NLKA,NTHA,NSIN],'LineWidth',2)
+plot([NJPN,NPHI,NMYS,NIDN,NIND,NVNM,NKOR,NLKA,NTHA,NSIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','Bangladesh','Sri Lanka','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
 % plot
 subplot(2,2,4)
-plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDNPL,NDBGD,NDLKA,NDTHA,NDSIN],'LineWidth',2)
+plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDVNM,NDKOR,NDLKA,NDTHA,NDSIN],'LineWidth',2)
 title('COVID-19: 7-day average deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','Bangladesh','Sri Lanka','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
 set(gcf,'Position',[600,200,1300,800]);
 saveas(gcf,'asia.png');

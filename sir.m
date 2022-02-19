@@ -28,7 +28,7 @@ ll1=datestr(d1+days(14),'yyyy-mm-dd');
 ll2=datestr(d2,'yyyy-mm-dd');
 
 % Japan
-PJPN=125.36;
+PJPN=125.845010;
 XJPN=VN(:,1)/PJPN;
 CJPN=VC(:,1)/PJPN;
 DJPN=VD(:,1)/PJPN;
@@ -36,7 +36,7 @@ RJPN=VR(:,2)/PJPN;
 AJPN=CJPN-RJPN-DJPN;
 
 % Tokyo
-PTKY=14.049146;
+PTKY=13.988129;
 XTKY=VN(:,14)/PTKY;
 CTKY=VC(:,14)/PTKY;
 DTKY=VD(:,14)/PTKY;
@@ -44,7 +44,7 @@ RTKY=VR(:,41)/PTKY;
 ATKY=CTKY-RTKY-DTKY;
 
 % Okinawa
-POKNW=1.458870;
+POKNW=1.469335;    
 XOKNW=VN(:,48)/POKNW;
 COKNW=VC(:,48)/POKNW;
 DOKNW=VD(:,48)/POKNW;
