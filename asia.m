@@ -269,7 +269,7 @@ xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Indonesia','India','Vietnam','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
 % plot
 subplot(2,2,4)
 plot([NDJPN,NDPHI,NDMYS,NDIDN,NDIND,NDVNM,NDKOR,NDLKA,NDTHA,NDSIN],'LineWidth',2)
@@ -278,6 +278,6 @@ xlabel('date');
 ylabel('deaths/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Indonesia','India','Nepwl','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Indonesia','India','Vietnam','South Korea','Sri Lanka','Thailand','Singapore','Location','northwest');
 set(gcf,'Position',[600,200,1300,800]);
 saveas(gcf,'asia.png');
