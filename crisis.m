@@ -93,6 +93,19 @@ for j=1:DD
     DEBWN(j,1)=max(0,UBWN(j+679,1)-UBWN(j+672,1))/7;
 end
 
+% Hong Kong 
+PHKG=7.600852;
+WHKG=transpose(W.data(72,3:qw))/PHKG;
+HKG=zeros(DD,1);
+for j=1:DD
+    HKG(j,1)=max(0,WHKG(j+679,1)-WHKG(j+672,1))/7;
+end
+UHKG=transpose(U.data(72,3:qu))/PHKG;
+DEHKG=zeros(DD,1);
+for j=1:DD
+    DEHKG(j,1)=max(0,UHKG(j+679,1)-UHKG(j+672,1))/7;
+end
+
 % France Italy Spain 
 PFRA=65.508662;
 PITA=60.317073;
@@ -426,22 +439,22 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([MYS,TKY,OKNW,OSK,KOR,AUS,BWN,USA,GBR,SIN],'LineWidth',2)
+plot([HKG,AUS,MYS,OSK,KOR,VNM,BWN,USA,GBR,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Malaysia','Tokyo','Okinawa','Osaka','South Korea','Australia','Brunei','United States','United Kingdom','Singapore','Location','northwest');
+legend('Hong Kong','Australia','Malaysia','Osaka','South Korea','Vietnam','Brunei','United States','United Kingdom','Singapore','Location','northwest');
 %
 subplot(2,2,2)
-plot([JPN,TKY,OKNW,OSK,VNM,IDN,KOR,IND,PHI,THA],'LineWidth',2)
+plot([JPN,TKY,OKNW,OSK,THA,VNM,IDN,IND,PHI,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Japan','Tokyo','Okinawa','Osaka','Vietnam','Indonesia','South Korea','India','Philippines','Tailand','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Osaka','Thailand','Vietnam','Indonesia','India','Philippines','Singapore','Location','northwest');
 %
 subplot(2,2,3)
 plot([VBWN,VMYS,VPHI,VSIN,VTHA,VVNM,VCHN,VIDN,VJPN,VUSA],'LineWidth',2)
