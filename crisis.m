@@ -167,13 +167,17 @@ for j=1:DD
     DEJPN(j,1)=max(0,UJPN(j+710,1)-UJPN(j+703,1))/7;
 end
 
-
 % South Korea
 PKOR=51.341022;
 WKOR=transpose(W.data(162,3:qw))/PKOR;
 KOR=zeros(DD,1);
 for j=1:DD
     KOR(j,1)=max(0,WKOR(j+710,1)-WKOR(j+703,1))/7;
+end
+UKOR=transpose(U.data(157,3:qu))/PKOR;
+DEKOR=zeros(DD,1);
+for j=1:DD
+    DEKOR(j,1)=max(0,UKOR(j+710,1)-UKOR(j+703,1))/7;
 end
 
 % Malaysia
@@ -466,13 +470,13 @@ xticklabels({[l0],[l1],[l2],[l3]})
 legend('Japan','Malaysia','Philippines','Indonesia','Thailand','Vietnam','Brunei','United States','China','Singapore','Location','northwest');
 %
 subplot(2,2,4)
-plot([DEJPN,DEGBR,DEUSA,DEOSK,DEAUS,DEMEX,DEBWN,DERUS,DEBRA,DESIN],'LineWidth',2)
+plot([DEJPN,DEAUS,DEUSA,DEOSK,DEKOR,DEGBR,DEBWN,DERUS,DEBRA,DESIN],'LineWidth',2)
 title('COVID-19: 7-day average of deaths per 1M','data sourced by JHU and MOH of Japan')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Japan','United Kingdom','United States','Osaka','Australia','Mexico','Brunei','Russia','Brazil','Singapore','Location','northwest');
+legend('Japan','Australia','United States','Osaka','South Korea','United Kingdom','Brunei','Russia','Brazil','Singapore','Location','northwest');
 %
 set(gcf,'Position',[600,200,1200,800]);
 saveas(gcf,'crisis.png');
