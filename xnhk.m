@@ -81,14 +81,22 @@ for j=1:D
     KYU3(j,1)=(KYU1(j+716,1)-KYU1(j+709,1))/7;
 end
 
+% Hokkaido code 1
+PHKD=5.191355;
+ROWHKD=find(B(:)==1);
+HKD1=A.data(ROWHKD,2)/PHKD;
+HKD3=zeros(D,1);
+for j=1:D
+    HKD3(j,1)=(HKD1(j+716,1)-HKD1(j+709,1))/7;
+end
 
 newcolors = [0 0 1; 
              1 131/255 0; 
              0 1 0; 
              1 0 0; 
+             169/255 80/255 69/255;
              0 191/255 1;
              138/255 43/255 226/255; 
-             169/255 80/255 69/255;
              1 0 1; 
              220/255 220/255 220/255; 
              1 191/255 17/255];
@@ -97,12 +105,12 @@ colororder(newcolors)
 % colororder(c);
 
 % plot
-plot([JPN3,TKY3,OKNW3,OSK3,KYU3],'LineWidth',2)
+plot([JPN3,TKY3,OKNW3,OSK3,HKD3,KYU3],'LineWidth',2)
 title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (Japanese Public TV)')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 32 60 91 D])
 xticklabels({[l0],[l1],[l2],[l3],[ll]})
-legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Kyushu','Location','northwest');
 set(gcf,'Position',[600,200,600,400]);
 saveas(gcf,'xnhk.png');
