@@ -12,9 +12,8 @@ dd1=strrep(A.textdata(l+1,1),'/','-');
 d1=datetime(dd1);
 D=1+days(d1-d0);
 l0=datestr(d0,'yyyy-mm-dd');
-l1=string('2022-02-01');
-l2=string('2022-03-01');
-l3=string('2022-04-01');
+l1=string('2022-03-01');
+l2=string('2022-05-01');
 ll=datestr(d1,'yyyy-mm-dd');
 
 % Japan (125M)
@@ -109,8 +108,8 @@ plot([JPN3,TKY3,OKNW3,OSK3,HKD3,KYU3],'LineWidth',2)
 title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (Japanese Public TV)')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 32 60 91 D])
-xticklabels({[l0],[l1],[l2],[l3],[ll]})
+xticks([1 60 D]) % l2 121
+xticklabels({[l0],[l1],[l2],[ll]})
 legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Kyushu','Location','northwest');
 set(gcf,'Position',[600,200,600,400]);
 saveas(gcf,'xnhk.png');
