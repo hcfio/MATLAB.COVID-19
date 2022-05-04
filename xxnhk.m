@@ -104,6 +104,9 @@ colororder(newcolors)
 % c=hsv(6);
 % colororder(c);
 
+
+v = VideoWriter('xxnhk.avi');
+open(v);
 % plot
 for k=1:D
     JPN=JPN3(1:k,1);
@@ -123,4 +126,8 @@ for k=1:D
     legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Kyushu','Location','northwest');
     drawnow
     pause(0.02)
+    frame = getframe(gcf);
+    writeVideo(v,frame);
 end
+
+close(v);

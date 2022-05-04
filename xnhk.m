@@ -109,7 +109,7 @@ title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 60 D]) % l2 121
-xticklabels({[l0],[l1],[l2],[ll]})
+xticklabels({[l0],[l1],[ll]})
 legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Kyushu','Location','northwest');
 set(gcf,'Position',[600,200,600,400]);
 saveas(gcf,'xnhk.png');
