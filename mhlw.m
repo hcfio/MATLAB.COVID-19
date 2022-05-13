@@ -66,7 +66,7 @@ end
 for j=8:D
     NTKY(j,1)=(CTKY(j,1)-CTKY(j-7,1))/7;
 end
-NDTKY=zeros(1,D);
+NDTKY=zeros(D,1);
 for j=1:7
     NDTKY(j,1)=(DTKY(j,1)-DTKY(1,1))/j;
 end
@@ -88,7 +88,7 @@ end
 for j=8:D
     NOKNW(j,1)=(COKNW(j,1)-COKNW(j-7,1))/7;
 end
-NDOKNW=zeros(1,D);
+NDOKNW=zeros(D,1);
 for j=1:7
     NDOKNW(j,1)=(DOKNW(j,1)-DOKNW(1,1))/j;
 end
@@ -130,11 +130,11 @@ for j=1:7
     NHYG(j,1)=(XHYG(j+104,1)+XHYG(j+103,1)+XHYG(j+102,1)+XHYG(j+101,1)+XHYG(j+100,1)+XHYG(j+99,1)+XHYG(j+98,1))/7;
 end
 for j=8:D
-    NDHYG(j,1)=(DHYG(j,1)-DHYG(1,1))/j;
+    NHYG(j,1)=(CHYG(j,1)-CHYG(j-7,1))/7;
 end
 NDHYG=zeros(D,1);
 for j=1:7
-    NDHYG(j,1)=DHYG(j,1)/j;
+    NDHYG(j,1)=(DHYG(j,1)-DHYG(1,1))/j;
 end
 for j=8:D
     NDHYG(j,1)=(DHYG(j,1)-DHYG(j-7,1))/7;
@@ -156,7 +156,7 @@ for j=8:D
 end
 NDHKD=zeros(D,1);
 for j=1:7
-    NDHYG(j,1)=(DHYG(j,1)-DHYG(1,1))/j;
+    NDHKD(j,1)=(DHKD(j,1)-DHKD(1,1))/j;
 end
 for j=8:D
     NDHKD(j,1)=(DHKD(j,1)-DHKD(j-7,1))/7;
@@ -173,10 +173,9 @@ newcolors = [0 0 1;
              1 191/255 17/255; 
              0 191/255 1];
 colororder(newcolors) 
-
 subplot(2,2,1)
-plot([CJPN,CTKY,COKNW,COSK],'LineWidth',2)
-title('COVID-19: cases per 1M','data sourced by MOH of Japan')
+plot([CJPN CTKY COKNW COSK],'LineWidth',2)
+title('COVID-19: cases per 1M','data sourced by MoH of Japan')
 xlabel('date')
 ylabel('cases/1M')
 xticks([1 floor(D/3) floor(2*D/3) D])
@@ -184,8 +183,8 @@ xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
 %
 subplot(2,2,2)
-plot([DJPN,DTKY,DOKNW,DOSK,DHYG,DHKD],'LineWidth',2)
-title('COVID-19: deaths per 1M','data sourced by MOH of Japan')
+plot([DJPN DTKY DOKNW DOSK DHYG DHKD],'LineWidth',2)
+title('COVID-19: deaths per 1M','data sourced by MoH of Japan')
 xlabel('date')
 ylabel('deaths/1M')
 xticks([1 floor(D/3) floor(2*D/3) D])
@@ -193,8 +192,8 @@ xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Hyogo','Hokkaido','Location','northwest');
 %
 subplot(2,2,3)
-plot([NJPN,NTKY,NOKNW,NOSK],'LineWidth',2)
-title('COVID-19: 7-day average of new cases per 1M','data sourced by MOH of Japan')
+plot([NJPN NTKY NOKNW NOSK],'LineWidth',2)
+title('COVID-19: 7-day average of new cases per 1M','data sourced by MoH of Japan')
 xlabel('date')
 ylabel('cases/1M')
 xticks([1 floor(D/3) floor(2*D/3) D])
@@ -202,8 +201,8 @@ xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
 %
 subplot(2,2,4)
-plot([NDJPN,NDTKY,NDOKNW,NDOSK,NDHYG,NDHKD],'LineWidth',2)
-title('COVID-19: 7-day average of daily deaths per 1M','data sourced by MOH of Japan')
+plot([NDJPN NDTKY NDOKNW NDOSK NDHYG NDHKD],'LineWidth',2)
+title('COVID-19: 7-day average of daily deaths per 1M','data sourced by MoH of Japan')
 xlabel('date')
 ylabel('deaths/1M')
 xticks([1 floor(D/3) floor(2*D/3) D])
