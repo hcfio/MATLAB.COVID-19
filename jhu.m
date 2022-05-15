@@ -87,11 +87,11 @@ PESP=46.784213;
 PFIE=PFRA+PITA+PESP;
 AFRA=transpose(A.data(132,3:qw));
 AITA=transpose(A.data(155,3:qw));
-AESP=transpose(A.data(240,3:qw));
+AESP=transpose(A.data(241,3:qw));
 AFIE=(AFRA+AITA+AESP)/PFIE;
 BFRA=transpose(B.data(132,3:qw));
 BITA=transpose(B.data(155,3:qw));
-BESP=transpose(B.data(240,3:qw));
+BESP=transpose(B.data(241,3:qw));
 BFIE=(BFRA+BITA+BESP)/PFIE;
 NFIE=zeros(D,1);
 for j=1:7
@@ -110,8 +110,8 @@ end
 
 % Mexico
 PMEX=131.137507;
-AMEX=transpose(A.data(185,3:qw))/PMEX;
-BMEX=transpose(B.data(185,3:qw))/PMEX;
+AMEX=transpose(A.data(186,3:qw))/PMEX;
+BMEX=transpose(B.data(186,3:qw))/PMEX;
 NMEX=zeros(D,1);
 for j=1:7
     NMEX(j,1)=AMEX(j,1)/j;
@@ -129,8 +129,8 @@ end
 
 % United Staes
 PUSA=334.207212;
-AUSA=transpose(A.data(257,3:qw))/PUSA;
-BUSA=transpose(B.data(257,3:qw))/PUSA;
+AUSA=transpose(A.data(258,3:qw))/PUSA;
+BUSA=transpose(B.data(258,3:qw))/PUSA;
 NUSA=zeros(D,1);
 for j=1:7
     NUSA(j,1)=AUSA(j,1)/j;
@@ -148,8 +148,8 @@ end
 
 % United Kingdom
 PGBR=68.466544;
-AGBR=transpose(A.data(274,3:qw))/PGBR;
-BGBR=transpose(B.data(274,3:qw))/PGBR;
+AGBR=transpose(A.data(275,3:qw))/PGBR;
+BGBR=transpose(B.data(275,3:qw))/PGBR;
 NGBR=zeros(D,1);
 for j=1:7
     NGBR(j,1)=AGBR(j,1)/j;

@@ -169,12 +169,12 @@ end
 
 % South Korea
 PKOR=51.341022;
-WKOR=transpose(W.data(162,3:qw))/PKOR;
+WKOR=transpose(W.data(163,3:qw))/PKOR;
 KOR=zeros(DD,1);
 for j=1:DD
     KOR(j,1)=max(0,WKOR(j+710,1)-WKOR(j+703,1))/7;
 end
-UKOR=transpose(U.data(157,3:qu))/PKOR;
+UKOR=transpose(U.data(163,3:qu))/PKOR;
 DEKOR=zeros(DD,1);
 for j=1:DD
     DEKOR(j,1)=max(0,UKOR(j+710,1)-UKOR(j+703,1))/7;
@@ -182,12 +182,12 @@ end
 
 % Malaysia
 PMYS=33.060794;
-WMYS=transpose(W.data(178,3:qw))/PMYS;
+WMYS=transpose(W.data(179,3:qw))/PMYS;
 MYS=zeros(DD,1);
 for j=1:DD
     MYS(j,1)=max(0,WMYS(j+710,1)-WMYS(j+703,1))/7;
 end
-UMYS=transpose(U.data(178,3:qu))/PMYS;
+UMYS=transpose(U.data(179,3:qu))/PMYS;
 DEMYS=zeros(DD,1);
 for j=1:DD
     DEMYS(j,1)=max(0,UMYS(j+710,1)-UMYS(j+703,1))/7;
@@ -195,7 +195,7 @@ end
 
 % Mexico
 PMEX=131.137507;
-UMEX=transpose(U.data(185,3:qu))/PMEX;
+UMEX=transpose(U.data(186,3:qu))/PMEX;
 DEMEX=zeros(DD,1);
 for j=1:DD
     DEMEX(j,1)=max(0,UMEX(j+710,1)-UMEX(j+703,1))/7;
@@ -205,8 +205,8 @@ end
 PNZ1=0.017593;
 PNZ2=4.892946;
 PNZL=PNZ1+PNZ2;
-WNZ1=transpose(W.data(200,3:qw));
-WNZ2=transpose(W.data(201,3:qw));
+WNZ1=transpose(W.data(201,3:qw));
+WNZ2=transpose(W.data(202,3:qw));
 WNZL=(WNZ1+WNZ2)/PNZL;
 NZL=zeros(DD,1);
 for j=1:DD
@@ -216,12 +216,12 @@ end
 
 % Philippines
 PPHI=112.027348;
-WPHI=transpose(W.data(214,3:qw))/PPHI;
+WPHI=transpose(W.data(215,3:qw))/PPHI;
 PHI=zeros(DD,1);
 for j=1:DD
     PHI(j,1)=max(0,WPHI(j+710,1)-WPHI(j+703,1))/7;
 end
-UIDN=transpose(U.data(214,3:qu))/PIDN;
+UIDN=transpose(U.data(215,3:qu))/PIDN;
 DEIDN=zeros(DD,1);
 for j=1:DD
     DEIDN(j,1)=max(0,UIDN(j+710,1)-UIDN(j+703,1))/7;
@@ -229,12 +229,12 @@ end
 
 % Russia
 PRUS=146.036343;
-WRUS=transpose(W.data(219,3:qw))/PRUS;
+WRUS=transpose(W.data(220,3:qw))/PRUS;
 RUS=zeros(DD,1);
 for j=1:DD
     RUS(j,1)=max(0,WRUS(j+710,1)-WRUS(j+703,1))/7;
 end
-URUS=transpose(U.data(219,3:qu))/PRUS;
+URUS=transpose(U.data(220,3:qu))/PRUS;
 DERUS=zeros(DD,1);
 for j=1:DD
     DERUS(j,1)=max(0,URUS(j+710,1)-URUS(j+703,1))/7;
@@ -242,12 +242,12 @@ end
 
 % Singapore
 PSIN=5.925237;
-WSIN=transpose(W.data(232,3:qw))/PSIN;
+WSIN=transpose(W.data(233,3:qw))/PSIN;
 SIN=zeros(DD,1);
 for j=1:DD
     SIN(j,1)=max(0,WSIN(j+710,1)-WSIN(j+703,1))/7;
 end
-USIN=transpose(U.data(232,3:qu))/PSIN;
+USIN=transpose(U.data(233,3:qu))/PSIN;
 DESIN=zeros(DD,1);
 for j=1:DD
     DESIN(j,1)=max(0,USIN(j+710,1)-USIN(j+703,1))/7;
@@ -255,12 +255,12 @@ end
 
 % Sri Lanka
 PLKA=21.559415;
-WLKA=transpose(W.data(240,3:qw))/PLKA;
+WLKA=transpose(W.data(241,3:qw))/PLKA;
 LKA=zeros(DD,1);
 for j=1:DD
     LKA(j,1)=max(0,WLKA(j+710,1)-WLKA(j+703,1))/7;
 end
-ULKA=transpose(U.data(240,3:qu))/PLKA;
+ULKA=transpose(U.data(241,3:qu))/PLKA;
 DELKA=zeros(DD,1);
 for j=1:DD
     DELKA(j,1)=max(0,ULKA(j+710,1)-ULKA(j+703,1))/7;
@@ -268,12 +268,12 @@ end
 
 % Thailand
 PTHA=70.085127;
-WTHA=transpose(W.data(250,3:qw))/PTHA;
+WTHA=transpose(W.data(251,3:qw))/PTHA;
 THA=zeros(DD,1);
 for j=1:DD
     THA(j,1)=max(0,WTHA(j+710,1)-WTHA(j+703,1))/7;
 end
-UTHA=transpose(U.data(250,3:qu))/PTHA;
+UTHA=transpose(U.data(251,3:qu))/PTHA;
 DETHA=zeros(DD,1);
 for j=1:DD
     DETHA(j,1)=max(0,UTHA(j+710,1)-UTHA(j+703,1))/7;
@@ -281,12 +281,12 @@ end
 
 % United Staes
 PUSA=334.207212;
-WUSA=transpose(W.data(257,3:qw))/PUSA;
+WUSA=transpose(W.data(258,3:qw))/PUSA;
 USA=zeros(DD,1);
 for j=1:DD
     USA(j,1)=max(0,WUSA(j+710,1)-WUSA(j+703,1))/7;
 end
-UUSA=transpose(U.data(257,3:qu))/PUSA;
+UUSA=transpose(U.data(258,3:qu))/PUSA;
 DEUSA=zeros(DD,1);
 for j=1:DD
     DEUSA(j,1)=max(0,UUSA(j+710,1)-UUSA(j+703,1))/7;
@@ -294,12 +294,12 @@ end
 
 % United Kingdom
 PGBR=68.466544;
-WGBR=transpose(W.data(274,3:qw))/PGBR;
+WGBR=transpose(W.data(275,3:qw))/PGBR;
 GBR=zeros(DD,1);
 for j=1:DD
     GBR(j,1)=max(0,WGBR(j+710,1)-WGBR(j+703,1))/7;
 end
-UGBR=transpose(U.data(274,3:qu))/PGBR;
+UGBR=transpose(U.data(275,3:qu))/PGBR;
 DEGBR=zeros(DD,1);
 for j=1:DD
     DEGBR(j,1)=max(0,UGBR(j+710,1)-UGBR(j+703,1))/7;
@@ -307,7 +307,7 @@ end
 
 % Vietnam
 PVNM=98.953541;
-WVNM=transpose(W.data(279,3:qw))/PVNM;
+WVNM=transpose(W.data(280,3:qw))/PVNM;
 VNM=zeros(DD,1);
 for j=1:DD
     VNM(j,1)=max(0,WVNM(j+710,1)-WVNM(j+703,1))/7;

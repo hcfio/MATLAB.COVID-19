@@ -81,8 +81,8 @@ end
 
 % South Korea
 PKOR=51.341022;
-AKOR=transpose(A.data(162,3:qw))/PKOR;
-BKOR=transpose(B.data(162,3:qw))/PKOR;
+AKOR=transpose(A.data(163,3:qw))/PKOR;
+BKOR=transpose(B.data(163,3:qw))/PKOR;
 NKOR=zeros(D,1);
 for j=1:7
     NKOR(j,1)=AKOR(j,1)/j;
@@ -100,8 +100,8 @@ end
 
 % Malaysia
 PMYS=33.060794;
-AMYS=transpose(A.data(178,3:qw))/PMYS;
-BMYS=transpose(B.data(178,3:qw))/PMYS;
+AMYS=transpose(A.data(179,3:qw))/PMYS;
+BMYS=transpose(B.data(179,3:qw))/PMYS;
 NMYS=zeros(D,1);
 for j=1:7
     NMYS(j,1)=AMYS(j,1)/j;
@@ -119,8 +119,8 @@ end
 
 % Nepal
 PNPL=29.989352;
-ANPL=transpose(A.data(194,3:qw))/PNPL;
-BNPL=transpose(B.data(194,3:qw))/PNPL;
+ANPL=transpose(A.data(195,3:qw))/PNPL;
+BNPL=transpose(B.data(195,3:qw))/PNPL;
 NNPL=zeros(D,1);
 for j=1:7
     NNPL(j,1)=ANPL(j,1)/j;
@@ -138,8 +138,8 @@ end
 
 % Philippines
 PPHI=112.027348;
-APHI=transpose(A.data(214,3:qw))/PPHI;
-BPHI=transpose(B.data(214,3:qw))/PPHI;
+APHI=transpose(A.data(215,3:qw))/PPHI;
+BPHI=transpose(B.data(215,3:qw))/PPHI;
 NPHI=zeros(D,1);
 for j=1:7
     NPHI(j,1)=APHI(j,1)/j;
@@ -157,8 +157,8 @@ end
 
 % Singapore
 PSIN=5.925237;
-ASIN=transpose(A.data(232,3:qw))/PSIN;
-BSIN=transpose(B.data(232,3:qw))/PSIN;
+ASIN=transpose(A.data(233,3:qw))/PSIN;
+BSIN=transpose(B.data(233,3:qw))/PSIN;
 NSIN=zeros(D,1);
 for j=1:7
     NSIN(j,1)=ASIN(j,1)/j;
@@ -176,8 +176,8 @@ end
 
 % Sri Lanka
 PLKA=21.559415;
-ALKA=transpose(A.data(240,3:qw))/PLKA;
-BLKA=transpose(B.data(240,3:qw))/PLKA;
+ALKA=transpose(A.data(241,3:qw))/PLKA;
+BLKA=transpose(B.data(241,3:qw))/PLKA;
 NLKA=zeros(D,1);
 for j=1:7
     NLKA(j,1)=ALKA(j,1)/j;
@@ -195,8 +195,8 @@ end
 
 % Thailand
 PTHA=70.085127;
-ATHA=transpose(A.data(250,3:qw))/PTHA;
-BTHA=transpose(B.data(250,3:qw))/PTHA;
+ATHA=transpose(A.data(251,3:qw))/PTHA;
+BTHA=transpose(B.data(251,3:qw))/PTHA;
 NTHA=zeros(D,1);
 for j=1:7
     NTHA(j,1)=ATHA(j,1)/j;
@@ -214,8 +214,8 @@ end
 
 % Vietnam
 PVNM=98.953541;
-AVNM=transpose(A.data(279,3:qw))/PVNM;
-BVNM=transpose(B.data(279,3:qw))/PVNM;
+AVNM=transpose(A.data(280,3:qw))/PVNM;
+BVNM=transpose(B.data(280,3:qw))/PVNM;
 NVNM=zeros(D,1);
 for j=1:7
     NVNM(j,1)=AVNM(j,1)/j;
