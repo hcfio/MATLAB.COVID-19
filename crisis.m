@@ -71,6 +71,13 @@ for j=1:DD
     DEAUS(j,1)=max(0,UAUS(j+710,1)-UAUS(j+703,1))/7;
 end
 
+% Western Australia
+PWAU=2.69;
+WWAU=transpose(W.data(17,3:qw))/PWAU;
+WAU=zeros(DD,1);
+for j=1:DD
+    WAU(j,1)=max(0,WWAU(j+710,1)-WWAU(j+703,1))/7;
+end
 
 % Brazil
 PBRA=215.019011;
@@ -266,6 +273,14 @@ for j=1:DD
     DELKA(j,1)=max(0,ULKA(j+710,1)-ULKA(j+703,1))/7;
 end
 
+% Taiwan
+PTWN=23.61;
+WTWN=transpose(W.data(248,3:qw))/PLKA;
+TWN=zeros(DD,1);
+for j=1:DD
+    TWN(j,1)=max(0,WTWN(j+710,1)-WTWN(j+703,1))/7;
+end
+
 % Thailand
 PTHA=70.085127;
 WTHA=transpose(W.data(251,3:qw))/PTHA;
@@ -456,13 +471,13 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([HKG,AUS,OKNW,NZL,KOR,VNM,BWN,NSW,VIC,SIN],'LineWidth',2)
+plot([HKG,AUS,OKNW,NZL,KOR,WAU,BWN,NSW,VIC,TWN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Hong Kong','Australia','Okinawa','New Zealand','South Korea','Vietnam','Brunei','New South Wales','Victoria','Singapore','Location','northwest');
+legend('Hong Kong','Australia','Okinawa','New Zealand','South Korea','Western Australia','Brunei','New South Wales','Victoria','Taiwan','Location','northwest');
 %
 subplot(2,2,2)
 plot([JPN,TKY,OKNW,OSK],'LineWidth',2)
