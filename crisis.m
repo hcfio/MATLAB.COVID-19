@@ -471,13 +471,13 @@ colororder(newcolors)
          
 % plot
 subplot(2,2,1)
-plot([HKG,AUS,OKNW,NZL,KOR,WAU,BWN,NSW,VIC,TWN],'LineWidth',2)
+plot([TWN,AUS,OKNW,NZL,KOR,WAU,BWN,NSW,VIC,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 floor(DD/3) floor(2*DD/3) DD])
 xticklabels({[ll0],[ll1],[ll2],[ll3]})
-legend('Hong Kong','Australia','Okinawa','New Zealand','South Korea','Western Australia','Brunei','New South Wales','Victoria','Taiwan','Location','northwest');
+legend('Taiwan','Australia','Okinawa','New Zealand','South Korea','Western Australia','Brunei','New South Wales','Victoria','Singapore','Location','northwest');
 %
 subplot(2,2,2)
 plot([JPN,TKY,OKNW,OSK],'LineWidth',2)
