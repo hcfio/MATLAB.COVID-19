@@ -14,6 +14,7 @@ D=1+days(d1-d0);
 l0=datestr(d0,'yyyy-mm-dd');
 l1=string('2022-03-01');
 l2=string('2022-05-01');
+l3=string('2022-07-01');
 ll=datestr(d1,'yyyy-mm-dd');
 
 % Japan (125M)
@@ -94,18 +95,19 @@ newcolors = [0 0 1;
              1 131/255 0; 
              0 1 0; 
              1 0 0; 
-             169/255 80/255 69/255;
              0 191/255 1;
              138/255 43/255 226/255; 
              1 0 1; 
              220/255 220/255 220/255; 
-             1 191/255 17/255];
+             1 191/255 17/255;
+             169/255 80/255 69/255];
 colororder(newcolors)         
 % c=hsv(6);
 % colororder(c);
 
 
-v = VideoWriter('xxnhk.avi');
+v = VideoWriter('covid19.mp4','MPEG-4');
+v.FrameRate=10;
 open(v);
 % plot
 for k=1:D
@@ -115,15 +117,15 @@ for k=1:D
     OSK=OSK3(1:k,1);
     HKD=HKD3(1:k,1);
     KYU=KYU3(1:k,1);
-    plot([JPN,TKY,OKNW,OSK,HKD,KYU],'LineWidth',2)
+    plot([JPN,TKY,OKNW,OSK,KYU],'LineWidth',2)
     xlim([0 D+1]);
-    ylim([0 1600])
+    ylim([0 3500])
     title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (Japanese Public TV)')
     xlabel('date');
     ylabel('cases/1M');
-    xticks([1 60 D]) %l2 121
-    xticklabels({[l0],[l1],[ll]})
-    legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Kyushu','Location','northwest');
+    xticks([1 60 122 D]) %l2 121
+    xticklabels({[l0],[l1],[l2],[ll]})
+    legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Location','northwest');
     drawnow
     pause(0.02)
     frame = getframe(gcf);
