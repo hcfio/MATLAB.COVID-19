@@ -38,7 +38,7 @@ for j=1:7
     NDIND(j,1)=BIND(j,1)/7;
 end
 for j=8:D
-    NDIND(j,1)=(BIND(j,1)-BIND(j-7,1))/7;
+    NDIND(j,1)=max(0,(BIND(j,1)-BIND(j-7,1))/7);
 end
 
 % Indonesia
@@ -57,7 +57,7 @@ for j=1:7
     NDIDN(j,1)=BIDN(j,1)/7;
 end
 for j=8:D
-    NDIDN(j,1)=(BIDN(j,1)-BIDN(j-7,1))/7;
+    NDIDN(j,1)=max(0,(BIDN(j,1)-BIDN(j-7,1))/7);
 end
 
 % Japwn
@@ -95,7 +95,7 @@ for j=1:7
     NDKOR(j,1)=BKOR(j,1)/7;
 end
 for j=8:D
-    NDKOR(j,1)=(BKOR(j,1)-BKOR(j-7,1))/7;
+    NDKOR(j,1)=max(0,(BKOR(j,1)-BKOR(j-7,1))/7);
 end
 
 % Malaysia
@@ -114,7 +114,7 @@ for j=1:7
     NDMYS(j,1)=BMYS(j,1)/7;
 end
 for j=8:D
-    NDMYS(j,1)=(BMYS(j,1)-BMYS(j-7,1))/7;
+    NDMYS(j,1)=max(0,(BMYS(j,1)-BMYS(j-7,1))/7);
 end
 
 % Nepal
@@ -152,7 +152,7 @@ for j=1:7
     NDPHI(j,1)=BPHI(j,1)/7;
 end
 for j=8:D
-    NDPHI(j,1)=(BPHI(j,1)-BPHI(j-7,1))/7;
+    NDPHI(j,1)=max(0,(BPHI(j,1)-BPHI(j-7,1))/7);
 end
 
 % Singapore

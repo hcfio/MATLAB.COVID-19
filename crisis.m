@@ -5,25 +5,23 @@ websave('./csv/jhu_deaths.csv','https://raw.githubusercontent.com/CSSEGISandData
 U=importdata('./csv/jhu_deaths.csv');
 [pu qu]=size(U.data);
 
-DD=qw-712;
-dd0=datetime(2022,1,1);
+DD=qw-893;
+dd0=datetime(2022,7,1);
 dd1=dd0+days(DD-1);
 ll0=datestr(dd0,'yyyy-mm-dd');
-ll1=datestr(dd0+days(floor((DD-1)/3)),'yyyy-mm-dd');
-ll2=datestr(dd0+days(floor(2*(DD-1)/3)),'yyyy-mm-dd');
-ll3=datestr(dd1,'yyyy-mm-dd');
+llf=datestr(dd1,'yyyy-mm-dd');
 
 % Argentina
 PARG=45.870820;
 WARG=transpose(W.data(8,3:qw))/PARG;
 ARG=zeros(DD,1);
 for j=1:DD
-    ARG(j,1)=max(0,WARG(j+710,1)-WARG(j+703,1))/7;
+    ARG(j,1)=max(0,WARG(j+891,1)-WARG(j+884,1))/7;
 end
 UARG=transpose(U.data(8,3:qu))/PARG;
 DEARG=zeros(DD,1);
 for j=1:DD
-    DEARG(j,1)=max(0,UARG(j+710,1)-UARG(j+703,1))/7;
+    DEARG(j,1)=max(0,UARG(j+891,1)-UARG(j+884,1))/7;
 end
 
 % NSW
@@ -31,7 +29,7 @@ PNSW=8.21;
 WNSW=transpose(W.data(11,3:qw))/PNSW;
 NSW=zeros(DD,1);
 for j=1:DD
-    NSW(j,1)=max(0,WNSW(j+710,1)-WNSW(j+703,1))/7;
+    NSW(j,1)=max(0,WNSW(j+891,1)-WNSW(j+884,1))/7;
 end
 
 % Victoria
@@ -39,7 +37,7 @@ PVIC=6.64;
 WVIC=transpose(W.data(16,3:qw))/PVIC;
 VIC=zeros(DD,1);
 for j=1:DD
-    VIC(j,1)=max(0,WVIC(j+710,1)-WVIC(j+703,1))/7;
+    VIC(j,1)=max(0,WVIC(j+891,1)-WVIC(j+884,1))/7;
 end
 
 % Australia
@@ -55,7 +53,7 @@ WWA=transpose(W.data(17,3:qw));
 WAUS=(WACT+WNSW+WNT+WQLD+WSA+WTAS+WVIC+WWA)/PAUS;
 AUS=zeros(DD,1);
 for j=1:DD
-    AUS(j,1)=max(0,WAUS(j+710,1)-WAUS(j+703,1))/7;
+    AUS(j,1)=max(0,WAUS(j+891,1)-WAUS(j+884,1))/7;
 end
 UACT=transpose(U.data(10,3:qw));
 UNSW=transpose(U.data(11,3:qw));
@@ -68,7 +66,7 @@ UWA=transpose(U.data(17,3:qw));
 UAUS=(UACT+UNSW+UNT+UQLD+USA+UTAS+UVIC+UWA)/PAUS;
 DEAUS=zeros(DD,1);
 for j=1:DD
-    DEAUS(j,1)=max(0,UAUS(j+710,1)-UAUS(j+703,1))/7;
+    DEAUS(j,1)=max(0,UAUS(j+891,1)-UAUS(j+884,1))/7;
 end
 
 % Western Australia
@@ -76,7 +74,7 @@ PWAU=2.69;
 WWAU=transpose(W.data(17,3:qw))/PWAU;
 WAU=zeros(DD,1);
 for j=1:DD
-    WAU(j,1)=max(0,WWAU(j+710,1)-WWAU(j+703,1))/7;
+    WAU(j,1)=max(0,WWAU(j+891,1)-WWAU(j+884,1))/7;
 end
 
 % Brazil
@@ -84,7 +82,7 @@ PBRA=215.019011;
 UBRA=transpose(U.data(32,3:qu))/PBRA;
 DEBRA=zeros(DD,1);
 for j=1:DD
-    DEBRA(j,1)=max(0,UBRA(j+710,1)-UBRA(j+703,1))/7;
+    DEBRA(j,1)=max(0,UBRA(j+891,1)-UBRA(j+884,1))/7;
 end
 
 % Brunei Darussalam
@@ -92,12 +90,12 @@ PBWN=0.4435;
 WBWN=transpose(W.data(33,3:qw))/PBWN;
 BWN=zeros(DD,1);
 for j=1:DD
-    BWN(j,1)=max(0,WBWN(j+710,1)-WBWN(j+703,1))/7;
+    BWN(j,1)=max(0,WBWN(j+891,1)-WBWN(j+884,1))/7;
 end
 UBWN=transpose(U.data(33,3:qu))/PBWN;
 DEBWN=zeros(DD,1);
 for j=1:DD
-    DEBWN(j,1)=max(0,UBWN(j+710,1)-UBWN(j+703,1))/7;
+    DEBWN(j,1)=max(0,UBWN(j+891,1)-UBWN(j+884,1))/7;
 end
 
 % Hong Kong 
@@ -105,12 +103,12 @@ PHKG=7.600852;
 WHKG=transpose(W.data(72,3:qw))/PHKG;
 HKG=zeros(DD,1);
 for j=1:DD
-    HKG(j,1)=max(0,WHKG(j+710,1)-WHKG(j+703,1))/7;
+    HKG(j,1)=max(0,WHKG(j+891,1)-WHKG(j+884,1))/7;
 end
 UHKG=transpose(U.data(72,3:qu))/PHKG;
 DEHKG=zeros(DD,1);
 for j=1:DD
-    DEHKG(j,1)=max(0,UHKG(j+710,1)-UHKG(j+703,1))/7;
+    DEHKG(j,1)=max(0,UHKG(j+891,1)-UHKG(j+884,1))/7;
 end
 
 % France Italy Spain 
@@ -124,7 +122,7 @@ WESP=transpose(W.data(239,3:qw));
 WFIE=(WFRA+WITA+WESP)/PFIE;
 FIE=zeros(DD,1);
 for j=1:DD
-    FIE(j,1)=max(0,WFIE(j+710,1)-WFIE(j+703,1))/7;
+    FIE(j,1)=max(0,WFIE(j+891,1)-WFIE(j+884,1))/7;
 end
 UFRA=transpose(U.data(132,3:qw));
 UITA=transpose(U.data(155,3:qw));
@@ -132,7 +130,7 @@ UESP=transpose(U.data(239,3:qw));
 UFIE=(UFRA+UITA+UESP)/PFIE;
 DEFIE=zeros(DD,1);
 for j=1:DD
-    DEFIE(j,1)=max(0,UFIE(j+710,1)-UFIE(j+703,1))/7;
+    DEFIE(j,1)=max(0,UFIE(j+891,1)-UFIE(j+884,1))/7;
 end
 
 % India
@@ -140,12 +138,12 @@ PIND=1402.124607;
 WIND=transpose(W.data(149,3:qw))/PIND;
 IND=zeros(DD,1);
 for j=1:DD
-    IND(j,1)=max(0,WIND(j+710,1)-WIND(j+703,1))/7;
+    IND(j,1)=max(0,WIND(j+891,1)-WIND(j+884,1))/7;
 end
 UIND=transpose(U.data(149,3:qu))/PIND;
 DEIND=zeros(DD,1);
 for j=1:DD
-    DEIND(j,1)=max(0,UIND(j+710,1)-UIND(j+703,1))/7;
+    DEIND(j,1)=max(0,UIND(j+891,1)-UIND(j+884,1))/7;
 end
 
 % Indonesia
@@ -153,12 +151,12 @@ PIDN=278.239007;
 WIDN=transpose(W.data(150,3:qw))/PIDN;
 IDN=zeros(DD,1);
 for j=1:DD
-    IDN(j,1)=max(0,WIDN(j+710,1)-WIDN(j+703,1))/7;
+    IDN(j,1)=max(0,WIDN(j+891,1)-WIDN(j+884,1))/7;
 end
 UIDN=transpose(U.data(150,3:qu))/PIDN;
 DEIDN=zeros(DD,1);
 for j=1:DD
-    DEIDN(j,1)=max(0,UIDN(j+710,1)-UIDN(j+703,1))/7;
+    DEIDN(j,1)=max(0,UIDN(j+891,1)-UIDN(j+884,1))/7;
 end
 
 % Japan
@@ -166,12 +164,12 @@ PJPN=125.845010;
 WJPN=transpose(W.data(157,3:qw))/PJPN;
 JPN=zeros(DD,1);
 for j=1:DD
-    JPN(j,1)=max(0,WJPN(j+710,1)-WJPN(j+703,1))/7;
+    JPN(j,1)=max(0,WJPN(j+891,1)-WJPN(j+884,1))/7;
 end
 UJPN=transpose(U.data(157,3:qu))/PJPN;
 DEJPN=zeros(DD,1);
 for j=1:DD
-    DEJPN(j,1)=max(0,UJPN(j+710,1)-UJPN(j+703,1))/7;
+    DEJPN(j,1)=max(0,UJPN(j+891,1)-UJPN(j+884,1))/7;
 end
 
 % South Korea
@@ -179,12 +177,12 @@ PKOR=51.341022;
 WKOR=transpose(W.data(163,3:qw))/PKOR;
 KOR=zeros(DD,1);
 for j=1:DD
-    KOR(j,1)=max(0,WKOR(j+710,1)-WKOR(j+703,1))/7;
+    KOR(j,1)=max(0,WKOR(j+891,1)-WKOR(j+884,1))/7;
 end
 UKOR=transpose(U.data(163,3:qu))/PKOR;
 DEKOR=zeros(DD,1);
 for j=1:DD
-    DEKOR(j,1)=max(0,UKOR(j+710,1)-UKOR(j+703,1))/7;
+    DEKOR(j,1)=max(0,UKOR(j+891,1)-UKOR(j+884,1))/7;
 end
 
 % Malaysia
@@ -192,12 +190,12 @@ PMYS=33.060794;
 WMYS=transpose(W.data(179,3:qw))/PMYS;
 MYS=zeros(DD,1);
 for j=1:DD
-    MYS(j,1)=max(0,WMYS(j+710,1)-WMYS(j+703,1))/7;
+    MYS(j,1)=max(0,WMYS(j+891,1)-WMYS(j+884,1))/7;
 end
 UMYS=transpose(U.data(179,3:qu))/PMYS;
 DEMYS=zeros(DD,1);
 for j=1:DD
-    DEMYS(j,1)=max(0,UMYS(j+710,1)-UMYS(j+703,1))/7;
+    DEMYS(j,1)=max(0,UMYS(j+891,1)-UMYS(j+884,1))/7;
 end
 
 % Mexico
@@ -205,7 +203,7 @@ PMEX=131.137507;
 UMEX=transpose(U.data(186,3:qu))/PMEX;
 DEMEX=zeros(DD,1);
 for j=1:DD
-    DEMEX(j,1)=max(0,UMEX(j+710,1)-UMEX(j+703,1))/7;
+    DEMEX(j,1)=max(0,UMEX(j+891,1)-UMEX(j+884,1))/7;
 end
 
 % New Zealand
@@ -217,7 +215,7 @@ WNZ2=transpose(W.data(202,3:qw));
 WNZL=(WNZ1+WNZ2)/PNZL;
 NZL=zeros(DD,1);
 for j=1:DD
-    NZL(j,1)=max(0,WNZL(j+710,1)-WNZL(j+703,1))/7;
+    NZL(j,1)=max(0,WNZL(j+891,1)-WNZL(j+884,1))/7;
 end
 
 
@@ -226,12 +224,12 @@ PPHI=112.027348;
 WPHI=transpose(W.data(215,3:qw))/PPHI;
 PHI=zeros(DD,1);
 for j=1:DD
-    PHI(j,1)=max(0,WPHI(j+710,1)-WPHI(j+703,1))/7;
+    PHI(j,1)=max(0,WPHI(j+891,1)-WPHI(j+884,1))/7;
 end
 UIDN=transpose(U.data(215,3:qu))/PIDN;
 DEIDN=zeros(DD,1);
 for j=1:DD
-    DEIDN(j,1)=max(0,UIDN(j+710,1)-UIDN(j+703,1))/7;
+    DEIDN(j,1)=max(0,UIDN(j+891,1)-UIDN(j+884,1))/7;
 end
 
 % Russia
@@ -239,12 +237,12 @@ PRUS=146.036343;
 WRUS=transpose(W.data(220,3:qw))/PRUS;
 RUS=zeros(DD,1);
 for j=1:DD
-    RUS(j,1)=max(0,WRUS(j+710,1)-WRUS(j+703,1))/7;
+    RUS(j,1)=max(0,WRUS(j+891,1)-WRUS(j+884,1))/7;
 end
 URUS=transpose(U.data(220,3:qu))/PRUS;
 DERUS=zeros(DD,1);
 for j=1:DD
-    DERUS(j,1)=max(0,URUS(j+710,1)-URUS(j+703,1))/7;
+    DERUS(j,1)=max(0,URUS(j+891,1)-URUS(j+884,1))/7;
 end
 
 % Singapore
@@ -252,12 +250,12 @@ PSIN=5.925237;
 WSIN=transpose(W.data(233,3:qw))/PSIN;
 SIN=zeros(DD,1);
 for j=1:DD
-    SIN(j,1)=max(0,WSIN(j+710,1)-WSIN(j+703,1))/7;
+    SIN(j,1)=max(0,WSIN(j+891,1)-WSIN(j+884,1))/7;
 end
 USIN=transpose(U.data(233,3:qu))/PSIN;
 DESIN=zeros(DD,1);
 for j=1:DD
-    DESIN(j,1)=max(0,USIN(j+710,1)-USIN(j+703,1))/7;
+    DESIN(j,1)=max(0,USIN(j+891,1)-USIN(j+884,1))/7;
 end
 
 % Sri Lanka
@@ -265,12 +263,12 @@ PLKA=21.559415;
 WLKA=transpose(W.data(241,3:qw))/PLKA;
 LKA=zeros(DD,1);
 for j=1:DD
-    LKA(j,1)=max(0,WLKA(j+710,1)-WLKA(j+703,1))/7;
+    LKA(j,1)=max(0,WLKA(j+891,1)-WLKA(j+884,1))/7;
 end
 ULKA=transpose(U.data(241,3:qu))/PLKA;
 DELKA=zeros(DD,1);
 for j=1:DD
-    DELKA(j,1)=max(0,ULKA(j+710,1)-ULKA(j+703,1))/7;
+    DELKA(j,1)=max(0,ULKA(j+891,1)-ULKA(j+884,1))/7;
 end
 
 % Taiwan
@@ -278,7 +276,7 @@ PTWN=23.61;
 WTWN=transpose(W.data(248,3:qw))/PLKA;
 TWN=zeros(DD,1);
 for j=1:DD
-    TWN(j,1)=max(0,WTWN(j+710,1)-WTWN(j+703,1))/7;
+    TWN(j,1)=max(0,WTWN(j+891,1)-WTWN(j+884,1))/7;
 end
 
 % Thailand
@@ -286,12 +284,12 @@ PTHA=70.085127;
 WTHA=transpose(W.data(251,3:qw))/PTHA;
 THA=zeros(DD,1);
 for j=1:DD
-    THA(j,1)=max(0,WTHA(j+710,1)-WTHA(j+703,1))/7;
+    THA(j,1)=max(0,WTHA(j+891,1)-WTHA(j+884,1))/7;
 end
 UTHA=transpose(U.data(251,3:qu))/PTHA;
 DETHA=zeros(DD,1);
 for j=1:DD
-    DETHA(j,1)=max(0,UTHA(j+710,1)-UTHA(j+703,1))/7;
+    DETHA(j,1)=max(0,UTHA(j+891,1)-UTHA(j+884,1))/7;
 end
 
 % United Staes
@@ -299,12 +297,12 @@ PUSA=334.207212;
 WUSA=transpose(W.data(258,3:qw))/PUSA;
 USA=zeros(DD,1);
 for j=1:DD
-    USA(j,1)=max(0,WUSA(j+710,1)-WUSA(j+703,1))/7;
+    USA(j,1)=max(0,WUSA(j+891,1)-WUSA(j+884,1))/7;
 end
 UUSA=transpose(U.data(258,3:qu))/PUSA;
 DEUSA=zeros(DD,1);
 for j=1:DD
-    DEUSA(j,1)=max(0,UUSA(j+710,1)-UUSA(j+703,1))/7;
+    DEUSA(j,1)=max(0,UUSA(j+891,1)-UUSA(j+884,1))/7;
 end
 
 % United Kingdom
@@ -312,12 +310,12 @@ PGBR=68.466544;
 WGBR=transpose(W.data(275,3:qw))/PGBR;
 GBR=zeros(DD,1);
 for j=1:DD
-    GBR(j,1)=max(0,WGBR(j+710,1)-WGBR(j+703,1))/7;
+    GBR(j,1)=max(0,WGBR(j+891,1)-WGBR(j+884,1))/7;
 end
 UGBR=transpose(U.data(275,3:qu))/PGBR;
 DEGBR=zeros(DD,1);
 for j=1:DD
-    DEGBR(j,1)=max(0,UGBR(j+710,1)-UGBR(j+703,1))/7;
+    DEGBR(j,1)=max(0,UGBR(j+891,1)-UGBR(j+884,1))/7;
 end
 
 % Vietnam
@@ -325,7 +323,7 @@ PVNM=98.953541;
 WVNM=transpose(W.data(280,3:qw))/PVNM;
 VNM=zeros(DD,1);
 for j=1:DD
-    VNM(j,1)=max(0,WVNM(j+710,1)-WVNM(j+703,1))/7;
+    VNM(j,1)=max(0,WVNM(j+891,1)-WVNM(j+884,1))/7;
 end
     
 websave("./csv/mhlw_cases.csv","https://covid19.mhlw.go.jp/public/opendata/confirmed_cases_cumulative_daily.csv");
@@ -341,11 +339,11 @@ OKNW1=VC(:,48)/POKNW;
 OKNW2=VD(:,48)/POKNW;
 OKNW=zeros(DD,1);
 for j=1:DD
-    OKNW(j,1)=(OKNW1(j+602,1)-OKNW1(j+595,1))/7;
+    OKNW(j,1)=(OKNW1(j+783,1)-OKNW1(j+776,1))/7;
 end
 DEOKNW=zeros(DD,1);
 for j=1:DD
-    DEOKNW(j,1)=(OKNW2(j+602,1)-OKNW2(j+595,1))/7;
+    DEOKNW(j,1)=(OKNW2(j+783,1)-OKNW2(j+776,1))/7;
 end
 
 % Tokyo (14M): code 13, 
@@ -353,7 +351,7 @@ PTKY=13.988129;
 TKY1=VC(:,14)/PTKY;
 TKY=zeros(DD,1);
 for j=1:DD
-    TKY(j,1)=(TKY1(j+602,1)-TKY1(j+595,1))/7;
+    TKY(j,1)=(TKY1(j+783,1)-TKY1(j+776,1))/7;
 end
 
 % Osaka: code 28
@@ -362,100 +360,12 @@ OSK1=VC(:,28)/POSK;
 OSK2=VD(:,28)/POSK;
 OSK=zeros(DD,1);
 for j=1:DD
-    OSK(j,1)=(OSK1(j+602,1)-OSK1(j+595,1))/7;
+    OSK(j,1)=(OSK1(j+783,1)-OSK1(j+776,1))/7;
 end
 DEOSK=zeros(DD,1);
 for j=1:DD
-    DEOSK(j,1)=(OSK2(j+602,1)-OSK2(j+595,1))/7;
+    DEOSK(j,1)=(OSK2(j+783,1)-OSK2(j+776,1))/7;
 end
-
-
-websave('./csv/jhu_vaccinated.csv','https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/global_data/time_series_covid19_vaccine_global.csv');
-V=readmatrix('./csv/jhu_vaccinated.csv');
-[m n]=size(V);
-UID=V(:,7);
-VAC=V(:,5);
-
-% Brunei Darussalam
-PBWN=4422.05;
-ROWBWN=find(UID(:)==96);
-VACBWN=VAC(ROWBWN)/PBWN;
-DBWN=length(VACBWN);
-DATEBWN=datetime(2021,4,2);
-d0=datetime(2021,8,1);
-d1=DATEBWN+caldays(DBWN+16);
-D=1+days(d1-d0);
-l0=datestr(d0,'yyyy-mm-dd');
-l1=datestr(d0+days(floor((D-1)/3)),'yyyy-mm-dd');
-l2=datestr(d0+days(floor(2*(D-1)/3)),'yyyy-mm-dd');
-l3=datestr(d1,'yyyy-mm-dd');
-VBWN=VACBWN(DBWN-D+1:DBWN);
-
-
-% China
-PCHN=14460554.93;
-ROWCHN=find(UID(:)==156);
-VACCHN=VAC(ROWCHN)/PCHN;
-DCHN=length(VACCHN);
-VCHN=VACCHN(DCHN-D+1:DCHN);
-
-% Indonesia
-PIDN=2768332.06;
-ROWIDN=find(UID(:)==360);
-VACIDN=VAC(ROWIDN)/PIDN;
-DIDN=length(VACIDN);
-VIDN=VACIDN(DIDN-D+1:DIDN);
-
-% Japan
-PJPN=1253600;
-ROWJPN=find(UID(:)==392);
-VACJPN=VAC(ROWJPN)/PJPN;
-DJPN=length(VACJPN);
-VJPN=VACJPN(DJPN-D+1:DJPN);
-
-% Malaysia
-PMYS=326600;
-ROWMYS=find(UID(:)==458);
-VACMYS=VAC(ROWMYS)/PMYS;
-DMYS=length(VACMYS);
-VMYS=VACMYS(DMYS-D+1:DMYS);
-
-% Philippines
-PPHI=1112491.16;
-ROWPHI=find(UID(:)==608);
-VACPHI=VAC(ROWPHI)/PPHI;
-DPHI=length(VACPHI);
-VPHI=VACPHI(DPHI-D+1:DPHI);
-
-% Singapore
-PSIN=59020.11;
-ROWSIN=find(UID(:)==702);
-VACSIN=VAC(ROWSIN)/PSIN;
-DSIN=length(VACSIN);
-VSIN=VACSIN(DSIN-D+1:DSIN);
-
-% Vietnam
-PVNM=983405.93;
-ROWVNM=find(UID(:)==704);
-VACVNM=VAC(ROWVNM)/PVNM;
-DVNM=length(VACVNM);
-VVNM=VACVNM(DVNM-D+1:DVNM);
-
-% Thailand
-PTHA=700006.62;
-ROWTHA=find(UID(:)==764);
-VACTHA=VAC(ROWTHA)/PTHA;
-DTHA=length(VACTHA);
-VTHA=VACTHA(DTHA-D+1:DTHA);
-
-% United Staes 
-PUSA=3332254.77;
-ROWUSA=find(UID(:)==840);
-VACUSA=VAC(ROWUSA)/PUSA;
-DUSA=length(VACUSA);
-VUSA=VACUSA(DUSA-D+1:DUSA);
-
-
 
 newcolors = [0 0 1; 
              1 131/255 0; 
@@ -475,8 +385,8 @@ plot([TWN,AUS,OKNW,NZL,KOR,WAU,BWN,NSW,VIC,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 floor(DD/3) floor(2*DD/3) DD])
-xticklabels({[ll0],[ll1],[ll2],[ll3]})
+xticks([1 DD])
+xticklabels({[ll0],[llf]})
 legend('Taiwan','Australia','Okinawa','New Zealand','South Korea','Western Australia','Brunei','New South Wales','Victoria','Singapore','Location','northwest');
 %
 subplot(2,2,2)
@@ -484,26 +394,17 @@ plot([JPN,TKY,OKNW,OSK],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 floor(DD/3) floor(2*DD/3) DD])
-xticklabels({[ll0],[ll1],[ll2],[ll3]})
+xticks([1 DD])
+xticklabels({[ll0],[llf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
 %
 subplot(2,2,3)
-plot([VJPN,VMYS,VPHI,VIDN,VTHA,VVNM,VBWN,VUSA,VCHN,VSIN],'LineWidth',2)
-title('COVID-19: fully vaccinated','data sourced by JHU Centers for CIVIC Impact')
-xlabel('date');
-ylabel('%');
-xticks([1 floor(D/3) floor(2*D/3) D])
-xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Malaysia','Philippines','Indonesia','Thailand','Vietnam','Brunei','United States','China','Singapore','Location','northwest');
-%
-subplot(2,2,4)
 plot([DEJPN,DEAUS,DEUSA,DEOSK,DEKOR,DEGBR,DEBWN,DERUS,DEBRA,DESIN],'LineWidth',2)
 title('COVID-19: 7-day average of deaths per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 floor(DD/3) floor(2*DD/3) DD])
-xticklabels({[ll0],[ll1],[ll2],[ll3]})
+xticks([1 DD])
+xticklabels({[ll0],[llf]})
 legend('Japan','Australia','United States','Osaka','South Korea','United Kingdom','Brunei','Russia','Brazil','Singapore','Location','northwest');
 %
 set(gcf,'Position',[600,200,1200,800]);

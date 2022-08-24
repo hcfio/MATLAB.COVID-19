@@ -6,15 +6,13 @@ B=str2double(A.textdata(2:l+1,2));
 websave('./csv/nhk_japan.csv','https://www3.nhk.or.jp/n-data/opendata/coronavirus/nhk_news_covid19_domestic_daily_data.csv');
 JP=importdata('./csv/nhk_japan.csv');
 
-dd0=strrep(A.textdata(718,1),'/','-');
+dd0=strrep(A.textdata(899,1),'/','-');
 d0=datetime(dd0);
 dd1=strrep(A.textdata(l+1,1),'/','-');
 d1=datetime(dd1);
 D=1+days(d1-d0);
 l0=datestr(d0,'yyyy-mm-dd');
-l1=string('2022-03-01');
-l2=string('2022-05-01');
-l3=string('2022-07-01');
+l1=string('2022-07-01');
 ll=datestr(d1,'yyyy-mm-dd');
 
 % Japan (125M)
@@ -22,7 +20,7 @@ PJPN=125.845010;
 JPN1=JP.data(:,2)/PJPN;
 JPN3=zeros(D,1);
 for j=1:D
-    JPN3(j,1)=(JPN1(j+716,1)-JPN1(j+709,1))/7;
+    JPN3(j,1)=(JPN1(j+897,1)-JPN1(j+890,1))/7;
 end
 
 % Tokyo: code 13, 
@@ -31,7 +29,7 @@ ROWTKY=find(B(:)==13);
 TKY1=A.data(ROWTKY,2)/PTKY;
 TKY3=zeros(D,1);
 for j=1:D
-    TKY3(j,1)=(TKY1(j+716,1)-TKY1(j+709,1))/7;
+    TKY3(j,1)=(TKY1(j+897,1)-TKY1(j+890,1))/7;
 end
 
 % Okinawa: code 47
@@ -40,7 +38,7 @@ ROWOKNW=find(B(:)==47);
 OKNW1=A.data(ROWOKNW,2)/POKNW;
 OKNW3=zeros(D,1);
 for j=1:D
-    OKNW3(j,1)=(OKNW1(j+716,1)-OKNW1(j+709,1))/7;
+    OKNW3(j,1)=(OKNW1(j+897,1)-OKNW1(j+890,1))/7;
 end
 
 % Osaka: code 27
@@ -49,7 +47,7 @@ ROWOSK=find(B(:)==27);
 OSK1=A.data(ROWOSK,2)/POSK;
 OSK3=zeros(D,1);
 for j=1:D
-    OSK3(j,1)=(OSK1(j+716,1)-OSK1(j+709,1))/7;
+    OSK3(j,1)=(OSK1(j+897,1)-OSK1(j+890,1))/7;
 end
 
 % Kyushu code 40 41 42 43 44 45 46
@@ -78,7 +76,7 @@ KAG1=A.data(ROWKAG,2);
 KYU1=(FUK1+SAG1+NAG1+KUM1+OIT1+MIY1+KAG1)/PKYU;
 KYU3=zeros(D,1);
 for j=1:D
-    KYU3(j,1)=(KYU1(j+716,1)-KYU1(j+709,1))/7;
+    KYU3(j,1)=(KYU1(j+897,1)-KYU1(j+890,1))/7;
 end
 
 % Hokkaido code 1
@@ -87,7 +85,7 @@ ROWHKD=find(B(:)==1);
 HKD1=A.data(ROWHKD,2)/PHKD;
 HKD3=zeros(D,1);
 for j=1:D
-    HKD3(j,1)=(HKD1(j+716,1)-HKD1(j+709,1))/7;
+    HKD3(j,1)=(HKD1(j+897,1)-HKD1(j+890,1))/7;
 end
 
 
@@ -123,8 +121,8 @@ for k=1:D
     title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (Japanese Public TV)')
     xlabel('date');
     ylabel('cases/1M');
-    xticks([1 60 122 D]) %l2 121
-    xticklabels({[l0],[l1],[l2],[ll]})
+    xticks([1 D]) %l2 121
+    xticklabels({[l0],[ll]})
     legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Location','northwest');
     drawnow
     pause(0.02)
