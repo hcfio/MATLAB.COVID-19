@@ -410,4 +410,4 @@ xticklabels({[ll0],[llf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Miyazaki','South Korea','Hong Kong','Taiwan','Singapore','Location','northwest');
 %
 set(gcf,'Position',[600,200,600,400]);
-saveas(gcf,'crisis.png');
+saveas(gcf,'xcrisis.png');
