@@ -18,38 +18,59 @@ ll=datestr(d1,'yyyy-mm-dd');
 % Japan (125M)
 PJPN=125.845010;
 JPN1=JP.data(:,2)/PJPN;
+JPN2=JP.data(:,4)/PJPN;
 JPN3=zeros(D,1);
+JPN4=zeros(D,1);
 for j=1:D
     JPN3(j,1)=(JPN1(j+897,1)-JPN1(j+890,1))/7;
+    JPN4(j,1)=(JPN2(j+897,1)-JPN2(j+890,1))/7;
 end
 
 % Tokyo: code 13, 
 PTKY=13.988129;
 ROWTKY=find(B(:)==13);
 TKY1=A.data(ROWTKY,2)/PTKY;
+TKY2=A.data(ROWTKY,4)/PTKY;
 TKY3=zeros(D,1);
+TKY4=zeros(D,1);
 for j=1:D
     TKY3(j,1)=(TKY1(j+897,1)-TKY1(j+890,1))/7;
+    TKY4(j,1)=(TKY2(j+897,1)-TKY2(j+890,1))/7;
 end
+
 
 % Okinawa: code 47
 POKNW=1.469335;    
 ROWOKNW=find(B(:)==47);
 OKNW1=A.data(ROWOKNW,2)/POKNW;
+OKNW2=A.data(ROWOKNW,4)/POKNW;
 OKNW3=zeros(D,1);
+OKNW4=zeros(D,1);
 for j=1:D
     OKNW3(j,1)=(OKNW1(j+897,1)-OKNW1(j+890,1))/7;
+    OKNW4(j,1)=(OKNW2(j+897,1)-OKNW2(j+890,1))/7;
 end
 
 % Osaka: code 27
 POSK=8.797153;
 ROWOSK=find(B(:)==27);
 OSK1=A.data(ROWOSK,2)/POSK;
+OSK2=A.data(ROWOSK,4)/POSK;
 OSK3=zeros(D,1);
+OSK4=zeros(D,1);
 for j=1:D
     OSK3(j,1)=(OSK1(j+897,1)-OSK1(j+890,1))/7;
+    OSK4(j,1)=(OSK2(j+897,1)-OSK2(j+890,1))/7;
 end
 
+% Kanagawa code 14
+% PKNGW=9.237123;
+% ROWKNGW=find(B(:)==14);
+% KNGW1=A.data(ROWKNGW,2)/PKNGW;
+% KNGW3=zeros(D,1);
+% for j=1:D
+%     KNGW3(j,1)=(KNGW1(j+897,1)-KNGW1(j+890,1))/7;
+% end
 
 % Kyushu code 40 41 42 43 44 45 46
 PFUK=5.112176;
@@ -122,6 +143,7 @@ colororder(newcolors)
 % colororder(c);
 
 % plot
+subplot(1,2,1)
 plot([JPN3,TKY3,OKNW3,OSK3,KYU3,MIY3],'LineWidth',2)
 title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (Japanese Public TV)')
 xlabel('date');
@@ -129,5 +151,15 @@ ylabel('cases/1M');
 xticks([1 D]) % l2 121
 xticklabels({[l0],[ll]})
 legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Miyazaki','Location','northwest');
-set(gcf,'Position',[600,200,600,400]);
+%
+subplot(1,2,2)
+plot([JPN4,TKY4,OKNW4,OSK4,],'LineWidth',2)
+title('COVID-19: 7-day average of daily deaths per 1M','data sourced by NHK (Japanese Public TV)')
+xlabel('date');
+ylabel('cases/1M');
+xticks([1 D]) % l2 121
+xticklabels({[l0],[ll]})
+legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
+%
+set(gcf,'Position',[600,200,1200,400]);
 saveas(gcf,'xnhk.png');
