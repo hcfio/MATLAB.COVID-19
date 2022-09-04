@@ -217,7 +217,13 @@ NZL=zeros(DD,1);
 for j=1:DD
     NZL(j,1)=max(0,WNZL(j+891,1)-WNZL(j+884,1))/7;
 end
-
+XNZ1=transpose(U.data(201,3:qw));
+XNZ2=transpose(U.data(202,3:qw));
+XNZL=(XNZ1+XNZ2)/PNZL;
+DENZL=zeros(DD,1);
+for j=1:DD
+    DENZL(j,1)=max(0,XNZL(j+891,1)-XNZL(j+884,1))/7;
+end
 
 % Philippines
 PPHI=112.027348;
@@ -277,6 +283,11 @@ WTWN=transpose(W.data(248,3:qw))/PLKA;
 TWN=zeros(DD,1);
 for j=1:DD
     TWN(j,1)=max(0,WTWN(j+891,1)-WTWN(j+884,1))/7;
+end
+UTWN=transpose(U.data(248,3:qu))/PTWN;
+DETWN=zeros(DD,1);
+for j=1:DD
+    DETWN(j,1)=max(0,UTWN(j+891,1)-UTWN(j+884,1))/7;
 end
 
 % Thailand
@@ -349,9 +360,14 @@ end
 % Tokyo (14M): code 13, 
 PTKY=13.988129;
 TKY1=VC(:,14)/PTKY;
+TKY2=VD(:,28)/PTKY;
 TKY=zeros(DD,1);
 for j=1:DD
     TKY(j,1)=(TKY1(j+783,1)-TKY1(j+776,1))/7;
+end
+DETKY=zeros(DD,1);
+for j=1:DD
+    DETKY(j,1)=(TKY2(j+783,1)-TKY2(j+776,1))/7;
 end
 
 % Osaka: code 28
@@ -380,32 +396,23 @@ newcolors = [0 0 1;
 colororder(newcolors)         
          
 % plot
-subplot(2,2,1)
-plot([TWN,AUS,OKNW,NZL,KOR,WAU,BWN,NSW,VIC,SIN],'LineWidth',2)
+subplot(1,2,1)
+plot([JPN,TKY,OKNW,OSK,AUS,NZL,KOR,HKG,TWN,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 DD])
 xticklabels({[ll0],[llf]})
-legend('Taiwan','Australia','Okinawa','New Zealand','South Korea','Western Australia','Brunei','New South Wales','Victoria','Singapore','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Osaka','Australia','New Zealand','South Korea','Hong Kong','Taiwan','Singapore','Location','northwest');
 %
-subplot(2,2,2)
-plot([JPN,TKY,OKNW,OSK],'LineWidth',2)
-title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
-xlabel('date');
-ylabel('cases/1M');
-xticks([1 DD])
-xticklabels({[ll0],[llf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
-%
-subplot(2,2,3)
-plot([DEJPN,DEAUS,DEUSA,DEOSK,DEKOR,DEGBR,DEBWN,DERUS,DEBRA,DESIN],'LineWidth',2)
+subplot(1,2,2)
+plot([DEJPN,DETKY,DEOKNW,DEOSK,DEAUS,DENZL,DEKOR,DEHKG,DETWN,DESIN],'LineWidth',2)
 title('COVID-19: 7-day average of deaths per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([1 DD])
 xticklabels({[ll0],[llf]})
-legend('Japan','Australia','United States','Osaka','South Korea','United Kingdom','Brunei','Russia','Brazil','Singapore','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Osaka','Australia','New Zealand','South Korea','Hong Kong','Taiwan','Singapore','Location','northwest');
 %
-set(gcf,'Position',[600,200,1200,800]);
+set(gcf,'Position',[600,200,1200,400]);
 saveas(gcf,'crisis.png');
