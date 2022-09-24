@@ -13,6 +13,8 @@ d1=datetime(dd1);
 D=1+days(d1-d0);
 l0=datestr(d0,'yyyy-mm-dd');
 l1=string('2022-07-01');
+l2=string('2022-08-01');
+l3=string('2022-09-01');
 ll=datestr(d1,'yyyy-mm-dd');
 
 % Japan (125M)
@@ -144,21 +146,21 @@ colororder(newcolors)
 
 % plot
 subplot(1,2,1)
-plot([JPN3,TKY3,OKNW3,OSK3,KYU3,MIY3],'LineWidth',2)
+plot([JPN3,TKY3,OKNW3,OSK3],'LineWidth',2)
 title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (Japanese Public TV)')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 D]) % l2 121
-xticklabels({[l0],[ll]})
-legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Miyazaki','Location','northwest');
+xticks([1 32 63 D]) % l2 121
+xticklabels({[l0],[l2],[l3],[ll]})
+legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
 %
 subplot(1,2,2)
-plot([JPN4,TKY4,OKNW4,OSK4,],'LineWidth',2)
+plot([JPN4,TKY4,OKNW4,OSK4],'LineWidth',2)
 title('COVID-19: 7-day average of daily deaths per 1M','data sourced by NHK (Japanese Public TV)')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 D]) % l2 121
-xticklabels({[l0],[ll]})
+xticks([1 32 63 D]) % l2 121
+xticklabels({[l0],[l2],[l3],[ll]})
 legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
 %
 set(gcf,'Position',[600,200,1200,400]);

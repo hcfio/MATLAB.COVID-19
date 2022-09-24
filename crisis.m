@@ -9,6 +9,8 @@ DD=qw-893;
 dd0=datetime(2022,7,1);
 dd1=dd0+days(DD-1);
 ll0=datestr(dd0,'yyyy-mm-dd');
+ll1=string('2022-08-01');
+ll2=string('2022-09-01');
 llf=datestr(dd1,'yyyy-mm-dd');
 
 % Argentina
@@ -401,8 +403,8 @@ plot([JPN,TKY,OKNW,OSK,AUS,NZL,KOR,HKG,TWN,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
-xticks([1 DD])
-xticklabels({[ll0],[llf]})
+xticks([1 32 63 DD])
+xticklabels({[ll0],[ll1],[ll2],[llf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Australia','New Zealand','South Korea','Hong Kong','Taiwan','Singapore','Location','northwest');
 %
 subplot(1,2,2)
@@ -410,8 +412,8 @@ plot([DEJPN,DETKY,DEOKNW,DEOSK,DEAUS,DENZL,DEKOR,DEHKG,DETWN,DESIN],'LineWidth',
 title('COVID-19: 7-day average of deaths per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('deaths/1M');
-xticks([1 DD])
-xticklabels({[ll0],[llf]})
+xticks([1 32 63 DD])
+xticklabels({[ll0],[ll1],[ll2],[llf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Australia','New Zealand','South Korea','Hong Kong','Taiwan','Singapore','Location','northwest');
 %
 set(gcf,'Position',[600,200,1200,400]);

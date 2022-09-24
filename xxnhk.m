@@ -11,9 +11,10 @@ d0=datetime(dd0);
 dd1=strrep(A.textdata(l+1,1),'/','-');
 d1=datetime(dd1);
 D=1+days(d1-d0);
-l0=datestr(d0,'yyyy-mm-dd');
-l1=string('2022-07-01');
-ll=datestr(d1,'yyyy-mm-dd');
+l0=string('2022-07-01');
+l1=string('2022-08-01');
+l2=string('2022-09-01');
+lf=datestr(d1,'yyyy-mm-dd');
 
 % Japan (125M)
 PJPN=125.845010;
@@ -115,15 +116,15 @@ for k=1:D
     OSK=OSK3(1:k,1);
     HKD=HKD3(1:k,1);
     KYU=KYU3(1:k,1);
-    plot([JPN,TKY,OKNW,OSK,KYU],'LineWidth',2)
+    plot([JPN,TKY,OKNW,OSK],'LineWidth',2)
     xlim([0 D+1]);
     ylim([0 3500])
     title('COVID-19: 7-day average of daily new cases per 1M','data sourced by NHK (Japanese Public TV)')
     xlabel('date');
     ylabel('cases/1M');
-    xticks([1 D]) %l2 121
-    xticklabels({[l0],[ll]})
-    legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Location','northwest');
+    xticks([1 32 63 D]) %l2 121
+    xticklabels({[l0],[l1],[l2],[lf]})
+    legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
     drawnow
     pause(0.02)
     frame = getframe(gcf);
