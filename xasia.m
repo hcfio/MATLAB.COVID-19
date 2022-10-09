@@ -403,13 +403,13 @@ newcolors = [0 0 1;
 colororder(newcolors)         
          
 % plot
-plot([JPN,TKY,OKNW,OSK,KYU,MIY,KOR,HKG,TWN,SIN],'LineWidth',2)
+plot([JPN,TKY,OKNW,OSK,AUS,NZL,KOR,HKG,TWN,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 32 63 DD])
 xticklabels({[ll0],[ll1],[ll2],[llf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Kyushu','Miyazaki','South Korea','Hong Kong','Taiwan','Singapore','Location','northwest');
+legend('Japan','Tokyo','Okinawa','Osaka','Australia','New Zealand','South Korea','Hong Kong','Taiwan','Singapore','Location','northwest');
 %
 set(gcf,'Position',[600,200,600,400]);
 saveas(gcf,'xcrisis.png');
