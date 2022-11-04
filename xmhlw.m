@@ -9,19 +9,16 @@ VD=XD.data(:,:);
 d0=datetime('2022-07-01');
 d1=datetime('2022-08-01');
 d2=datetime('2022-09-01');
+d3=datetime('2022-10-01');
+
 xdf=strrep(XC.textdata(l+1,1),'/','-');
 df=datetime(xdf);
 D=1+days(df-d0);
 l0=datestr(d0,'yyyy-mm-dd');
 l1=datestr(d1,'yyyy-mm-dd');
 l2=datestr(d2,'yyyy-mm-dd');
+l3=datestr(d3,'yyyy-mm-dd');
 lf=datestr(df,'yyyy-mm-dd');
-
-dd0=datetime('2021-07-01');
-DD=1+days(d1-dd0);
-ll0=datestr(dd0,'yyyy-mm-dd');
-ll1=datestr(dd0+days(floor((DD-1)/2)),'yyyy-mm-dd');
-ll2=datestr(d1,'yyyy-mm-dd');
 
 % Japan
 PJPN=125.845010;
@@ -75,6 +72,19 @@ for j=1:D
     NDOSK(j,1)=(DOSK(j+783,1)-DOSK(j+776,1))/7;
 end
 
+% Hokkaido
+PHKD=5.191355;
+CHKD=VC(:,2)/PHKD;
+DHKD=VD(:,2)/PHKD;
+NHKD=zeros(D,1);
+for j=1:D
+    NHKD(j,1)=(CHKD(j+783,1)-CHKD(j+776,1))/7;
+end
+NDHKD=zeros(D,1);
+for j=1:D
+    NDHKD(j,1)=(DHKD(j+783,1)-DHKD(j+776,1))/7;
+end
+
 newcolors = [0 0 1; 
              1 131/255 0; 
              0 1 0; 
@@ -87,22 +97,22 @@ newcolors = [0 0 1;
              0 191/255 1];
 colororder(newcolors) 
 subplot(1,2,1)
-plot([NJPN NTKY NOKNW NOSK],'LineWidth',1.5)
+plot([NJPN NTKY NOKNW NOSK NHKD],'LineWidth',1.5)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by MoH of Japan')
 xlabel('date')
 ylabel('cases/1M')
-xticks([1 32 63 D])
-xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Location','northeast');
+xticks([1 63 D])
+xticklabels({[l0],[l2],[lf]})
+legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northeast');
 %
 subplot(1,2,2)
-plot([NDJPN NDTKY NDOKNW NDOSK],'LineWidth',1.5)
+plot([NDJPN NDTKY NDOKNW NDOSK NDHKD],'LineWidth',1.5)
 title('COVID-19: 7-day average of daily deaths per 1M','data sourced by MoH of Japan')
 xlabel('date')
 ylabel('deaths/1M')
-xticks([1 32 63 D])
-xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Location','northwest');
+xticks([1 63 D])
+xticklabels({[l0],[l2],[lf]})
+legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
 %
-set(gcf,'Position',[600,200,1200,450]);
+set(gcf,'Position',[1000,200,1600,500]);
 saveas(gcf,'xmhlw.png');
