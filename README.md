@@ -1,1 +1,1 @@
-These MATLAB programs create line graphs of time series data of COVID-19 using the open data of COVID-19 given by Johns Hopkins Coronavirus Resource Center and Japanese Ministry of Health, Labor and Welfare.
+These MATLAB programs create line graphs of time series data of COVID-19 using the open data of COVID-19 given by Johns Hopkins Coronavirus Resource Center (JHU) and Japanese Ministry of Health, Labor and Welfare (MHLW).
