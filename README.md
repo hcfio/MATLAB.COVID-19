@@ -1,1 +1,1 @@
-These MATLAB programs download open time-series data of COVID-19 given by JHU, MOH of Japan and NHK (Japanese public TV) and draw some graphs. 
+These MATLAB programs create line graphs of time series data of COVID-19 using the open data of COVID-19 given by Johns Hopkins Coronavirus Resource Center and Japanese Ministry of Health, Labor and Welfare.
