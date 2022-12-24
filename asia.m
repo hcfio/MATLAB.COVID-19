@@ -76,7 +76,7 @@ for j=1:7
     NDJPN(j,1)=BJPN(j,1)/7;
 end
 for j=8:D
-    NDJPN(j,1)=(BJPN(j,1)-BJPN(j-7,1))/7;
+    NDJPN(j,1)=max(0,(BJPN(j,1)-BJPN(j-7,1)))/7;
 end
 
 % South Korea
@@ -119,8 +119,8 @@ end
 
 % Nepal
 PNPL=29.989352;
-ANPL=transpose(A.data(195,3:qw))/PNPL;
-BNPL=transpose(B.data(195,3:qw))/PNPL;
+ANPL=transpose(A.data(196,3:qw))/PNPL;
+BNPL=transpose(B.data(196,3:qw))/PNPL;
 NNPL=zeros(D,1);
 for j=1:7
     NNPL(j,1)=ANPL(j,1)/j;
@@ -133,13 +133,13 @@ for j=1:7
     NDNPL(j,1)=BNPL(j,1)/7;
 end
 for j=8:D
-    NDNPL(j,1)=(BNPL(j,1)-BNPL(j-7,1))/7;
+    NDNPL(j,1)=max(0,(BNPL(j,1)-BNPL(j-7,1)))/7;
 end
 
 % Philippines
 PPHI=112.027348;
-APHI=transpose(A.data(215,3:qw))/PPHI;
-BPHI=transpose(B.data(215,3:qw))/PPHI;
+APHI=transpose(A.data(217,3:qw))/PPHI;
+BPHI=transpose(B.data(217,3:qw))/PPHI;
 NPHI=zeros(D,1);
 for j=1:7
     NPHI(j,1)=APHI(j,1)/j;
@@ -157,8 +157,8 @@ end
 
 % Singapore
 PSIN=5.925237;
-ASIN=transpose(A.data(233,3:qw))/PSIN;
-BSIN=transpose(B.data(233,3:qw))/PSIN;
+ASIN=transpose(A.data(235,3:qw))/PSIN;
+BSIN=transpose(B.data(235,3:qw))/PSIN;
 NSIN=zeros(D,1);
 for j=1:7
     NSIN(j,1)=ASIN(j,1)/j;
@@ -171,13 +171,13 @@ for j=1:7
     NDSIN(j,1)=BSIN(j,1)/7;
 end
 for j=8:D
-    NDSIN(j,1)=(BSIN(j,1)-BSIN(j-7,1))/7;
+    NDSIN(j,1)=max(0,(BSIN(j,1)-BSIN(j-7,1)))/7;
 end
 
 % Sri Lanka
 PLKA=21.559415;
-ALKA=transpose(A.data(241,3:qw))/PLKA;
-BLKA=transpose(B.data(241,3:qw))/PLKA;
+ALKA=transpose(A.data(243,3:qw))/PLKA;
+BLKA=transpose(B.data(243,3:qw))/PLKA;
 NLKA=zeros(D,1);
 for j=1:7
     NLKA(j,1)=ALKA(j,1)/j;
@@ -190,13 +190,13 @@ for j=1:7
     NDLKA(j,1)=BLKA(j,1)/7;
 end
 for j=8:D
-    NDLKA(j,1)=(BLKA(j,1)-BLKA(j-7,1))/7;
+    NDLKA(j,1)=max(0,(BLKA(j,1)-BLKA(j-7,1)))/7;
 end
 
 % Taiwan
 PTWN=23.61;
-ATWN=transpose(A.data(251,3:qw))/PTWN;
-BTWN=transpose(B.data(251,3:qw))/PTWN;
+ATWN=transpose(A.data(250,3:qw))/PTWN;
+BTWN=transpose(B.data(250,3:qw))/PTWN;
 NTWN=zeros(D,1);
 for j=1:7
     NTWN(j,1)=ATWN(j,1)/j;
@@ -209,13 +209,13 @@ for j=1:7
     NDTWN(j,1)=BTWN(j,1)/7;
 end
 for j=8:D
-    NDTWN(j,1)=(BTWN(j,1)-BTWN(j-7,1))/7;
+    NDTWN(j,1)=max(0,(BTWN(j,1)-BTWN(j-7,1)))/7;
 end
 
 % Thailand
 PTHA=70.085127;
-ATHA=transpose(A.data(251,3:qw))/PTHA;
-BTHA=transpose(B.data(251,3:qw))/PTHA;
+ATHA=transpose(A.data(253,3:qw))/PTHA;
+BTHA=transpose(B.data(253,3:qw))/PTHA;
 NTHA=zeros(D,1);
 for j=1:7
     NTHA(j,1)=ATHA(j,1)/j;
@@ -228,13 +228,13 @@ for j=1:7
     NDTHA(j,1)=BTHA(j,1)/7;
 end
 for j=8:D
-    NDTHA(j,1)=(BTHA(j,1)-BTHA(j-7,1))/7;
+    NDTHA(j,1)=max(0,(BTHA(j,1)-BTHA(j-7,1)))/7;
 end
 
 % Vietnam
 PVNM=98.953541;
-AVNM=transpose(A.data(280,3:qw))/PVNM;
-BVNM=transpose(B.data(280,3:qw))/PVNM;
+AVNM=transpose(A.data(283,3:qw))/PVNM;
+BVNM=transpose(B.data(283,3:qw))/PVNM;
 NVNM=zeros(D,1);
 for j=1:7
     NVNM(j,1)=AVNM(j,1)/j;
@@ -247,7 +247,7 @@ for j=1:7
     NDVNM(j,1)=BVNM(j,1)/7;
 end
 for j=8:D
-    NDVNM(j,1)=(BVNM(j,1)-BVNM(j-7,1))/7;
+    NDVNM(j,1)=max(0,(BVNM(j,1)-BVNM(j-7,1)))/7;
 end
 
 newcolors = [0 0 1; 

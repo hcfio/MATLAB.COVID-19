@@ -77,7 +77,7 @@ for j=1:7
     NDCOL(j,1)=BCOL(j,1)/7;
 end
 for j=8:D
-    NDCOL(j,1)=(BCOL(j,1)-BCOL(j-7,1))/7;
+    NDCOL(j,1)=max(0,(BCOL(j,1)-BCOL(j-7,1)))/7;
 end
 
 % France Italy Spwin
@@ -87,11 +87,11 @@ PESP=46.784213;
 PFIE=PFRA+PITA+PESP;
 AFRA=transpose(A.data(132,3:qw));
 AITA=transpose(A.data(155,3:qw));
-AESP=transpose(A.data(241,3:qw));
+AESP=transpose(A.data(242,3:qw));
 AFIE=(AFRA+AITA+AESP)/PFIE;
 BFRA=transpose(B.data(132,3:qw));
 BITA=transpose(B.data(155,3:qw));
-BESP=transpose(B.data(241,3:qw));
+BESP=transpose(B.data(242,3:qw));
 BFIE=(BFRA+BITA+BESP)/PFIE;
 NFIE=zeros(D,1);
 for j=1:7
@@ -105,7 +105,7 @@ for j=1:7
     NDFIE(j,1)=BFIE(j,1)/7;
 end
 for j=8:D
-    NDFIE(j,1)=(BFIE(j,1)-BFIE(j-7,1))/7;
+    NDFIE(j,1)=max(0,(BFIE(j,1)-BFIE(j-7,1)))/7;
 end
 
 % Mexico
@@ -124,13 +124,13 @@ for j=1:7
     NDMEX(j,1)=BMEX(j,1)/7;
 end
 for j=8:D
-    NDMEX(j,1)=(BMEX(j,1)-BMEX(j-7,1))/7;
+    NDMEX(j,1)=max(0,(BMEX(j,1)-BMEX(j-7,1)))/7;
 end
 
 % United Staes
 PUSA=334.207212;
-AUSA=transpose(A.data(258,3:qw))/PUSA;
-BUSA=transpose(B.data(258,3:qw))/PUSA;
+AUSA=transpose(A.data(261,3:qw))/PUSA;
+BUSA=transpose(B.data(261,3:qw))/PUSA;
 NUSA=zeros(D,1);
 for j=1:7
     NUSA(j,1)=AUSA(j,1)/j;
@@ -143,13 +143,13 @@ for j=1:7
     NDUSA(j,1)=BUSA(j,1)/7;
 end
 for j=8:D
-    NDUSA(j,1)=(BUSA(j,1)-BUSA(j-7,1))/7;
+    NDUSA(j,1)=max(0,(BUSA(j,1)-BUSA(j-7,1)))/7;
 end
 
 % United Kingdom
 PGBR=68.466544;
-AGBR=transpose(A.data(275,3:qw))/PGBR;
-BGBR=transpose(B.data(275,3:qw))/PGBR;
+AGBR=transpose(A.data(279,3:qw))/PGBR;
+BGBR=transpose(B.data(279,3:qw))/PGBR;
 NGBR=zeros(D,1);
 for j=1:7
     NGBR(j,1)=AGBR(j,1)/j;
@@ -162,7 +162,7 @@ for j=1:7
     NDGBR(j,1)=BGBR(j,1)/7;
 end
 for j=8:D
-    NDGBR(j,1)=(BGBR(j,1)-BGBR(j-7,1))/7;
+    NDGBR(j,1)=max(0,(BGBR(j,1)-BGBR(j-7,1)))/7;
 end
 
 newcolors = [0 0 1; 
@@ -212,6 +212,6 @@ xlabel('date');
 ylabel('deaths/1M');
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northwest');
+legend('United States','United Kingdom','Argentina','Brazil','Colombia','Mexico','FRA+ITA+ESP','Location','northeast');
 set(gcf,'Position',[600,200,1200,800]);
 saveas(gcf,'jhu.png');
