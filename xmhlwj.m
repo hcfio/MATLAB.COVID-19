@@ -98,21 +98,21 @@ newcolors = [0 0 1;
 colororder(newcolors) 
 subplot(1,2,1)
 plot([NJPN NTKY NOKNW NOSK NHKD],'LineWidth',1.5)
-title('COVID-19: 7-day average of new cases per 1M','data sourced by MoH of Japan')
-xlabel('date')
-ylabel('cases/1M')
+title('COVID-19: 百万人あたりの日毎感染者数の7日間平均','厚生労働省の公開データに基づく')
+xlabel('日付')
+ylabel('百万人あたりの人数')
 xticks([1 32 62 D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
 %
 subplot(1,2,2)
 plot([NDJPN NDTKY NDOKNW NDOSK NDHKD],'LineWidth',1.5)
-title('COVID-19: 7-day average of daily deaths per 1M','data sourced by MoH of Japan')
-xlabel('date')
-ylabel('deaths/1M')
+title('COVID-19: 百万人あたりの死亡者数の7日間平均','厚生労働省の公開データに基づく')
+xlabel('日付')
+ylabel('百万人あたりの人数')
 xticks([1 32 62 D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
 %
-set(gcf,'Position',[200,200,1600,500]);
+set(gcf,'Position',[500,200,1400,500]);
 saveas(gcf,'xmhlw.png');
