@@ -11,7 +11,7 @@ dd1=dd0+days(DD-1);
 ll0=datestr(dd0,'yyyy-mm-dd');
 ll1=string('2022-11-01');
 ll2=string('2022-12-01');
-ll2=string('2023-01-01');
+ll3=string('2023-01-01');
 llf=datestr(dd1,'yyyy-mm-dd');
 
 % NSW
