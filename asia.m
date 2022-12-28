@@ -22,6 +22,62 @@ ll0=datestr(dd0,'yyyy-mm-dd');
 ll1=datestr(dd0+days(floor((DD-1)/2)),['yyyy-mm-dd']);
 ll2=datestr(dd1,'yyyy-mm-dd');
 
+% Australia
+% Australia
+PAUS=25.981402;
+AACT=transpose(A.data(10,3:qw));
+ANSW=transpose(A.data(11,3:qw));
+ANT=transpose(A.data(12,3:qw));
+AQLD=transpose(A.data(13,3:qw));
+ASA=transpose(A.data(14,3:qw));
+ATAS=transpose(A.data(15,3:qw));
+AVIC=transpose(A.data(16,3:qw));
+AWA=transpose(A.data(17,3:qw));
+BACT=transpose(B.data(10,3:qw));
+BNSW=transpose(B.data(11,3:qw));
+BNT=transpose(B.data(12,3:qw));
+BQLD=transpose(B.data(13,3:qw));
+BSA=transpose(B.data(14,3:qw));
+BTAS=transpose(B.data(15,3:qw));
+BVIC=transpose(B.data(16,3:qw));
+BWA=transpose(B.data(17,3:qw));
+AAUS=(AACT+ANSW+ANT+AQLD+ASA+ATAS+AVIC+AWA)/PAUS;
+BAUS=(BACT+BNSW+BNT+BQLD+BSA+BTAS+BVIC+BWA)/PAUS;
+NAUS=zeros(D,1);
+for j=1:7
+    NAUS(j,1)=AAUS(j,1)/j;
+end
+for j=8:D
+    NAUS(j,1)=max(0,AAUS(j,1)-AAUS(j-7,1))/7;
+end
+NDAUS=zeros(D,1);
+for j=1:7
+    NDAUS(j,1)=BAUS(j,1)/7;
+end
+for j=8:D
+    NDAUS(j,1)=max(0,(BAUS(j,1)-BAUS(j-7,1))/7);
+end
+
+
+% Hong Kong
+PHKG=7.600852;
+AHKG=transpose(A.data(72,3:qw))/PHKG;
+BHKG=transpose(B.data(72,3:qw))/PHKG;
+NHKG=zeros(D,1);
+for j=1:7
+    NHKG(j,1)=AHKG(j,1)/j;
+end
+for j=8:D
+    NHKG(j,1)=max(0,AHKG(j,1)-AHKG(j-7,1))/7;
+end
+NDHKG=zeros(D,1);
+for j=1:7
+    NDHKG(j,1)=BHKG(j,1)/7;
+end
+for j=8:D
+    NDHKG(j,1)=max(0,(BHKG(j,1)-BHKG(j-7,1))/7);
+end
+
 % India
 PIND=1395.531433;
 AIND=transpose(A.data(149,3:qw))/PIND;
@@ -260,43 +316,43 @@ newcolors = [0 0 1;
              220/255 220/255 220/255; 
              1 191/255 17/255; 
              0 191/255 1];
-colororder(newcolors)         
+colororder(newcolors)        Australia 
          
 % plot
 subplot(2,2,1)
-plot([AJPN,APHI,AMYS,ATWN,AIND,AVNM,AKOR,AIDN,ATHA,ASIN],'LineWidth',2)
+plot([AJPN,APHI,AMYS,ATWN,AVNM,AAUS,AKOR,AHKG,ATHA,ASIN],'LineWidth',2)
 title('COVID-19: cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D]);
 xticklabels({[l0],[l1],[l2],[l3]});
-legend('Japan','Philippines','Malaysia','Taiwan','India','Vietnam','South Korea','Indonesia','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Taiwan','Vietnam','Australia','South Korea','Hong Kong','Thailand','Singapore','Location','northwest');
 % plot
 subplot(2,2,2)
-plot([BJPN,BPHI,BMYS,BTWN,BIND,BVNM,BKOR,BIDN,BTHA,BSIN],'LineWidth',2)
+plot([BJPN,BPHI,BMYS,BTWN,BVNM,BAUS,BKOR,BHKG,BTHA,BSIN],'LineWidth',2)
 title('COVID-19: deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Taiwan','India','Vietnam','South Korea','Indonesia','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Taiwan','Vietnam','Australia','South Korea','Hong Kong','Thailand','Singapore','Location','northwest');
 % plot
 subplot(2,2,3)
-plot([NJPN,NPHI,NMYS,NTWN,NIND,NVNM,NKOR,NIDN,NTHA,NSIN],'LineWidth',2)
+plot([NJPN,NPHI,NMYS,NTWN,NVNM,NAUS,NKOR,NHKG,NTHA,NSIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('cases/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Taiwan','India','Vietnam','South Korea','Indonesia','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Taiwan','Vietnam','Australia','South Korea','Hong Kong','Thailand','Singapore','Location','northwest');
 % plot
 subplot(2,2,4)
-plot([NDJPN,NDPHI,NDMYS,NDTWN,NDIND,NDVNM,NDKOR,NDIDN,NDTHA,NDSIN],'LineWidth',2)
+plot([NDJPN,NDPHI,NDMYS,NDTWN,NDVNM,NDAUS,NDKOR,NDHKG,NDTHA,NDSIN],'LineWidth',2)
 title('COVID-19: 7-day average deaths per 1M','data sourced by JHU Coronavirus Resource Center')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([0 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[l3]})
-legend('Japan','Philippines','Malaysia','Taiwan','India','Vietnam','South Korea','Indonesia','Thailand','Singapore','Location','northwest');
+legend('Japan','Philippines','Malaysia','Taiwan','Vietnam','Australia','South Korea','Hong Kong','Thailand','Singapore','Location','northwest');
 set(gcf,'Position',[600,200,1300,800]);
 saveas(gcf,'asia.png');
