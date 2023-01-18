@@ -21,7 +21,7 @@ l3=datestr(d3,'yyyy-mm-dd');
 lf=datestr(df,'yyyy-mm-dd');
 
 % Japan
-PJPN=125.845010;
+PJPN=125.49534;
 CJPN=VC(:,1)/PJPN;
 DJPN=VD(:,1)/PJPN;
 NJPN=zeros(D,1);
@@ -34,7 +34,7 @@ for j=1:D
 end
 
 % Tokyo
-PTKY=13.988129;
+PTKY=14.042127;
 CTKY=VC(:,14)/PTKY;
 DTKY=VD(:,14)/PTKY;
 NTKY=zeros(D,1);
@@ -47,7 +47,7 @@ for j=1:D
 end
 
 % Okinawa
-POKNW=1.469335;    
+POKNW=1.469230;    
 COKNW=VC(:,48)/POKNW;
 DOKNW=VD(:,48)/POKNW;
 NOKNW=zeros(D,1);
@@ -60,7 +60,7 @@ for j=1:D
 end
 
 % Osaka
-POSK=8.797153;
+POSK=8.785211;
 COSK=VC(:,28)/POSK;
 DOSK=VD(:,28)/POSK;
 NOSK=zeros(D,1);
@@ -73,7 +73,7 @@ for j=1:D
 end
 
 % Hokkaido
-PHKD=5.191355;
+PHKD=5.149405;
 CHKD=VC(:,2)/PHKD;
 DHKD=VD(:,2)/PHKD;
 NHKD=zeros(D,1);
@@ -114,5 +114,5 @@ xticks([1 32 62 D])
 xticklabels({[l0],[l1],[l2],[lf]})
 legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
 %
-set(gcf,'Position',[200,200,1600,500]);
+set(gcf,'Position',[200,200,1400,500]);
 saveas(gcf,'xmhlw.png');
