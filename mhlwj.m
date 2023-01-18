@@ -153,39 +153,39 @@ newcolors = [0 0 1;
 colororder(newcolors) 
 subplot(2,2,1)
 plot([CJPN CTKY COKNW COSK CHKD],'LineWidth',2)
-title('COVID-19: cases per 1M','data sourced by MoH of Japan')
-xlabel('date')
-ylabel('cases/1M')
+title('COVID-19: 百万人あたりの感染者数累計','厚生労働省の公開データに基づく')
+xlabel('日付')
+ylabel('百万人あたりの人数')
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
 %
 subplot(2,2,2)
 plot([DJPN DTKY DOKNW DOSK DHKD],'LineWidth',2)
-title('COVID-19: deaths per 1M','data sourced by MoH of Japan')
-xlabel('date')
-ylabel('deaths/1M')
+title('COVID-19: 百万人あたりの死亡者数累計','厚生労働省の公開データに基づく')
+xlabel('日付')
+ylabel('百万人あたりの人数')
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
 %
 subplot(2,2,3)
 plot([NJPN NTKY NOKNW NOSK NHKD],'LineWidth',2)
-title('COVID-19: 7-day average of new cases per 1M','data sourced by MoH of Japan')
-xlabel('date')
-ylabel('cases/1M')
+title('COVID-19: 百万人あたりの日毎感染者数7日間平均','厚生労働省の公開データに基づく')
+xlabel('日付')
+ylabel('百万人あたりの人数')
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
 %
 subplot(2,2,4)
 plot([NDJPN NDTKY NDOKNW NDOSK NDHKD],'LineWidth',2)
-title('COVID-19: 7-day average of daily deaths per 1M','data sourced by MoH of Japan')
-xlabel('date')
-ylabel('deaths/1M')
+title('COVID-19: 百万人あたりの死亡者数7日間平均','厚生労働省の公開データに基づく')
+xlabel('日付')
+ylabel('百万人あたりの人数')
 xticks([1 floor(D/3) floor(2*D/3) D])
 xticklabels({[l0],[l1],[l2],[lf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Location','northwest');
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
 %
 set(gcf,'Position',[600,200,1200,800]);
-saveas(gcf,'mhlw.png');
+saveas(gcf,'mhlwj.png');
