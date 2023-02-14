@@ -6,10 +6,11 @@ l=length(XC.data(:,1));
 VC=XC.data(:,:);
 VD=XD.data(:,:);
 
-d0=datetime('2022-10-01');
-d1=datetime('2022-11-01');
-d2=datetime('2022-12-01');
-d3=datetime('2023-01-01');
+d0=datetime('2023-01-01');
+d1=datetime('2023-02-01');
+d2=datetime('2023-03-01');
+d3=datetime('2023-04-01');
+d4=datetime('2023-05-01');
 
 xdf=strrep(XC.textdata(l+1,1),'/','-');
 df=datetime(xdf);
@@ -26,11 +27,11 @@ CJPN=VC(:,1)/PJPN;
 DJPN=VD(:,1)/PJPN;
 NJPN=zeros(D,1);
 for j=1:D
-    NJPN(j,1)=(CJPN(j+875,1)-CJPN(j+868,1))/7;
+    NJPN(j,1)=(CJPN(j+967,1)-CJPN(j+960,1))/7;
 end
 NDJPN=zeros(D,1);
 for j=1:D
-    NDJPN(j,1)=(DJPN(j+875,1)-DJPN(j+868,1))/7;
+    NDJPN(j,1)=(DJPN(j+967,1)-DJPN(j+960,1))/7;
 end
 
 % Tokyo
@@ -39,11 +40,11 @@ CTKY=VC(:,14)/PTKY;
 DTKY=VD(:,14)/PTKY;
 NTKY=zeros(D,1);
 for j=1:D
-    NTKY(j,1)=(CTKY(j+875,1)-CTKY(j+868,1))/7;
+    NTKY(j,1)=(CTKY(j+967,1)-CTKY(j+960,1))/7;
 end
 NDTKY=zeros(D,1);
 for j=1:D
-    NDTKY(j,1)=(DTKY(j+875,1)-DTKY(j+868,1))/7;
+    NDTKY(j,1)=(DTKY(j+967,1)-DTKY(j+960,1))/7;
 end
 
 % Okinawa
@@ -52,11 +53,11 @@ COKNW=VC(:,48)/POKNW;
 DOKNW=VD(:,48)/POKNW;
 NOKNW=zeros(D,1);
 for j=1:D
-    NOKNW(j,1)=(COKNW(j+875,1)-COKNW(j+868,1))/7;
+    NOKNW(j,1)=(COKNW(j+967,1)-COKNW(j+960,1))/7;
 end
 NDOKNW=zeros(D,1);
 for j=1:D
-    NDOKNW(j,1)=(DOKNW(j+875,1)-DOKNW(j+868,1))/7;
+    NDOKNW(j,1)=(DOKNW(j+967,1)-DOKNW(j+960,1))/7;
 end
 
 % Osaka
@@ -65,11 +66,11 @@ COSK=VC(:,28)/POSK;
 DOSK=VD(:,28)/POSK;
 NOSK=zeros(D,1);
 for j=1:D
-    NOSK(j,1)=(COSK(j+875,1)-COSK(j+868,1))/7;
+    NOSK(j,1)=(COSK(j+967,1)-COSK(j+960,1))/7;
 end
 NDOSK=zeros(D,1);
 for j=1:D
-    NDOSK(j,1)=(DOSK(j+875,1)-DOSK(j+868,1))/7;
+    NDOSK(j,1)=(DOSK(j+967,1)-DOSK(j+960,1))/7;
 end
 
 % Hokkaido
@@ -78,11 +79,11 @@ CHKD=VC(:,2)/PHKD;
 DHKD=VD(:,2)/PHKD;
 NHKD=zeros(D,1);
 for j=1:D
-    NHKD(j,1)=(CHKD(j+875,1)-CHKD(j+868,1))/7;
+    NHKD(j,1)=(CHKD(j+967,1)-CHKD(j+960,1))/7;
 end
 NDHKD=zeros(D,1);
 for j=1:D
-    NDHKD(j,1)=(DHKD(j+875,1)-DHKD(j+868,1))/7;
+    NDHKD(j,1)=(DHKD(j+967,1)-DHKD(j+960,1))/7;
 end
 
 newcolors = [0 0 1; 
@@ -101,18 +102,18 @@ plot([NJPN NTKY NOKNW NOSK NHKD],'LineWidth',1.5)
 title('COVID-19: 百万人あたりの日毎感染者数の7日間平均','厚生労働省の公開データに基づく')
 xlabel('日付')
 ylabel('百万人あたりの人数')
-xticks([1 32 62 D])
-xticklabels({[l0],[l1],[l2],[lf]})
-legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
+xticks([1 32 D])
+xticklabels({[l0],[l1],[lf]})
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northeast');
 %
 subplot(1,2,2)
 plot([NDJPN NDTKY NDOKNW NDOSK NDHKD],'LineWidth',1.5)
 title('COVID-19: 百万人あたりの死亡者数の7日間平均','厚生労働省の公開データに基づく')
 xlabel('日付')
 ylabel('百万人あたりの人数')
-xticks([1 32 62 D])
-xticklabels({[l0],[l1],[l2],[lf]})
-legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northwest');
+xticks([1 32 D])
+xticklabels({[l0],[l1],[lf]})
+legend('日本国','東京都','沖縄県','大阪府','北海道','Location','northeast');
 %
 set(gcf,'Position',[500,200,1400,500]);
 saveas(gcf,'xmhlwj.png');
