@@ -9,11 +9,11 @@ DD=qw-1077;
 dd0=datetime(2023,1,1);
 dd1=dd0+days(DD-1);
 ll0=datestr(dd0,'yyyy-mm-dd');
-ll1=string('2023-01-01');
-ll2=string('2023-02-01');
-ll3=string('2023-03-01');
-ll1=string('2023-04-01');
-ll2=string('2023-05-01');
+ll1=string('2023-02-01');
+ll2=string('2023-03-01');
+ll3=string('2023-04-01');
+ll4=string('2023-05-01');
+ll5=string('2023-06-01');
 llf=datestr(dd1,'yyyy-mm-dd');
 
 % NSW
@@ -224,10 +224,10 @@ PHI=zeros(DD,1);
 for j=1:DD
     PHI(j,1)=max(0,WPHI(j+1075,1)-WPHI(j+1068,1))/7;
 end
-UIDN=transpose(U.data(217,3:qu))/PIDN;
-DEIDN=zeros(DD,1);
+UPHI=transpose(U.data(217,3:qu))/PIDN;
+DEPHI=zeros(DD,1);
 for j=1:DD
-    DEIDN(j,1)=max(0,UIDN(j+1075,1)-UIDN(j+1068,1))/7;
+    DEPHI(j,1)=max(0,UPHI(j+1075,1)-UPHI(j+1068,1))/7;
 end
 
 % Russia
@@ -402,22 +402,22 @@ colororder(newcolors)
          
 % plot
 subplot(1,2,1)
-plot([JPN,TKY,OKNW,OSK,HKD,AUS,KOR,HKG,TWN,SIN],'LineWidth',2)
+plot([JPN,TKY,OKNW,OSK,HKG,AUS,KOR,PHI,TWN,SIN],'LineWidth',2)
 title('COVID-19: 7-day average of new cases per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('cases/1M');
 xticks([1 32 DD])
 xticklabels({[ll0],[ll1],[llf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Australia','South Korea','Hong Kong','Taiwan','Singapore','Location','northeast');
+legend('Japan','Tokyo','Okinawa','Osaka','Hong Kong','Australia','South Korea','Philippines','Taiwan','Singapore','Location','northeast');
 %
 subplot(1,2,2)
-plot([DEJPN,DETKY,DEOKNW,DEOSK,DEHKD,DEAUS,DEKOR,DEHKG,DETWN,DESIN],'LineWidth',2)
+plot([DEJPN,DETKY,DEOKNW,DEOSK,DEHKG,DEAUS,DEKOR,DEPHI,DETWN,DESIN],'LineWidth',2)
 title('COVID-19: 7-day average of deaths per 1M','data sourced by JHU and MoH of Japan')
 xlabel('date');
 ylabel('deaths/1M');
 xticks([1 32 DD])
 xticklabels({[ll0],[ll1],[llf]})
-legend('Japan','Tokyo','Okinawa','Osaka','Hokkaido','Australia','South Korea','Hong Kong','Taiwan','Singapore','Location','northeast');
+legend('Japan','Tokyo','Okinawa','Osaka','Hong Kong','Australia','South Korea','Philippines','Taiwan','Singapore','Location','northeast');
 %
 set(gcf,'Position',[600,200,1200,400]);
 saveas(gcf,'crisis.png');
